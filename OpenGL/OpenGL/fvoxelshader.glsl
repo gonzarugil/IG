@@ -144,7 +144,7 @@ void main()
 		vec3 voxelCenter;
 		vec3 texCoords;
 
-        float tfin = (ptofin.z-pto.z)/v.z;
+        float tfin = (ptofin.z-pto.z)/(v.z + 0.0000000001f);
         float t = 0; // t del entrypoint es 0 por la forma en la que se crea la recta---
 
 		//aqui va el while
