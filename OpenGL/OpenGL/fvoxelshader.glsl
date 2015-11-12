@@ -5,11 +5,11 @@ in vec3 entryPoint;
 
 uniform sampler3D dataTex;
 uniform sampler2D exitPointTex;
-uniform vec3 texSize;
+uniform ivec3 texSize;
 
-uniform vec2      screenSize;
+uniform ivec2      screenSize;
 uniform float     stepSize;
-float isoValue  = 0.40;
+float isoValue  = 0.0;
 
 
 

@@ -2,7 +2,7 @@
 class CFBO
 {
 public:
-	CFBO(void);
+	CFBO(unsigned int w,unsigned int h);
 	~CFBO(void);
 
 	void resize(unsigned int w, unsigned int h);

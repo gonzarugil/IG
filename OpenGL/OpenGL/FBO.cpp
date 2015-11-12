@@ -8,7 +8,7 @@
 
 
 
-CFBO::CFBO(void)
+CFBO::CFBO(unsigned int w,unsigned int h)
 {
 	//Bloque 1
 	glGenTextures(1, &colorTex);
@@ -21,7 +21,7 @@ CFBO::CFBO(void)
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 256, 256, 0, GL_BGRA, GL_UNSIGNED_BYTE, NULL);
 	//-------------------------
 	//Bloque 2
-	resize(250, 250); //Se explicará más adelante
+	resize(w, h); //Se explicará más adelante
 
 	//Bloque 3
 	glGenFramebuffers(1, &id);
@@ -57,7 +57,9 @@ CFBO::~CFBO(void)
 
 void CFBO::resize(unsigned int w, unsigned int h)
 {
+
 	//Bloque 1
+	/**/
 	glBindTexture(GL_TEXTURE_2D, colorTex);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA32F, w, h, 0,
 		GL_RGBA, GL_UNSIGNED_BYTE, 0);

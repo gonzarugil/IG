@@ -149,7 +149,7 @@ const char *fileName = "Orange.pvm";
 
 //VAO
 GLuint vao;
-GLuint fboVao;
+//GLuint fboVao;
 
 //VBO
 GLuint vbo[2];
@@ -438,7 +438,7 @@ void sceneInit(){
 	//glDisable(GL_CULL_FACE);
 
 	glGenVertexArrays(1, &vao);
-	glGenVertexArrays(1, &fboVao);
+	//glGenVertexArrays(1, &fboVao);
 	glBindVertexArray(vao);
 
 	//Buffers
@@ -505,6 +505,7 @@ void renderScene(void){
 	//Pintado del buffer    
 	glBindVertexArray(vao);
 	glDrawElements(GL_TRIANGLES, boxNTriangleIndex, GL_UNSIGNED_INT, (void*)0);
+	
 	fbo->deactivate();
 	/**/
 	//Cargar Segundo programa (Segunda pasada)
@@ -517,9 +518,9 @@ void renderScene(void){
 	glUniformMatrix4fv(u2Model, 1, GL_FALSE, glm::value_ptr(model));
 	glUniformMatrix4fv(u2View, 1, GL_FALSE, glm::value_ptr(view));
 	glUniformMatrix4fv(u2Proy, 1, GL_FALSE, glm::value_ptr(proy));
-	glUniform2f(scrSize,scrw,scrh);
-	glUniform1f(stpSize, 0.01);
-	glUniform3f(textureSize, w, h, d);
+	glUniform2i(scrSize,scrw,scrh);
+	glUniform1f(stpSize, 0.01f);
+	glUniform3i(textureSize, w, h, d);
 
 	
 
@@ -545,7 +546,9 @@ void funcionDeReescalado(GLsizei w, GLsizei h)
 {
 	glViewport(0, 0, w, h);
 	buildProjectionMatrix(45.0f, 4.0f / 3.0f, 0.1f, 50.0f);
-	fbo->resize(w,h);
+	//fbo->resize(w,h); cambio esto porlo siguiente para no reescribir en el fbo sino crear uno nuevo
+	fbo->~CFBO();
+	fbo = new CFBO(w, h);
 	scrw = w;
 	scrh = h;
 }
@@ -567,13 +570,13 @@ int main(int argc, char **argv)
 {
 	
 	glutInit(&argc, argv);
-	glutInitContextVersion(3, 3);
+	glutInitContextVersion(4, 4);
 	glutInitContextFlags(GLUT_FORWARD_COMPATIBLE);
-	glutInitContextProfile(GLUT_CORE_PROFILE);
-	//glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
+	//glutInitContextProfile(GLUT_CORE_PROFILE);
+	glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
 
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutInitWindowSize(250, 250);
+	glutInitWindowSize(512, 512);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("glsl3");
 	glutReshapeFunc(funcionDeReescalado);
@@ -590,7 +593,7 @@ int main(int argc, char **argv)
 	}
 	const GLubyte *oglVersion = glGetString(GL_VERSION);
 	//CFBO fboaux;
-	fbo = new CFBO;// fboaux;
+	fbo = new CFBO(512,512);// fboaux;
 
 	printf("This system supports OpenGL Version %s.\n", oglVersion);
 	shaderInit();
