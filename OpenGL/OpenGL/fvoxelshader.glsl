@@ -9,7 +9,7 @@ uniform ivec3 texSize;
 
 uniform ivec2      screenSize;
 uniform float     stepSize;
-float isoValue  = 0.0;
+float isoValue  = 0.4;
 
 
 
@@ -129,7 +129,7 @@ void main()
     
 	if (entryPoint.z <= exitPoint.z)
 	{
-		discard;
+		//discard;
 	}else{
 		
 		vec3 pto   = (vmMatrixInverse * vec4 (entryPoint,1)).xyz;
@@ -215,7 +215,7 @@ void main()
 				bvec3 GT=greaterThan(sol,vec3(t));
 				sol = sol*vec3(GT) + tnext*vec3(not(GT));
 				float s=min(min(sol.x,sol.y),sol.z);
-				if (s>tnext) discard;
+				//if (s<tnext) discard; //FALLA AQUI EN ESTA COMPROBACIÓN!!!!!!! (Puede ser por la escala numérica?)(Normalizar?)
 
 				color = vec4(s,0.0f,0.0f,1.0f);
 				
