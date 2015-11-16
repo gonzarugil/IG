@@ -1,4 +1,4 @@
-#version 440
+#version 430
 #define MAX_ITERATIONS 4000
 
 in vec3 entryPoint;
@@ -9,7 +9,7 @@ uniform ivec3 texSize;
 
 uniform ivec2      screenSize;
 uniform float     stepSize;
-float isoValue  = 0.2;
+float isoValue  = 0.0;
 
 
 
@@ -37,6 +37,7 @@ float computeX (float As,float Ch,float Dh,float delta){
 }
 
 int solveCubic(in vec4 coff, out vec3 res){
+	res = vec3(0.0);
 	int nsol = 0;
 	coff.yz *= 0.33333333333333;
 	vec3 sigma = vec3(coff.x*coff.z - coff.y*coff.y,
@@ -212,14 +213,22 @@ void main()
 				//Comprobamos el numero de soluciones válidas de la ecuación y obtenemos la menor
 				
 				//comprobamos las soluciones obtenidas
-				bvec3 GT=greaterThan(sol,vec3(t));
-				sol = sol*vec3(GT) + tnext*vec3(not(GT));
-				float s=min(min(sol.x,sol.y),sol.z);
-				//if (s>tnext) discard; //FALLA AQUI EN ESTA COMPROBACIÓN!!!!!!! (Puede ser por la escala numérica?)(Normalizar?)
-
-				color = vec4(s,0.0f,0.0f,1.0f);
-				
-				
+				bool validsolution = true;
+				float s;
+				if (numsoluciones == 1){
+					s = sol.x;
+					if (s >= tnext) validsolution = false;
+				}
+				else if (numsoluciones == 3){
+					bvec3 GT = greaterThan(sol, vec3(t));
+					sol = sol*vec3(GT) + tnext*vec3(not(GT));
+					s = min(min(sol.x, sol.y), sol.z);
+					if (s >= tnext) validsolution = false; //FALLA AQUI EN ESTA COMPROBACIÓN!!!!!!! (Puede ser por la escala numérica?)(Normalizar?)
+				}
+				if (validsolution){
+					color = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+					break;
+				}
 			}
 			
 			voxelId = newvoxelId;

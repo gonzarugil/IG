@@ -570,7 +570,7 @@ int main(int argc, char **argv)
 {
 	
 	glutInit(&argc, argv);
-	glutInitContextVersion(4, 4);
+	glutInitContextVersion(4, 3);
 	glutInitContextFlags(GLUT_FORWARD_COMPATIBLE);
 	//glutInitContextProfile(GLUT_CORE_PROFILE);
 	glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
