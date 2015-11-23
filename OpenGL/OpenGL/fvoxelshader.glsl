@@ -9,7 +9,7 @@ uniform ivec3 texSize;
 
 uniform ivec2      screenSize;
 uniform float     stepSize;
-float isoValue  = 0.0;
+float isoValue  = 0.3;
 
 
 
@@ -173,6 +173,7 @@ void main()
 
 			if (checkIsoValue(isoValue,voxelId)){ //Comprobacion de que el isovalor que buscamos se halla dentro del voxel
 				//Cálculo de las densidades en los vértices multiplico la z por -1 ya que en coordenadas de textura las z son positivas
+				/* con arrays
 				vec3 vertex[8];
 				float density[8];
 				vertex[0] = voxelId;
@@ -200,7 +201,37 @@ void main()
 				float XY  = density[6]-density[3]+density[1]-density[2]-density[5]-density[4]+density[0]+density[7];
 				float YZ  = density[7]+density[0]-density[5]-density[2]+density[3]-density[6]-density[1]+density[4];
 				float ZX  = density[0]-density[1]+density[7]+density[2]-density[6]+density[5]-density[4]-density[3];
-				
+				*/
+				//con variables sueltas
+
+				vec3 v0, v1, v2, v3, v4, v5, v6, v7;
+				float d0, d1, d2, d3, d4, d5, d6, d7;
+				v0 = voxelId;
+				d0 = texture(dataTex, v0 * vec3(1, 1, -1) / texSize).r;
+				v1 = vec3(voxelId.x, voxelId.y, voxelId.z - 1);
+				d1 = texture(dataTex, v1 * vec3(1, 1, -1) / texSize).r;
+				v2 = vec3(voxelId.x, voxelId.y + 1, voxelId.z);
+				d2 = texture(dataTex, v2 * vec3(1, 1, -1) / texSize).r;
+				v3 = vec3(voxelId.x, voxelId.y + 1, voxelId.z - 1);
+				d3 = texture(dataTex, v3 * vec3(1, 1, -1) / texSize).r;
+				v4 = vec3(voxelId.x + 1, voxelId.y, voxelId.z);
+				d4 = texture(dataTex, v4 * vec3(1, 1, -1) / texSize).r;
+				v5 = vec3(voxelId.x + 1, voxelId.y, voxelId.z - 1);
+				d5 = texture(dataTex, v5 * vec3(1, 1, -1) / texSize).r;
+				v6 = vec3(voxelId.x + 1, voxelId.y + 1, voxelId.z);
+				d6 = texture(dataTex, v6 * vec3(1, 1, -1) / texSize).r;
+				v7 = vec3(voxelId.x + 1, voxelId.y + 1, voxelId.z - 1);
+				d7 = texture(dataTex, v7 * vec3(1, 1, -1) / texSize).r;
+				//Calculo de los coeficientes de la interpolacion
+				float A = d6 + d0 + d4 + d2 + d7 + d3 + d1 + d5 - 8.0*isoValue;
+				float Z = d3 + d5 + d1 - d4 - d2 + d7 - d0 - d6;
+				float X = d7 + d6 - d1 + d4 - d0 - d3 - d2 + d5;
+				float Y = d6 - d0 - d1 - d4 + d3 - d5 + d2 + d7;
+				float XYZ = d4 + d2 - d6 + d1 - d0 - d5 - d3 + d7;
+				float XY = d6 - d3 + d1 - d2 - d5 - d4 + d0 + d7;
+				float YZ = d7 + d0 - d5 - d2 + d3 - d6 - d1 + d4;
+				float ZX = d0 - d1 + d7 + d2 - d6 + d5 - d4 - d3;
+
 				//Repetir multiplicaciones
 				vec3 ptotrans = pto - voxelId; //translacion del pto de la recta para encuadrarlo todo en el origen
 				vec4 a;
