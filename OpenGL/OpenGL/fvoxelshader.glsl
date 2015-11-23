@@ -9,14 +9,25 @@ uniform ivec3 texSize;
 
 uniform ivec2      screenSize;
 uniform float     stepSize;
-float isoValue  = 0.3;
+float isoValue  = 0.2;
 
+//propiedades de la luz
+vec3 Ia = vec3(0.3);
+vec3 Id = vec3(1.0);
+vec3 Is = vec3(1.0);
+vec3 lpos = vec3(0.0);
+float alpha = 5000.0;
 
+//propiedades del material (HARDCODEADOS)
+vec3 Ka = vec3(1, 0, 0);
+vec3 Kd = vec3(1, 0, 0);
+vec3 Ks = vec3(1.0);
 
 //matriz para el punto
 uniform mat4 rot;
 uniform mat4 view;
 uniform mat4 proy;
+
 
 out vec4 outColor;
 
@@ -96,6 +107,23 @@ int solveCubic(in vec4 coff, out vec3 res){
 	return nsol;
 }
 
+vec4 shade(in vec3 norm, in vec3 colorpos){
+	vec3 c = vec3(0.0);
+	c = Ia * Ka;
+	
+	vec3 L = normalize(lpos - colorpos);
+	vec3 diffuse = Id * Kd * dot(L, norm);
+	c += clamp(diffuse, 0.0, 1.0);
+
+	vec3 V = normalize(-colorpos);
+	vec3 R = normalize(reflect(-L, norm));
+	float factor = max(dot(R, V), 0.001);
+	vec3 specular = Is * Ks * pow(factor, alpha);
+	c += clamp(specular, 0.0, 1.0);
+	
+	return vec4(c, 0.0f);
+}
+
 bool checkIsoValue(in float isoValue, in vec3 voxelID){
 	vec3 vertex[8];
 	vertex[0] = voxelID;
@@ -123,14 +151,15 @@ void main()
 {
 	mat4 vmMatrix = view*rot;
 	mat4 vmMatrixInverse = inverse(vmMatrix);
+	mat4 normalMat = transpose(inverse(vmMatrix));
 
 	vec4 color = vec4(0,0,0,0);
 	vec2 screenCoords = gl_FragCoord.st/screenSize;
     vec3 exitPoint = texture(exitPointTex, screenCoords).xyz;
     
-	if (entryPoint.z <= exitPoint.z)
+	if (entryPoint.z < exitPoint.z)
 	{
-		//discard;
+		discard;
 	}else{
 		
 		vec3 pto   = (vmMatrixInverse * vec4 (entryPoint,1)).xyz;
@@ -145,7 +174,7 @@ void main()
 		vec3 voxelCenter;
 		vec3 texCoords;
 
-        float tfin = (ptofin.z-pto.z)/(v.z + 0.0000000001f);
+        float tfin = (ptofin.z-pto.z)/(v.z +0.000001f); //esto es para evitar que se cuelgue
         float t = 0; // t del entrypoint es 0 por la forma en la que se crea la recta---
 
 		//aqui va el while
@@ -206,23 +235,24 @@ void main()
 
 				vec3 v0, v1, v2, v3, v4, v5, v6, v7;
 				float d0, d1, d2, d3, d4, d5, d6, d7;
-				v0 = voxelId;
+				v0 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z - 1);
 				d0 = texture(dataTex, v0 * vec3(1, 1, -1) / texSize).r;
-				v1 = vec3(voxelId.x, voxelId.y, voxelId.z - 1);
+				v1 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z);
 				d1 = texture(dataTex, v1 * vec3(1, 1, -1) / texSize).r;
-				v2 = vec3(voxelId.x, voxelId.y + 1, voxelId.z);
+				v2 = vec3(voxelId.x, voxelId.y - 1, voxelId.z);
 				d2 = texture(dataTex, v2 * vec3(1, 1, -1) / texSize).r;
-				v3 = vec3(voxelId.x, voxelId.y + 1, voxelId.z - 1);
+				v3 = vec3(voxelId.x, voxelId.y - 1, voxelId.z - 1);
 				d3 = texture(dataTex, v3 * vec3(1, 1, -1) / texSize).r;
-				v4 = vec3(voxelId.x + 1, voxelId.y, voxelId.z);
+				v4 = vec3(voxelId.x - 1, voxelId.y, voxelId.z - 1);
 				d4 = texture(dataTex, v4 * vec3(1, 1, -1) / texSize).r;
-				v5 = vec3(voxelId.x + 1, voxelId.y, voxelId.z - 1);
+				v5 = vec3(voxelId.x - 1, voxelId.y, voxelId.z);
 				d5 = texture(dataTex, v5 * vec3(1, 1, -1) / texSize).r;
-				v6 = vec3(voxelId.x + 1, voxelId.y + 1, voxelId.z);
+				v6 = vec3(voxelId.x, voxelId.y, voxelId.z);
 				d6 = texture(dataTex, v6 * vec3(1, 1, -1) / texSize).r;
-				v7 = vec3(voxelId.x + 1, voxelId.y + 1, voxelId.z - 1);
+				v7 = vec3(voxelId.x, voxelId.y, voxelId.z - 1);
 				d7 = texture(dataTex, v7 * vec3(1, 1, -1) / texSize).r;
-				//Calculo de los coeficientes de la interpolacion
+				//Calculo de los coeficientes de la interpolacion (COEFICIENTES DE MARCOS)
+				/*
 				float A = d6 + d0 + d4 + d2 + d7 + d3 + d1 + d5 - 8.0*isoValue;
 				float Z = d3 + d5 + d1 - d4 - d2 + d7 - d0 - d6;
 				float X = d7 + d6 - d1 + d4 - d0 - d3 - d2 + d5;
@@ -231,7 +261,18 @@ void main()
 				float XY = d6 - d3 + d1 - d2 - d5 - d4 + d0 + d7;
 				float YZ = d7 + d0 - d5 - d2 + d3 - d6 - d1 + d4;
 				float ZX = d0 - d1 + d7 + d2 - d6 + d5 - d4 - d3;
-
+				*/
+				//Calculo de los coeficientes (COEFICIENTES DE LOIC)
+				float A = d0 - 8.0*isoValue;
+				
+				float X = d3 - d0;
+				float Y = d4 - d0;
+				float Z = d1 - d0;
+				float XY = d7 + d0 - d3 - d4;
+				float ZX = d2 + d0 - d4 - d1;
+				float YZ = d5 + d0 - d4 - d3;
+				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
+				
 				//Repetir multiplicaciones
 				vec3 ptotrans = pto - voxelId; //translacion del pto de la recta para encuadrarlo todo en el origen
 				vec4 a;
@@ -257,7 +298,23 @@ void main()
 					if (s >= tnext) validsolution = false; //FALLA AQUI EN ESTA COMPROBACIÓN!!!!!!! (Puede ser por la escala numérica?)(Normalizar?)
 				}
 				if (validsolution){
-					color = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+					//Calculo del punto
+					vec3 colorpos = ptotrans + v*s;
+					//Devolvemos el punto a coordenadas de la camara (esta en coordenadas del mundo escaladas)
+					colorpos = colorpos + voxelId;
+					colorpos = colorpos / texSize; //translacion y escalado
+					colorpos = (vmMatrix * vec4(colorpos,1)).xyz; //coordenadas de la camara
+
+					//Calculo de normales mediante las derivadas parciales
+					vec3 norm = vec3(0.0f);
+					norm.x = X + XY * ptotrans.y + ZX * ptotrans.z + XYZ * ptotrans.y * ptotrans.z;
+					norm.y = Y + XY * ptotrans.x + YZ * ptotrans.z + XYZ * ptotrans.x * ptotrans.z;
+					norm.z = Z + ZX * ptotrans.x + YZ * ptotrans.y + XYZ * ptotrans.x * ptotrans.y;
+					norm = norm * -1;
+					norm = norm / texSize;// solo escalado porque es un vector y no es homogeneo
+					norm = (normalMat * vec4(norm,0)).xyz; //coordenadas de la camara
+					norm = normalize(norm);
+					color = shade(norm,colorpos);
 					break;
 				}
 			}
