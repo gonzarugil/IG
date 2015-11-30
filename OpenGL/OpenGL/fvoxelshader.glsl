@@ -9,9 +9,10 @@ uniform ivec3 texSize;
 
 uniform ivec2      screenSize;
 uniform float     stepSize;
-float isoValue  = 0.2;
+float isoValue  = 0.1;
 
 //propiedades de la luz
+/*
 vec3 Ia = vec3(0.3);
 vec3 Id = vec3(1.0);
 vec3 Is = vec3(1.0);
@@ -22,7 +23,7 @@ float alpha = 5000.0;
 vec3 Ka = vec3(1, 0, 0);
 vec3 Kd = vec3(0, 1, 0);
 vec3 Ks = vec3(1.0);
-
+*/
 //matriz para el punto
 uniform mat4 model;
 uniform mat4 view;
@@ -108,7 +109,7 @@ int solveCubic(in vec4 coff, out vec3 res){
 }
 
 vec4 shade(in vec3 norm, in vec3 colorpos){
-	vec3 c = vec3(0.0);
+	/*vec3 c = vec3(0.0);
 	c = Ia * Ka;
 	
 	vec3 L = normalize(lpos - colorpos);
@@ -121,29 +122,28 @@ vec4 shade(in vec3 norm, in vec3 colorpos){
 	vec3 specular = Is * Ks * pow(factor, alpha);
 	c += clamp(specular, 0.0, 1.0);
 	
-	return vec4(c, 0.0f);
+	return vec4(c, 0.0f);*/
+	return vec4(norm, 1);
 }
 
-bool checkIsoValue(in float isovalue, in vec3 voxelId){
-	vec3 v0, v1, v2, v3, v4, v5, v6, v7;
-	float d0, d1, d2, d3, d4, d5, d6, d7;
-	v0 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z - 1);
-	d0 = texture(dataTex, v0 * vec3(1, 1, -1) / texSize).r;
-	v1 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z);
-	d1 = texture(dataTex, v1 * vec3(1, 1, -1) / texSize).r;
-	v2 = vec3(voxelId.x, voxelId.y - 1, voxelId.z);
-	d2 = texture(dataTex, v2 * vec3(1, 1, -1) / texSize).r;
-	v3 = vec3(voxelId.x, voxelId.y - 1, voxelId.z - 1);
-	d3 = texture(dataTex, v3 * vec3(1, 1, -1) / texSize).r;
-	v4 = vec3(voxelId.x - 1, voxelId.y, voxelId.z - 1);
-	d4 = texture(dataTex, v4 * vec3(1, 1, -1) / texSize).r;
-	v5 = vec3(voxelId.x - 1, voxelId.y, voxelId.z);
-	d5 = texture(dataTex, v5 * vec3(1, 1, -1) / texSize).r;
-	v6 = vec3(voxelId.x, voxelId.y, voxelId.z);
-	d6 = texture(dataTex, v6 * vec3(1, 1, -1) / texSize).r;
-	v7 = vec3(voxelId.x, voxelId.y, voxelId.z - 1);
-	d7 = texture(dataTex, v7 * vec3(1, 1, -1) / texSize).r;
-	
+void computeDensity(in vec3 voxelId, out float d0, out float d1, out float d2,
+	out float d3, out float d4, out float d5, out float d6, out float d7)
+{
+	ivec3 v0;
+	v0 = ivec3(voxelId);
+	d0 = texelFetch(dataTex, v0, 0).r;
+	d1 = texelFetch(dataTex, v0 + ivec3(0, 0, 1), 0).r;
+	d2 = texelFetch(dataTex, v0 + ivec3(1, 0, 1), 0).r;
+	d3 = texelFetch(dataTex, v0 + ivec3(1, 0, 0), 0).r;
+	d4 = texelFetch(dataTex, v0 + ivec3(0, 1, 0), 0).r;
+	d5 = texelFetch(dataTex, v0 + ivec3(0, 1, 1), 0).r;
+	d6 = texelFetch(dataTex, v0 + ivec3(1, 1, 1), 0).r;
+	d7 = texelFetch(dataTex, v0 + ivec3(1, 1, 0), 0).r;
+}
+
+bool checkIsoValue(in float d0, in float d1, in float d2, in float d3, in float d4,
+				   in float d5, in float d6, in float d7, in float isovalue )
+{
 	
 	float v1sig = d0-isoValue;
 	if ((v1sig*(d1 - isovalue)) < 0.0) return true;
@@ -164,6 +164,9 @@ void main()
 	mat4 vmMatrixInverse = inverse(vmMatrix);
 	mat4 normalMat = transpose(inverse(vmMatrix));
 
+	vec3 texSizeF = texSize;
+	vec3 texSizeInv = 1.0 / texSizeF;
+	
 	vec4 color = vec4(0,0,0,0);
 	vec2 screenCoords = gl_FragCoord.st/screenSize;
     vec3 exitPoint = texture(exitPointTex, screenCoords).xyz;
@@ -173,29 +176,37 @@ void main()
 		discard;
 	}else{
 		
-		vec3 pto   = (vmMatrixInverse * vec4 (entryPoint,1)).xyz;
-        vec3 ptofin   = (vmMatrixInverse * vec4 (exitPoint,1)).xyz;
-		vec3 v = ptofin -pto;
+		vec3 pto = (vmMatrixInverse * vec4(entryPoint, 1)).xyz;
+		vec3 ptofin = (vmMatrixInverse * vec4(exitPoint, 1)).xyz;
 
-		pto *= texSize;
-		v *= texSize;
-		ptofin *= texSize;
+		//TODO: Pasar texSize a float
+		pto *= texSizeF;
+		ptofin *= texSizeF;
+		vec3 v = ptofin - pto;
+		//TODO: VER LO QUE PASAS CUANDO COMPONENTES DE V SON PROXIMAS A 0
+		vec3 vInv = 1.0 / v;
+
 		vec3 incDir = sign(v);
-		vec3 voxelId = ceil(pto);
+		vec3 singDir = (sing(v) + vec3(1))*0.5;
+		vec3 voxelId = floor(pto);
 		vec3 voxelCenter;
 		vec3 texCoords;
+		
 
-        float tfin = (ptofin.z-pto.z)/(v.z +0.000001f); //esto es para evitar que se cuelgue
+        //float tfin = (ptofin.z-pto.z)/(v.z +0.000001f); //esto es para evitar que se cuelgue
+		float tfin = 1;
         float t = 0; // t del entrypoint es 0 por la forma en la que se crea la recta---
 
+		int i = 0;
 		//aqui va el while
-		while (t<tfin){
-			
+		while (t<tfin&&i<MAX_ITERATIONS){
+			i++;
+
 			//calculo del siguiente, esto debe hacerse antes ya que se necesita el valor de tnext
 			float tnext;
 			vec3 newvoxelId;
 			vec3 sig = voxelId + incDir;
-			vec3 tsig = (sig - pto)/v;
+			vec3 tsig = (sig - pto)*vInv;
 			if (tsig.x<tsig.y && tsig.x<tsig.z){
 				newvoxelId = voxelId + vec3(1,0,0)*incDir;
 				tnext = tsig.x;
@@ -209,9 +220,15 @@ void main()
 			}
 
 		    //Calculo del centro del voxel actual
-			voxelCenter = voxelId + vec3(0.5);
+			//voxelCenter = voxelId + vec3(0.5);
 
-			if (checkIsoValue(isoValue,voxelId)){ //Comprobacion de que el isovalor que buscamos se halla dentro del voxel
+
+			float d0, d1, d2, d3, d4, d5, d6, d7;
+			computeDensity(voxelId, d0, d1, d2, d3, d4, d5, d6, d7);
+			if (checkIsoValue(d0, d1, d2, d3, d4, d5, d6, d7, isoValue)){ //Comprobacion de que el isovalor que buscamos se halla dentro del voxel
+				color = vec4(1);
+				break;
+
 				//Cálculo de las densidades en los vértices multiplico la z por -1 ya que en coordenadas de textura las z son positivas
 				/* con arrays
 				vec3 vertex[8];
@@ -243,25 +260,24 @@ void main()
 				float ZX  = density[0]-density[1]+density[7]+density[2]-density[6]+density[5]-density[4]-density[3];
 				*/
 				//con variables sueltas
-
 				vec3 v0, v1, v2, v3, v4, v5, v6, v7;
 				float d0, d1, d2, d3, d4, d5, d6, d7;
 				v0 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z - 1);
-				d0 = texture(dataTex, v0 * vec3(1, 1, -1) / texSize).r;
+				d0 = texture(dataTex, v0 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v1 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z);
-				d1 = texture(dataTex, v1 * vec3(1, 1, -1) / texSize).r;
+				d1 = texture(dataTex, v1 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v2 = vec3(voxelId.x, voxelId.y - 1, voxelId.z);
-				d2 = texture(dataTex, v2 * vec3(1, 1, -1) / texSize).r;
+				d2 = texture(dataTex, v2 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v3 = vec3(voxelId.x, voxelId.y - 1, voxelId.z - 1);
-				d3 = texture(dataTex, v3 * vec3(1, 1, -1) / texSize).r;
+				d3 = texture(dataTex, v3 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v4 = vec3(voxelId.x - 1, voxelId.y, voxelId.z - 1);
-				d4 = texture(dataTex, v4 * vec3(1, 1, -1) / texSize).r;
+				d4 = texture(dataTex, v4 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v5 = vec3(voxelId.x - 1, voxelId.y, voxelId.z);
-				d5 = texture(dataTex, v5 * vec3(1, 1, -1) / texSize).r;
+				d5 = texture(dataTex, v5 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v6 = vec3(voxelId.x, voxelId.y, voxelId.z);
-				d6 = texture(dataTex, v6 * vec3(1, 1, -1) / texSize).r;
+				d6 = texture(dataTex, v6 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v7 = vec3(voxelId.x, voxelId.y, voxelId.z - 1);
-				d7 = texture(dataTex, v7 * vec3(1, 1, -1) / texSize).r;
+				d7 = texture(dataTex, v7 * vec3(1, 1, -1) / vec3(texSize)).r;
 				//Calculo de los coeficientes de la interpolacion (COEFICIENTES DE MARCOS)
 				/*
 				float A = d6 + d0 + d4 + d2 + d7 + d3 + d1 + d5 - 8.0*isoValue;
@@ -274,8 +290,8 @@ void main()
 				float ZX = d0 - d1 + d7 + d2 - d6 + d5 - d4 - d3;
 				*/
 				//Calculo de los coeficientes (COEFICIENTES DE LOIC)
-				float A = d0 - 8.0*isoValue;
-				
+				//float A = d0 - 8.0*isoValue;
+				float A = d0 - isoValue;
 				float X = d3 - d0;
 				float Y = d4 - d0;
 				float Z = d1 - d0;
@@ -285,7 +301,7 @@ void main()
 				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
 				
 				//Repetir multiplicaciones
-				vec3 ptotrans = pto - voxelId; //translacion del pto de la recta para encuadrarlo todo en el origen
+				/*vec3 ptotrans = pto - voxelId; //translacion del pto de la recta para encuadrarlo todo en el origen
 				vec4 a;
 				a.x = XYZ*v.x*v.y*v.z;
 				a.y = XYZ*(ptotrans.z*v.y*v.x+v.z*ptotrans.y*v.x+v.z*v.y*ptotrans.x)+XY*v.y*v.x+ZX*v.z*v.x+YZ*v.z*v.y;
@@ -327,7 +343,7 @@ void main()
 					norm = normalize(norm);
 					color = shade(norm,colorpos);
 					break;
-				}
+				//}*/
 			}
 			
 			voxelId = newvoxelId;
