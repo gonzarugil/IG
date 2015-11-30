@@ -139,9 +139,9 @@ GLint texLoc = -1;
 //GLint isoLoc = -1;
 //GLint sizeLoc = -1;
 
-GLuint w = 256;
-GLuint h= 256;
-GLuint d= 64;
+GLuint w3d = 256;
+GLuint h3d= 256;
+GLuint d3d= 64;
 
 //aqui va el archivo pvm que cargaremos (lo de arriba es el tamaño)
 const char *fileName = "Orange.pvm";
@@ -457,8 +457,8 @@ void sceneInit(){
 	glBindVertexArray(0);
 
 
-	unsigned char *texels = new unsigned char[w*h*d];
-	loadTexture(&texels, w, h, d, fileName);
+	unsigned char *texels = new unsigned char[w3d*h3d*d3d];
+	loadTexture(&texels, w3d, h3d, d3d, fileName);
 	//glEnable(GL_TEXTURE_3D);
 	glActiveTexture(GL_TEXTURE0);
 	glGenTextures(1, texId);
@@ -478,7 +478,7 @@ void sceneInit(){
 
 	glPixelStorei(GL_PACK_ALIGNMENT, 1);
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	glTexImage3D(GL_TEXTURE_3D, 0, GL_R8, w, h, d, 0, GL_RED,
+	glTexImage3D(GL_TEXTURE_3D, 0, GL_R8, w3d, h3d, d3d, 0, GL_RED,
 		GL_UNSIGNED_BYTE, texels);
 
 	delete[]texels;
@@ -520,7 +520,7 @@ void renderScene(void){
 	glUniformMatrix4fv(u2Proy, 1, GL_FALSE, glm::value_ptr(proy));
 	glUniform2i(scrSize,scrw,scrh);
 	glUniform1f(stpSize, 0.01f);
-	glUniform3i(textureSize, w, h, d);
+	glUniform3i(textureSize, w3d, h3d, d3d);
 
 	
 
