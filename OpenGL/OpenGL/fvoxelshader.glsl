@@ -24,7 +24,7 @@ vec3 Kd = vec3(0, 1, 0);
 vec3 Ks = vec3(1.0);
 
 //matriz para el punto
-uniform mat4 rot;
+uniform mat4 model;
 uniform mat4 view;
 uniform mat4 proy;
 
@@ -160,7 +160,7 @@ bool checkIsoValue(in float isovalue, in vec3 voxelId){
 
 void main()
 {
-	mat4 vmMatrix = view*rot;
+	mat4 vmMatrix = view*model;
 	mat4 vmMatrixInverse = inverse(vmMatrix);
 	mat4 normalMat = transpose(inverse(vmMatrix));
 

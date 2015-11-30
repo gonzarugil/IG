@@ -386,11 +386,11 @@ void shaderInit()
 	//Variable uniform
 	uProy = glGetUniformLocation(program, "proy");
 	uView = glGetUniformLocation(program, "view");
-	uModel = glGetUniformLocation(program, "rot");
+	uModel = glGetUniformLocation(program, "model");
 
 	u2Proy = glGetUniformLocation(program2, "proy");
 	u2View = glGetUniformLocation(program2, "view");
-	u2Model = glGetUniformLocation(program2, "rot");
+	u2Model = glGetUniformLocation(program2, "model");
 	uTex = glGetUniformLocation(program2, "exitPointTex");
 	texLoc = glGetUniformLocation(program2, "dataTex");
 	scrSize = glGetUniformLocation(program2, "screenSize");
@@ -559,13 +559,13 @@ void funcionDeReescalado(GLsizei w, GLsizei h)
 //IdleFunc
 void funcionIdle(){
 	
-	angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
+	//angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
 
 
-	model = glm::rotate(glm::mat4(1.0f), angulo, glm::vec3(1, 0, 0));
-	model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
+	//model = glm::rotate(glm::mat4(1.0f), angulo, glm::vec3(1, 0, 0));
+	//model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
 
-	Sleep(5);
+	//Sleep(5);
 	glutPostRedisplay();
 }
 
