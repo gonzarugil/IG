@@ -214,6 +214,10 @@ void loadTexture(unsigned char **texels, unsigned int &w, unsigned int &h, unsig
 
 	*texels = readPVMvolume((char *)fileName, &ww, &hh, &dd);
 
+	w = ww;
+	h = hh;
+	d = dd;
+
 	if (ww*hh*dd == d*h*w)
 		return;
 	return;
