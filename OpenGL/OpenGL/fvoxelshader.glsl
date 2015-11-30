@@ -20,7 +20,7 @@ float alpha = 5000.0;
 
 //propiedades del material (HARDCODEADOS)
 vec3 Ka = vec3(1, 0, 0);
-vec3 Kd = vec3(1, 0, 0);
+vec3 Kd = vec3(0, 1, 0);
 vec3 Ks = vec3(1.0);
 
 //matriz para el punto
@@ -124,7 +124,7 @@ vec4 shade(in vec3 norm, in vec3 colorpos){
 	return vec4(c, 0.0f);
 }
 
-bool checkIsoValue(in float isoValue, in vec3 voxelID){
+bool checkIsoValue(in float isovalue, in vec3 voxelId){
 	vec3 v0, v1, v2, v3, v4, v5, v6, v7;
 	float d0, d1, d2, d3, d4, d5, d6, d7;
 	v0 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z - 1);
@@ -146,13 +146,13 @@ bool checkIsoValue(in float isoValue, in vec3 voxelID){
 	
 	
 	float v1sig = d0-isoValue;
-	if (v1sig*(d1 - isovalue)) < 0.0) return true;
-	if (v1sig*(d2 - isovalue)) < 0.0) return true;
-	if (v1sig*(d3 - isovalue)) < 0.0) return true;
-	if (v1sig*(d4 - isovalue)) < 0.0) return true;
-	if (v1sig*(d5 - isovalue)) < 0.0) return true;
-	if (v1sig*(d6 - isovalue)) < 0.0) return true;
-	if (v1sig*(d7 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d1 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d2 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d3 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d4 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d5 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d6 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d7 - isovalue)) < 0.0) return true;
 	return false;
 	
 }
