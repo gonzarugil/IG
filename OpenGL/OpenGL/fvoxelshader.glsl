@@ -125,25 +125,36 @@ vec4 shade(in vec3 norm, in vec3 colorpos){
 }
 
 bool checkIsoValue(in float isoValue, in vec3 voxelID){
-	vec3 vertex[8];
-	vertex[0] = voxelID;
-	vertex[1] = vec3(voxelID.x,voxelID.y,voxelID.z-1);
-	vertex[2] = vec3(voxelID.x,voxelID.y+1,voxelID.z); 
-	vertex[3] = vec3(voxelID.x,voxelID.y+1,voxelID.z-1); 
-	vertex[4] = vec3(voxelID.x+1,voxelID.y,voxelID.z); 
-	vertex[5] = vec3(voxelID.x+1,voxelID.y,voxelID.z-1); 
-	vertex[6] = vec3(voxelID.x+1,voxelID.y+1,voxelID.z); 
-	vertex[7] = vec3(voxelID.x+1,voxelID.y+1,voxelID.z-1);
+	vec3 v0, v1, v2, v3, v4, v5, v6, v7;
+	float d0, d1, d2, d3, d4, d5, d6, d7;
+	v0 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z - 1);
+	d0 = texture(dataTex, v0 * vec3(1, 1, -1) / texSize).r;
+	v1 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z);
+	d1 = texture(dataTex, v1 * vec3(1, 1, -1) / texSize).r;
+	v2 = vec3(voxelId.x, voxelId.y - 1, voxelId.z);
+	d2 = texture(dataTex, v2 * vec3(1, 1, -1) / texSize).r;
+	v3 = vec3(voxelId.x, voxelId.y - 1, voxelId.z - 1);
+	d3 = texture(dataTex, v3 * vec3(1, 1, -1) / texSize).r;
+	v4 = vec3(voxelId.x - 1, voxelId.y, voxelId.z - 1);
+	d4 = texture(dataTex, v4 * vec3(1, 1, -1) / texSize).r;
+	v5 = vec3(voxelId.x - 1, voxelId.y, voxelId.z);
+	d5 = texture(dataTex, v5 * vec3(1, 1, -1) / texSize).r;
+	v6 = vec3(voxelId.x, voxelId.y, voxelId.z);
+	d6 = texture(dataTex, v6 * vec3(1, 1, -1) / texSize).r;
+	v7 = vec3(voxelId.x, voxelId.y, voxelId.z - 1);
+	d7 = texture(dataTex, v7 * vec3(1, 1, -1) / texSize).r;
 	
 	
-	float v1sig = texture(dataTex,vertex[0]*vec3(1,1,-1)/texSize).r-isoValue;
-	for (int i=1; i < 8 ;i++){
-		float vIsig = texture(dataTex,vertex[i]*vec3(1,1,-1)/texSize).r-isoValue;
-		if (v1sig*vIsig <= 0.0){
-			return true;
-		}
-	}
+	float v1sig = d0-isoValue;
+	if (v1sig*(d1 - isovalue)) < 0.0) return true;
+	if (v1sig*(d2 - isovalue)) < 0.0) return true;
+	if (v1sig*(d3 - isovalue)) < 0.0) return true;
+	if (v1sig*(d4 - isovalue)) < 0.0) return true;
+	if (v1sig*(d5 - isovalue)) < 0.0) return true;
+	if (v1sig*(d6 - isovalue)) < 0.0) return true;
+	if (v1sig*(d7 - isovalue)) < 0.0) return true;
 	return false;
+	
 }
 
 
