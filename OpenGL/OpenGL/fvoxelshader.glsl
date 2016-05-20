@@ -9,10 +9,10 @@ uniform ivec3 texSize;
 
 uniform ivec2      screenSize;
 uniform float     stepSize;
-float isoValue  = 0.1;
+float isoValue  = 0.05;
 
 //propiedades de la luz
-/*
+
 vec3 Ia = vec3(0.3);
 vec3 Id = vec3(1.0);
 vec3 Is = vec3(1.0);
@@ -23,7 +23,7 @@ float alpha = 5000.0;
 vec3 Ka = vec3(1, 0, 0);
 vec3 Kd = vec3(0, 1, 0);
 vec3 Ks = vec3(1.0);
-*/
+
 //matriz para el punto
 uniform mat4 model;
 uniform mat4 view;
@@ -109,7 +109,8 @@ int solveCubic(in vec4 coff, out vec3 res){
 }
 
 vec4 shade(in vec3 norm, in vec3 colorpos){
-	/*vec3 c = vec3(0.0);
+	/*
+	vec3 c = vec3(0.0);
 	c = Ia * Ka;
 	
 	vec3 L = normalize(lpos - colorpos);
@@ -126,10 +127,24 @@ vec4 shade(in vec3 norm, in vec3 colorpos){
 	return vec4(norm, 1);
 }
 
+//TODO ESTO HAY QUE MEJORARLO 
+vec4 safeFetchTexture(in ivec3 texcoords){
+	if (texcoords.x <= 0 || texcoords.y <= 0 || texcoords.z <= 0
+		|| texcoords.x > texSize.x || texcoords.y > texSize.y || texcoords.z > texSize.z){
+		return vec4(0, 0, 0, 0);
+	}
+	else{
+		return texelFetch(dataTex, texcoords, 0);
+	}
+}
+
+//Esto calcula las texturas de todo el cubo identificado por voxelID (es mejor que lo otro porque el cubo se redimensiona a la textura)
 void computeDensity(in vec3 voxelId, out float d0, out float d1, out float d2,
 	out float d3, out float d4, out float d5, out float d6, out float d7)
 {
 	ivec3 v0;
+	//unsafe
+	/*
 	v0 = ivec3(voxelId);
 	d0 = texelFetch(dataTex, v0, 0).r;
 	d1 = texelFetch(dataTex, v0 + ivec3(0, 0, 1), 0).r;
@@ -139,6 +154,18 @@ void computeDensity(in vec3 voxelId, out float d0, out float d1, out float d2,
 	d5 = texelFetch(dataTex, v0 + ivec3(0, 1, 1), 0).r;
 	d6 = texelFetch(dataTex, v0 + ivec3(1, 1, 1), 0).r;
 	d7 = texelFetch(dataTex, v0 + ivec3(1, 1, 0), 0).r;
+	*/
+	//SAFE FETCH
+	v0 = ivec3(voxelId);
+	d0 = safeFetchTexture(v0).r;
+	d1 = safeFetchTexture(v0 + ivec3(0, 0, 1)).r;
+	d2 = safeFetchTexture(v0 + ivec3(1, 0, 1)).r;
+	d3 = safeFetchTexture(v0 + ivec3(1, 0, 0)).r;
+	d4 = safeFetchTexture(v0 + ivec3(0, 1, 0)).r;
+	d5 = safeFetchTexture(v0 + ivec3(0, 1, 1)).r;
+	d6 = safeFetchTexture(v0 + ivec3(1, 1, 1)).r;
+	d7 = safeFetchTexture(v0 + ivec3(1, 1, 0)).r;
+
 }
 
 bool checkIsoValue(in float d0, in float d1, in float d2, in float d3, in float d4,
@@ -187,7 +214,7 @@ void main()
 		vec3 vInv = 1.0 / v;
 
 		vec3 incDir = sign(v);
-		vec3 singDir = (sing(v) + vec3(1))*0.5;
+		vec3 signDir = (sign(v) + vec3(1))*0.5;
 		vec3 voxelId = floor(pto);
 		vec3 voxelCenter;
 		vec3 texCoords;
@@ -226,9 +253,7 @@ void main()
 			float d0, d1, d2, d3, d4, d5, d6, d7;
 			computeDensity(voxelId, d0, d1, d2, d3, d4, d5, d6, d7);
 			if (checkIsoValue(d0, d1, d2, d3, d4, d5, d6, d7, isoValue)){ //Comprobacion de que el isovalor que buscamos se halla dentro del voxel
-				color = vec4(1);
-				break;
-
+				
 				//Cálculo de las densidades en los vértices multiplico la z por -1 ya que en coordenadas de textura las z son positivas
 				/* con arrays
 				vec3 vertex[8];
@@ -259,7 +284,8 @@ void main()
 				float YZ  = density[7]+density[0]-density[5]-density[2]+density[3]-density[6]-density[1]+density[4];
 				float ZX  = density[0]-density[1]+density[7]+density[2]-density[6]+density[5]-density[4]-density[3];
 				*/
-				//con variables sueltas
+				//con variables sueltas y calculando los v utilizando texture(remapeando a valores entre 0 y 1)
+				/*
 				vec3 v0, v1, v2, v3, v4, v5, v6, v7;
 				float d0, d1, d2, d3, d4, d5, d6, d7;
 				v0 = vec3(voxelId.x - 1, voxelId.y - 1, voxelId.z - 1);
@@ -278,8 +304,9 @@ void main()
 				d6 = texture(dataTex, v6 * vec3(1, 1, -1) / vec3(texSize)).r;
 				v7 = vec3(voxelId.x, voxelId.y, voxelId.z - 1);
 				d7 = texture(dataTex, v7 * vec3(1, 1, -1) / vec3(texSize)).r;
+				*/
 				//Calculo de los coeficientes de la interpolacion (COEFICIENTES DE MARCOS)
-				/*
+				
 				float A = d6 + d0 + d4 + d2 + d7 + d3 + d1 + d5 - 8.0*isoValue;
 				float Z = d3 + d5 + d1 - d4 - d2 + d7 - d0 - d6;
 				float X = d7 + d6 - d1 + d4 - d0 - d3 - d2 + d5;
@@ -288,9 +315,9 @@ void main()
 				float XY = d6 - d3 + d1 - d2 - d5 - d4 + d0 + d7;
 				float YZ = d7 + d0 - d5 - d2 + d3 - d6 - d1 + d4;
 				float ZX = d0 - d1 + d7 + d2 - d6 + d5 - d4 - d3;
-				*/
+				
 				//Calculo de los coeficientes (COEFICIENTES DE LOIC)
-				//float A = d0 - 8.0*isoValue;
+				/*float A = d0 - 8.0*isoValue;
 				float A = d0 - isoValue;
 				float X = d3 - d0;
 				float Y = d4 - d0;
@@ -299,9 +326,10 @@ void main()
 				float ZX = d2 + d0 - d4 - d1;
 				float YZ = d5 + d0 - d4 - d3;
 				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
+				*/
 				
 				//Repetir multiplicaciones
-				/*vec3 ptotrans = pto - voxelId; //translacion del pto de la recta para encuadrarlo todo en el origen
+				vec3 ptotrans = pto - voxelId; //translacion del pto de la recta para encuadrarlo todo en el origen
 				vec4 a;
 				a.x = XYZ*v.x*v.y*v.z;
 				a.y = XYZ*(ptotrans.z*v.y*v.x+v.z*ptotrans.y*v.x+v.z*v.y*ptotrans.x)+XY*v.y*v.x+ZX*v.z*v.x+YZ*v.z*v.y;
@@ -342,8 +370,8 @@ void main()
 					norm = (normalMat * vec4(norm,0)).xyz; //coordenadas de la camara
 					norm = normalize(norm);
 					color = shade(norm,colorpos);
-					break;
-				//}*/
+					
+				}
 			}
 			
 			voxelId = newvoxelId;

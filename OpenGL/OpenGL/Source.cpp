@@ -558,12 +558,12 @@ void funcionDeReescalado(GLsizei w, GLsizei h)
 }
 //IdleFunc
 void funcionIdle(){
-	/*
+	
 	angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
 
 
 	model = glm::rotate(glm::mat4(1.0f), angulo, glm::vec3(1, 0, 0));
-	model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));//*/
+	model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
 
 	//Sleep(5);
 	glutPostRedisplay();
