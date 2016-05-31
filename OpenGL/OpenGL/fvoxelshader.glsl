@@ -1,5 +1,5 @@
 #version 430
-#define MAX_ITERATIONS 4000
+#define MAX_ITERATIONS 6000
 
 in vec3 entryPoint;
 
@@ -8,7 +8,7 @@ uniform sampler2D exitPointTex;
 uniform ivec3 texSize;
 
 uniform ivec2      screenSize;
-uniform float     stepSize;
+uniform float     stepsize;
 float isoValue  = 0.05;
 
 //propiedades de la luz
@@ -157,14 +157,14 @@ void computeDensity(in vec3 voxelId, out float d0, out float d1, out float d2,
 	*/
 	//SAFE FETCH
 	v0 = ivec3(voxelId);
-	d0 = safeFetchTexture(v0).r;
-	d1 = safeFetchTexture(v0 + ivec3(0, 0, 1)).r;
-	d2 = safeFetchTexture(v0 + ivec3(1, 0, 1)).r;
-	d3 = safeFetchTexture(v0 + ivec3(1, 0, 0)).r;
-	d4 = safeFetchTexture(v0 + ivec3(0, 1, 0)).r;
-	d5 = safeFetchTexture(v0 + ivec3(0, 1, 1)).r;
-	d6 = safeFetchTexture(v0 + ivec3(1, 1, 1)).r;
-	d7 = safeFetchTexture(v0 + ivec3(1, 1, 0)).r;
+	d0 = safeFetchTexture(ivec3(v0 + vec3(-0.5f))).r;
+	d1 = safeFetchTexture(ivec3(v0 + vec3(-0.5f, -0.5f, 0.5f))).r;
+	d2 = safeFetchTexture(ivec3(v0 + vec3(0.5f, -0.5f, 0.5f))).r;
+	d3 = safeFetchTexture(ivec3(v0 + vec3(0.5f, -0.5f, -0.5f))).r;
+	d4 = safeFetchTexture(ivec3(v0 + vec3(-0.5f, 0.5f, -0.5f))).r;
+	d5 = safeFetchTexture(ivec3(v0 + vec3(-0.5f, 0.5f, 0.5f))).r;
+	d6 = safeFetchTexture(ivec3(v0 + vec3(0.5f))).r;
+	d7 = safeFetchTexture(ivec3(v0 + vec3(0.5f, 0.5f, -0.5f))).r;
 
 }
 
@@ -316,6 +316,7 @@ void main()
 				float YZ = d7 + d0 - d5 - d2 + d3 - d6 - d1 + d4;
 				float ZX = d0 - d1 + d7 + d2 - d6 + d5 - d4 - d3;
 				
+				
 				//Calculo de los coeficientes (COEFICIENTES DE LOIC)
 				/*float A = d0 - 8.0*isoValue;
 				float A = d0 - isoValue;
@@ -325,8 +326,8 @@ void main()
 				float XY = d7 + d0 - d3 - d4;
 				float ZX = d2 + d0 - d4 - d1;
 				float YZ = d5 + d0 - d4 - d3;
-				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
-				*/
+				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;*/
+				
 				
 				//Repetir multiplicaciones
 				vec3 ptotrans = pto - voxelId; //translacion del pto de la recta para encuadrarlo todo en el origen

@@ -333,7 +333,7 @@ void shaderInit()
 	const char fname[] = "fExitpoints.glsl";
 
 	const char v2name[] = "vvoxelshader.glsl";
-	const char f2name[] = "fvoxelshader.glsl";
+	const char f2name[] = "ISO_DATA_S2OUTFrag.glsl";
 	
 
 	//Compilación
@@ -564,6 +564,7 @@ void funcionIdle(){
 
 	model = glm::rotate(glm::mat4(1.0f), angulo, glm::vec3(1, 0, 0));
 	model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
+
 
 	//Sleep(5);
 	glutPostRedisplay();

@@ -85,6 +85,7 @@
     <None Include="fvoxelshader.glsl" />
     <None Include="gbuffer.frag" />
     <None Include="gbuffer.vert" />
+    <None Include="ISO_DATA_S2OUTFrag.glsl" />
     <None Include="Texture.frag" />
     <None Include="Texture.vert" />
     <None Include="vExitpoints.glsl" />
