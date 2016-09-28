@@ -25,6 +25,14 @@ CFBO *fbo;
 unsigned int fpsCurrent = 0;
 unsigned int fpsCount = 0;
 
+//Camara
+// angle of rotation for the camera direction
+float angle = 0.0;
+// actual vector representing the camera's direction
+float lx = 0.0f, lz = -1.0f;
+// XZ position of the camera
+float x = 0.0f, z = 5.0f;
+
 //estructura que define las luces
 struct Light {
 	glm::vec3 position;
@@ -139,13 +147,17 @@ GLint texLoc = -1;
 //GLint isoLoc = -1;
 //GLint sizeLoc = -1;
 
-GLuint w3d = 256;
-GLuint h3d= 256;
-GLuint d3d= 64;
+GLuint w3d = 512;
+GLuint h3d= 512;
+GLuint d3d= 134;
+
+GLfloat iso = 0.20f;
 
 //aqui va el archivo pvm que cargaremos (lo de arriba es el tamaño)
-const char *fileName = "Orange.pvm";
-
+const char *fileName = "MRI-Head.pvm";
+//const char *fileName = "Orange.pvm";
+//const char *fileName = "Porsche.pvm";
+//const char *fileName = "Lobster.pvm";
 
 //VAO
 GLuint vao;
@@ -178,6 +190,7 @@ GLint u2Model = -1;
 GLint scrSize = -1;
 GLint stpSize = -1;
 GLint textureSize = -1;
+GLint isoValue = -1;
 
 GLint uTex = -1;
 
@@ -197,6 +210,8 @@ glm::mat4 view ( 1.0f, 0.0f, 0.0f, 0.0f,
 0.0f, 0.0f, -10.0f, 1.0f );
 
 glm::mat4 model(1.0f);
+
+
 
 glm::mat4 modelstatic(1.0f);
 
@@ -396,6 +411,7 @@ void shaderInit()
 	scrSize = glGetUniformLocation(program2, "screenSize");
 	stpSize = glGetUniformLocation(program2, "stepsize");
 	textureSize = glGetUniformLocation(program2, "texSize");
+	isoValue = glGetUniformLocation(program2, "isoValue");
 
 	
 	//Atributos
@@ -489,6 +505,19 @@ void sceneInit(){
 
 }
 
+void processSpecialKeys(int key, int xx, int yy) {
+
+	float fraction = 0.1f;
+
+	switch (key) {
+	case GLUT_KEY_UP:
+		iso = iso + 0.001;
+		break;
+	case GLUT_KEY_DOWN:
+		iso = iso - 0.001;
+		break;
+	}
+}
 
 //DisplayFunc
 void renderScene(void){
@@ -525,6 +554,7 @@ void renderScene(void){
 	glUniform2i(scrSize,scrw,scrh);
 	glUniform1f(stpSize, 0.01f);
 	glUniform3i(textureSize, w3d, h3d, d3d);
+	glUniform1f(isoValue, iso);
 
 	
 
@@ -539,6 +569,11 @@ void renderScene(void){
 	//Pintado del cubo
 	glBindVertexArray(vao);
 	glDrawElements(GL_TRIANGLES, boxNTriangleIndex, GL_UNSIGNED_INT, (void*)0);/**/
+	glLoadIdentity();
+	gluLookAt(x, 1.0f, z,
+		x + lx, 1.0f, z + lz,
+		0.0f, 1.0f, 0.0f);
+
 
 	glUseProgram(NULL);
 	glutSwapBuffers();
@@ -559,11 +594,14 @@ void funcionDeReescalado(GLsizei w, GLsizei h)
 //IdleFunc
 void funcionIdle(){
 	
-	angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
+	 angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
 
+	 model = glm::scale(glm::mat4(1.0f), glm::vec3(3, 3, 3));
+	 
+	 model = glm::rotate(model, angulo, glm::vec3(1, 0, 0));
+	 model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
+	 
 
-	model = glm::rotate(glm::mat4(1.0f), angulo, glm::vec3(1, 0, 0));
-	model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
 
 
 	//Sleep(5);
@@ -588,6 +626,7 @@ int main(int argc, char **argv)
 	glutDisplayFunc(renderScene);
 	glutIdleFunc(funcionIdle);
 	glutTimerFunc(1000, countFPS, 1);
+	glutSpecialFunc(processSpecialKeys);
 
 	//Esperamos a que se cree el contexto de OpenGL
 	glewExperimental = GL_TRUE;
