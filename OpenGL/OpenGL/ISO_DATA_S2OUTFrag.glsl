@@ -24,13 +24,14 @@ uniform float isoValue;
 vec3 Ia = vec3(0.6);
 vec3 Id = vec3(0.5);
 vec3 Is = vec3(1.0);
-vec3 lpos = vec3(1,0,0);
-float alpha = 500.0;
+vec3 lpos = vec3(0,0,0);
+
 
 //propiedades del material (HARDCODEADOS)
 vec3 Ka = vec3(1, 0.5, 0.0);
 vec3 Kd = vec3(1, 1, 1);
 vec3 Ks = vec3(1.0);
+float alpha = 500.0;
 
 
 //float isoValue = 0.35;
@@ -265,7 +266,7 @@ void main()
 				float YZ = d5 + d0 - d4 - d3;
 				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
 
-				vec3 ptotrans = currentPoint - voxelID; //translacion del voxel al origen
+				vec3 ptotrans = currentPoint - voxelID + vec3(0.5f); //translacion del voxel al origen
 				vec4 ec;
 				ec.x = XYZ*dir.x*dir.y*dir.z;
 				ec.y = XYZ*(ptotrans.z*dir.y*dir.x + dir.z*ptotrans.y*dir.x + dir.z*dir.y*ptotrans.x) + XY*dir.y*dir.x + ZX*dir.z*dir.x + YZ*dir.z*dir.y;
@@ -325,7 +326,7 @@ void main()
 					//calculo del punto
 					vec3 ptosol = ptotrans + dir*s;
 					//deshacemos la translacion de voxelID
-					ptosol = ptosol + voxelID;
+					ptosol = ptosol + voxelID - vec3(0.5f);
 					ptosol = ptosol / volumeDim;
 					ptosol = (vmMatrix * vec4(ptosol, 1)).xyz;
 

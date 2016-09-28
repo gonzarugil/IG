@@ -154,8 +154,8 @@ GLuint d3d= 134;
 GLfloat iso = 0.20f;
 
 //aqui va el archivo pvm que cargaremos (lo de arriba es el tamaño)
-const char *fileName = "MRI-Head.pvm";
-//const char *fileName = "Orange.pvm";
+//const char *fileName = "MRI-Head.pvm";
+const char *fileName = "Orange.pvm";
 //const char *fileName = "Porsche.pvm";
 //const char *fileName = "Lobster.pvm";
 
@@ -219,22 +219,28 @@ glm::mat4 modelstatic(1.0f);
 
 
 
-
+unsigned char test[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1,
+						 1,1,1,1,255,1,1,1,1,
+						 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
 void loadTexture(unsigned char **texels, unsigned int &w, unsigned int &h, unsigned int &d, const char *fileName)
 {
 	unsigned int ww, hh, dd;
-	delete[](*texels);
+	//delete[](*texels);
 
-
+	/*
 	*texels = readPVMvolume((char *)fileName, &ww, &hh, &dd);
 
 	w = ww;
 	h = hh;
 	d = dd;
+	*/
+	*texels = test;
 
-	if (ww*hh*dd == d*h*w)
-		return;
+	w = 3;
+	h = 3;
+	d = 3;
+
 	return;
 
 }
@@ -501,20 +507,46 @@ void sceneInit(){
 	glTexImage3D(GL_TEXTURE_3D, 0, GL_R8, w3d, h3d, d3d, 0, GL_RED,
 		GL_UNSIGNED_BYTE, texels);
 
-	delete[]texels;
+	//TODO: Volver a poner
+	//delete[]texels;
 
 }
 
 void processSpecialKeys(int key, int xx, int yy) {
 
 	float fraction = 0.1f;
+	float incV = 0.05f;
 
 	switch (key) {
+	case GLUT_KEY_ALT_L:
+		iso = iso + 0.05;
+		break;
+	case GLUT_KEY_ALT_R:
+		iso = iso - 0.05;
+		break;
 	case GLUT_KEY_UP:
-		iso = iso + 0.001;
+		view[3].y += incV;
+		std::cout << "a";
+		//iso = iso + 0.01;
 		break;
 	case GLUT_KEY_DOWN:
-		iso = iso - 0.001;
+		view[3].y -= incV;
+		std::cout << "a";
+		//iso = iso - 0.01;
+		break;
+	case GLUT_KEY_LEFT:
+		view[3].x += incV;
+		std::cout << "a";
+		break;
+	case GLUT_KEY_RIGHT:
+		view[3].x -= incV;
+		break;
+	case GLUT_KEY_PAGE_DOWN:
+		view[3].z += incV;
+		std::cout << "a";
+		break;
+	case GLUT_KEY_PAGE_UP:
+		view[3].z -= incV;
 		break;
 	}
 }
@@ -594,13 +626,16 @@ void funcionDeReescalado(GLsizei w, GLsizei h)
 //IdleFunc
 void funcionIdle(){
 	
-	 angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
+	//angulo = 0.0f;
+	angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
 
-	 model = glm::scale(glm::mat4(1.0f), glm::vec3(3, 3, 3));
-	 
+	model = glm::mat4(1);
 	 model = glm::rotate(model, angulo, glm::vec3(1, 0, 0));
 	 model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
-	 
+
+	 model = glm::scale(model, glm::vec3(3, 3, 3));
+	 model = glm::translate(model, glm::vec3(-0.333f));
+
 
 
 
