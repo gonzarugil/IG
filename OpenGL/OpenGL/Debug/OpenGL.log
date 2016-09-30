@@ -1,23 +1,22 @@
-﻿Build started 28/09/2016 20:24:57.
-     1>Project "C:\Users\Gonzalo\Source\Repos\IG\OpenGL\OpenGL\OpenGL.vcxproj" on node 2 (Build target(s)).
+﻿Compilación iniciada a las 30/09/2016 12:56:42.
+     1>Proyecto "C:\Users\IreneGMRV\Repos\IG\OpenGL\OpenGL\OpenGL.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /D NDEBUG /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
-     1>c:\users\gonzalo\source\repos\ig\opengl\opengl\source.cpp(228): warning C4101: 'dd' : unreferenced local variable
-     1>c:\users\gonzalo\source\repos\ig\opengl\opengl\source.cpp(228): warning C4101: 'hh' : unreferenced local variable
-     1>c:\users\gonzalo\source\repos\ig\opengl\opengl\source.cpp(228): warning C4101: 'ww' : unreferenced local variable
-     1>c:\users\gonzalo\source\repos\ig\opengl\opengl\source.cpp(305): warning C4244: 'initializing' : conversion from 'std::streamoff' to 'unsigned int', possible loss of data
-     1>c:\users\gonzalo\source\repos\ig\opengl\opengl\source.cpp(522): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\gonzalo\source\repos\ig\opengl\opengl\source.cpp(525): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+     1>c:\users\irenegmrv\repos\ig\opengl\opengl\source.cpp(228): warning C4101: 'dd' : variable local sin referencia
+     1>c:\users\irenegmrv\repos\ig\opengl\opengl\source.cpp(228): warning C4101: 'hh' : variable local sin referencia
+     1>c:\users\irenegmrv\repos\ig\opengl\opengl\source.cpp(228): warning C4101: 'ww' : variable local sin referencia
+     1>c:\users\irenegmrv\repos\ig\opengl\opengl\source.cpp(305): warning C4244: 'inicializando' : conversión de 'std::streamoff' a 'unsigned int'; posible pérdida de datos
+     1>c:\users\irenegmrv\repos\ig\opengl\opengl\source.cpp(522): warning C4244: '=' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\irenegmrv\repos\ig\opengl\opengl\source.cpp(525): warning C4244: '=' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Gonzalo\Source\Repos\IG\OpenGL\Debug\OpenGL.exe" /INCREMENTAL /NOLOGO /LIBPATH:Dependencies\freeglut /LIBPATH:Dependencies\glew /LIBPATH:Dependencies\freeimage FreeImage.lib opengl32.lib freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Gonzalo\Source\Repos\IG\OpenGL\Debug\OpenGL.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Gonzalo\Source\Repos\IG\OpenGL\Debug\OpenGL.lib" /MACHINE:X86 Debug\ddsbase.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\IreneGMRV\Repos\IG\OpenGL\Debug\OpenGL.exe" /INCREMENTAL /NOLOGO /LIBPATH:Dependencies\freeglut /LIBPATH:Dependencies\glew /LIBPATH:Dependencies\freeimage FreeImage.lib opengl32.lib freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\IreneGMRV\Repos\IG\OpenGL\Debug\OpenGL.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\IreneGMRV\Repos\IG\OpenGL\Debug\OpenGL.lib" /MACHINE:X86 Debug\ddsbase.obj
          Debug\FBO.obj
          Debug\Source.obj
          Debug\Texture.obj
-         OpenGL.vcxproj -> C:\Users\Gonzalo\Source\Repos\IG\OpenGL\Debug\OpenGL.exe
-     1>Done Building Project "C:\Users\Gonzalo\Source\Repos\IG\OpenGL\OpenGL\OpenGL.vcxproj" (Build target(s)).
+         OpenGL.vcxproj -> C:\Users\IreneGMRV\Repos\IG\OpenGL\Debug\OpenGL.exe
+     1>Compilación del proyecto terminada "C:\Users\IreneGMRV\Repos\IG\OpenGL\OpenGL\OpenGL.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:01.10
+Tiempo transcurrido 00:00:01.40

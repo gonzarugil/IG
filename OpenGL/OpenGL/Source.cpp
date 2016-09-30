@@ -154,8 +154,8 @@ GLuint d3d= 134;
 GLfloat iso = 0.20f;
 
 //aqui va el archivo pvm que cargaremos (lo de arriba es el tamaño)
-//const char *fileName = "MRI-Head.pvm";
-const char *fileName = "Orange.pvm";
+const char *fileName = "MRI-Head.pvm";
+//const char *fileName = "Orange.pvm";
 //const char *fileName = "Porsche.pvm";
 //const char *fileName = "Lobster.pvm";
 

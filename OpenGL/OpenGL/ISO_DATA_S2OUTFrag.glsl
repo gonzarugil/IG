@@ -47,18 +47,20 @@ float alphaStepFactor = 1.0f / stepSize;
 vec3 getVoxelID(in vec3 v, in vec3 p){ //pasar incDir como parámetro?¿
 	vec3 s = sign(v);
 	vec3 pointAux = p + s * 0.01f;
-	vec3 c = ceil(pointAux) - vec3(0.5f);
-	vec3 f = floor(pointAux) + vec3(0.5f);
+	vec3 c = floor(pointAux) + vec3(0.5f);
+	/*vec3 f = floor(pointAux) + vec3(0.5f);
 	vec3 pos = max(s, vec3(0));
 	vec3 neg = -min(s, vec3(0));
-	return pos * f + neg * c;
+	return pos * f + neg * c;*/
+	return c;
+
 }
 
 //---------------Solver ecuaciones cuadráticas---------------
 
 int solveQuad(in vec3 coff, out vec3 res){
 	res.x = (-coff.y + sqrt(pow(coff.y, 2) - 4 * coff.x*coff.z)) / 2 * coff.x;
-	res.y = (-coff.y + sqrt(pow(coff.y, 2) - 4 * coff.x*coff.z)) / 2 * coff.x;
+	res.y = (-coff.y - sqrt(pow(coff.y, 2) - 4 * coff.x*coff.z)) / 2 * coff.x;
 	return 2;
 }
 //---------------Solver ecuaciones cúbicas-------------------
@@ -201,6 +203,50 @@ bool checkIsoValue(in float d0, in float d1, in float d2, in float d3, in float 
 	return false;
 
 }
+/*
+// Returns true when isoValue is inside the voxel
+bool CheckIsoValue(in float d000, in float d001, in float d101, in float d100, in float d010,
+	in float d011, in float d111, in float d110, in float isoValue)
+{
+	// Comparar todos los valores del voxel con el isoValue -> signos -1, 0, 1
+	const float signs[] = { sign(d000 - isoValue), sign(d001 - isoValue), sign(d101 - isoValue), sign(d100 - isoValue),
+		sign(d010 - isoValue), sign(d011 - isoValue), sign(d111 - isoValue), sign(d110 - isoValue), };
+
+	// Identificar signos positivos y negativos (valores mayores y menores que isoValue)
+	bool foundPositive = false;
+	bool foundNegative = false;
+
+	for (int i = 0; i < 8; i++)
+	{
+		if (signs[i] < 0.0)
+			foundNegative = true;
+		else
+			foundPositive = true;
+	}
+
+	// Si hay positivo y negativo, hay una isosuperficie en el voxel
+	bool changeInVoxel = foundPositive && foundNegative;
+
+	return changeInVoxel
+}
+*/
+
+bool checkSolution(in vec3 solutions, in float t,in float tnext, in int nsol, out float s){
+	bvec3 validsolution = bvec3(false);
+	validsolution.x = solutions.x > t && solutions.x <= tnext;
+	if (nsol > 1) validsolution.y = solutions.y > t && solutions.y <= tnext;
+	if (nsol > 2) validsolution.z = solutions.z > t && solutions.z <= tnext;
+	vec3 valids = solutions * vec3(validsolution);
+	vec3 invalid = tnext * vec3(not(validsolution));
+	vec3 sum = valids + invalid;
+	float temp = min(min(sum.x, sum.y), sum.z);
+	s = temp;
+	return s != tnext;
+	
+
+	
+	
+}
 
 void main()
 {
@@ -217,6 +263,7 @@ void main()
 	}
 	else{
 		//Direccion del rayo. Calculamos el rayo un cubo en el que el 
+		volumeDim -= vec3(1.0f);
 		vec3 volumeDimInv = 1.0f / volumeDim;
 		vec3 dir = exitPoint - entryPoint;
 		//vector escalado en coordenadas de la textura
@@ -234,10 +281,13 @@ void main()
 		vec3 voxelID;
 		vec3 currentPoint = pto; //primer punto de corte
 		vec4 colorAcum = vec4(0);
-		while (t < tfin && i < MAX_ITERATIONS){
+		while (t <= tfin && i < MAX_ITERATIONS){
 			i++;
 			//obtenemos el voxelID del punto
 			voxelID = getVoxelID(dir, currentPoint);
+			/*
+			colorAcum = vec4((voxelID - vec3(0.5f))*volumeDimInv, 1f);
+			break;*/
 
 			//calculamos siguiente entrypoint y su t correspondiente
 
@@ -266,7 +316,7 @@ void main()
 				float YZ = d5 + d0 - d4 - d3;
 				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
 
-				vec3 ptotrans = currentPoint - voxelID + vec3(0.5f); //translacion del voxel al origen
+				vec3 ptotrans = currentPoint - (voxelID - vec3(0.5f)); //translacion del voxel al origen
 				vec4 ec;
 				ec.x = XYZ*dir.x*dir.y*dir.z;
 				ec.y = XYZ*(ptotrans.z*dir.y*dir.x + dir.z*ptotrans.y*dir.x + dir.z*dir.y*ptotrans.x) + XY*dir.y*dir.x + ZX*dir.z*dir.x + YZ*dir.z*dir.y;
@@ -292,36 +342,13 @@ void main()
 				// tmin = t, tmax = tnext
 
 				//comprobamos las soluciones obtenidas
-				bool validsolution = true;
 				float s;
-				if (nsol == 1){
-					s = sol.x;
-					if (s >= tnext && s <= t)validsolution = false;
-				}
-				else if (nsol == 2) {
-					float saux1 = sol.x;
-					float saux2 = sol.y;
-					if (saux1 >= tnext && saux1 <= t && saux2 >= tnext && saux2 <= t){
-						validsolution = false;
-					}
-					else{
-						if (saux1 >= tnext && saux1 <= t){
-							s = sol.y;
-						}
-						else{
-							s = sol.z;
-						}
-					}
-				}
-				else if (nsol == 3){	
-					bvec3 GT = greaterThan(sol, vec3(t));
-					sol = sol*vec3(GT) + tnext*vec3(not(GT));
-					s = min(min(sol.x, sol.y), sol.z);
-					if (s > tnext) validsolution = false;
-				}
+				bool validsolution;
+				validsolution = checkSolution(sol,t,tnext,nsol,s);
 			
 
-				if (validsolution){
+				if (validsolution)
+				{
 					colorAcum = 2*vec4(isoValue,0,0,0);
 					//calculo del punto
 					vec3 ptosol = ptotrans + dir*s;
@@ -342,7 +369,7 @@ void main()
 					norm = (vmNMatrix * vec4(norm, 0)).xyz; //coordenadas de la camara
 					norm = normalize(norm);
 
-					colorAcum = shade(norm, ptotrans);
+					colorAcum = vec4(voxelID/volumeDim, 1);//shade(norm, ptotrans);
 					break;
 					
 				}
