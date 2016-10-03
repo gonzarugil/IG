@@ -260,7 +260,7 @@ int solveCubic(in float inA, in float inB, in float inC, in float inD, out vec3 
 
 			solutions.x = s1;
 			solutions.y = s2;
-			return 2;
+			return 1; // retornamos 1 en lugar de 2 porque es un caso despreciable de tangencia con la superficie
 		}
 		else{
 			//Algoritmo D
@@ -393,7 +393,8 @@ bool checkIsoValue(in float d0, in float d1, in float d2, in float d3, in float 
 }
 
 
-bool checkSolution(in vec3 solutions, in float t,in float tnext, in int nsol, out float s){
+bool checkSolution(in vec3 solutions, in float t,in float tnext, in int nsol, out float s)
+{
 	bvec3 validsolution = bvec3(false);
 	validsolution.x = solutions.x > t && solutions.x <= tnext;
 	if (nsol > 1) validsolution.y = solutions.y > t && solutions.y <= tnext;
@@ -401,14 +402,26 @@ bool checkSolution(in vec3 solutions, in float t,in float tnext, in int nsol, ou
 	vec3 valids = solutions * vec3(validsolution);
 	vec3 invalid = tnext * vec3(not(validsolution));
 	vec3 sum = valids + invalid;
+	
 	float temp = min(min(sum.x, sum.y), sum.z);
 	s = temp;
 	return !((s >= tnext - EPSILON) && (s <= tnext + EPSILON)) && 
 		   !((s >= t - EPSILON) && (s <= t + EPSILON));
-	
+}
 
-	
-	
+bool checkSolution2(in vec3 solutions, in float t, in float tnext, in int nsol, out float s)
+{
+	bvec3 validsolution = bvec3(false);
+	validsolution.x = solutions.x > 0 && solutions.x <= 1;
+	if (nsol > 1) validsolution.y = solutions.y > 0 && solutions.y <= 1;
+	if (nsol > 2) validsolution.z = solutions.z > 0 && solutions.z <= 1;
+	vec3 valids = solutions * vec3(validsolution);
+	vec3 invalid = 1 * vec3(not(validsolution));
+	vec3 sum = valids + invalid;
+
+	float temp = min(min(sum.x, sum.y), sum.z);
+	s = temp;
+	return !((s >= 1 - EPSILON) && (s <= 1 + EPSILON));
 }
 
 //******Irene***************************************************************************************
@@ -598,6 +611,8 @@ void main()
 				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
 
 				vec3 ptotrans = currentPoint - (voxelID - vec3(0.5)); //translacion del voxel al origen
+				vec3 pointNextTrans = pointnext - (voxelID - vec3(0.5)); // ***
+				vec3 currentDir = pointNextTrans - ptotrans;
 				vec4 ec;
 				/*
 				ec.x = XYZ*dir.x*dir.y*dir.z;
@@ -606,7 +621,7 @@ void main()
 				ec.w = A - isoValue + XY*ptotrans.y*ptotrans.x + ZX*ptotrans.z*ptotrans.x + YZ*ptotrans.z*ptotrans.y + XYZ*ptotrans.z*ptotrans.y*ptotrans.x + X*ptotrans.x + Z*ptotrans.z + Y*ptotrans.y;
 				*/
 				//******Irene -> GetTEquation OK, funciona igual con esta línea que comentándola
-				ec = GetTEquation(d0, d1, d2, d3, d4, d5, d6, d7, isoValue, ptotrans, dir);
+				ec = GetTEquation(d0, d1, d2, d3, d4, d5, d6, d7, isoValue, ptotrans, currentDir);
 
 				//colorAcum += 0.1*vec4(ec.w);
 				//Ecuación cúbica en funcion de T At^3 + Bt^2 + Ct + D -isoValue = 0 
@@ -630,28 +645,33 @@ void main()
 				//comprobamos las soluciones obtenidas
 				float s;
 				bool validsolution;
-				validsolution = checkSolution(sol, t, tnext, nsol, s);
+				validsolution = checkSolution2(sol, t, tnext, nsol, s);
 
 
-				/*if (nsol == 1)
-					colorAcum = vec4(1, 0, 0, 1);
-				else if (nsol == 2)
-					colorAcum = vec4(0, 1, 0, 1);
-				else if (nsol == 3)
-					colorAcum = vec4(0, 0, 1, 1);
-				else
-					colorAcum = vec4(1, 1, 1, 1);
-				break;*/
+
+				
 
 				if (validsolution)
 				{
+					/*
+					if (nsol == 1)
+						colorAcum = vec4(1, 0, 0, 1);
+					else if (nsol == 2)
+						colorAcum = vec4(0, 1, 0, 1);
+					else if (nsol == 3)
+						colorAcum = vec4(0, 0, 1, 1);
+					else
+						colorAcum = vec4(1, 1, 1, 1);
+					break;
+					*/
 					
 					//colorAcum = 2 * vec4(isoValue, 0, 0, 0);
 					//calculo del punto
-					vec3 ptosol = ptotrans + dir*s;
+					vec3 ptosol = ptotrans + currentDir*s; //ptotrans + dir*s; //***
 					//deshacemos la translacion de voxelID
 					ptosol = ptosol + voxelID - vec3(0.5);
 					ptosol = ptosol / volumeDim;
+					vec3 texSample = ptosol;    //***
 					ptosol = (vmMatrix * vec4(ptosol, 1)).xyz;
 
 					//Calculo de normales
@@ -662,11 +682,26 @@ void main()
 					norm.z = Z + ZX * ptotrans.x + YZ * ptotrans.y + XYZ * ptotrans.x * ptotrans.y;
 					norm = norm * -1;
 
+					// TODO: fallo de normales
+					// ***
+					/*vec3 epsX = vec3(EPSILON, 0.0, 0.0);
+					vec3 epsY = vec3(0.0, EPSILON, 0.0);
+					vec3 epsZ = vec3(0.0, 0.0, EPSILON);
+
+					vec3 grad = vec3(texture(dataTex, texSample + epsX).r - texture(dataTex, texSample - epsX).r,
+									 texture(dataTex, texSample + epsY).r - texture(dataTex, texSample - epsY).r,
+									 texture(dataTex, texSample + epsZ).r - texture(dataTex, texSample - epsZ).r);
+					norm = -grad;*/
+					// ***
+
+
 					norm = norm / volumeDim;// solo escalado porque es un vector y no es homogeneo
 					norm = (vmNMatrix * vec4(norm, 0)).xyz; //coordenadas de la camara
 					norm = normalize(norm);
 
-					colorAcum = vec4(voxelID/volumeDim, 1);//shade(norm, ptotrans); //
+					colorAcum = shade(norm, ptotrans); //vec4(voxelID/volumeDim, 1);//
+					//if (s < 0.5)
+						//colorAcum = vec4(1, 0, 0, 1);
 					
 					break;
 
@@ -686,8 +721,6 @@ void main()
 		}
 
 		outColor = colorAcum;
-		outColor = vec4(t, 0, 0, 1);
-
 
 		//float len = length(dir);
 		//vec3 deltaDir = (volumeDimInv)*(stepSize / len)*dir;

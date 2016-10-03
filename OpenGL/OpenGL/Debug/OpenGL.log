@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 03/10/2016 13:20:34.
+﻿Compilación iniciada a las 03/10/2016 16:38:23.
      1>Proyecto "C:\Users\IreneGMRV\Repos\IG\OpenGL\OpenGL\OpenGL.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /D NDEBUG /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -19,4 +19,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:01.43
+Tiempo transcurrido 00:00:01.34
