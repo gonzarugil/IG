@@ -219,9 +219,9 @@ glm::mat4 modelstatic(1.0f);
 
 
 
-unsigned char test[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1,
-						 1,1,1,1,255,1,1,1,1,
-						 1, 1, 1, 1, 1, 1, 1, 1, 1};
+unsigned char test[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						 0,0,0,0,255,0,0,0,0,
+						 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 void loadTexture(unsigned char **texels, unsigned int &w, unsigned int &h, unsigned int &d, const char *fileName)
 {
