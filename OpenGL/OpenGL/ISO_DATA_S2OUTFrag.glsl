@@ -24,7 +24,7 @@ uniform float isoValue;
 
 vec3 Ia = vec3(0.6);
 vec3 Id = vec3(0.5);
-vec3 Is = vec3(1.0);
+vec3 Is = vec3(0.0);
 vec3 lpos = vec3(0,0,0);
 
 
@@ -355,10 +355,10 @@ vec4 shade(in vec3 norm, in vec3 colorpos){
 	vec3 R = normalize(reflect(-L, norm));
 	float factor = max(dot(R, V), 0.001);
 	vec3 specular = Is * Ks * pow(factor, alpha);
-	c += clamp(specular, 0.0, 1.0);
+	//c += clamp(specular, 0.0, 1.0);
 
 	return vec4(c, 0.0);
-	//return vec4(norm, 1);
+	return vec4(norm, 1);
 }
 
 
@@ -544,7 +544,9 @@ void main()
 		vec3 voxelID;
 		vec3 currentPoint = pto; //primer punto de corte
 		vec4 colorAcum = vec4(0);
-		while (t <= tfin && i < MAX_ITERATIONS){
+		bool end = false;
+
+		while (t <= tfin && i < MAX_ITERATIONS && !end){
 			i++;
 			//obtenemos el voxelID del punto
 			voxelID = getVoxelID(dir, currentPoint);
@@ -668,42 +670,36 @@ void main()
 					//colorAcum = 2 * vec4(isoValue, 0, 0, 0);
 					//calculo del punto
 					vec3 ptosol = ptotrans + currentDir*s; //ptotrans + dir*s; //***
+					
+
+					//Calculo de normales
+
+					vec3 norm = vec3(0.0);
+					norm.x = X + XY * ptosol.y + ZX * ptosol.z + XYZ * ptosol.y * ptosol.z;
+					norm.y = Y + XY * ptosol.x + YZ * ptosol.z + XYZ * ptosol.x * ptosol.z;
+					norm.z = Z + ZX * ptosol.x + YZ * ptosol.y + XYZ * ptosol.x * ptosol.y;
+					norm = norm * -1;
+
+
 					//deshacemos la translacion de voxelID
 					ptosol = ptosol + voxelID - vec3(0.5);
 					ptosol = ptosol / volumeDim;
 					vec3 texSample = ptosol;    //***
 					ptosol = (vmMatrix * vec4(ptosol, 1)).xyz;
 
-					//Calculo de normales
+					
 
-					vec3 norm = vec3(0.0);
-					norm.x = X + XY * ptotrans.y + ZX * ptotrans.z + XYZ * ptotrans.y * ptotrans.z;
-					norm.y = Y + XY * ptotrans.x + YZ * ptotrans.z + XYZ * ptotrans.x * ptotrans.z;
-					norm.z = Z + ZX * ptotrans.x + YZ * ptotrans.y + XYZ * ptotrans.x * ptotrans.y;
-					norm = norm * -1;
-
-					// TODO: fallo de normales
-					// ***
-					/*vec3 epsX = vec3(EPSILON, 0.0, 0.0);
-					vec3 epsY = vec3(0.0, EPSILON, 0.0);
-					vec3 epsZ = vec3(0.0, 0.0, EPSILON);
-
-					vec3 grad = vec3(texture(dataTex, texSample + epsX).r - texture(dataTex, texSample - epsX).r,
-									 texture(dataTex, texSample + epsY).r - texture(dataTex, texSample - epsY).r,
-									 texture(dataTex, texSample + epsZ).r - texture(dataTex, texSample - epsZ).r);
-					norm = -grad;*/
-					// ***
-
-
-					norm = norm / volumeDim;// solo escalado porque es un vector y no es homogeneo
+					norm = norm * volumeDim; // inversa del escalado que pasa a coord cámara M^{-t}*S^{-t}
 					norm = (vmNMatrix * vec4(norm, 0)).xyz; //coordenadas de la camara
 					norm = normalize(norm);
 
-					colorAcum = shade(norm, ptotrans); //vec4(voxelID/volumeDim, 1);//
+
+					colorAcum = shade(norm, ptosol); //vec4(voxelID/volumeDim, 1);//
 					//if (s < 0.5)
 						//colorAcum = vec4(1, 0, 0, 1);
 					
-					break;
+					//break;
+					end = true;
 
 				}
 

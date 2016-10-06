@@ -154,10 +154,12 @@ GLuint d3d= 134;
 GLfloat iso = 0.20f;
 
 //aqui va el archivo pvm que cargaremos (lo de arriba es el tamaño)
-const char *fileName = "MRI-Head.pvm";
+//const char *fileName = "MRI-Head.pvm";
+//const char *fileName = "VisMale.pvm";
+//const char *fileName = "Baby.pvm";
 //const char *fileName = "Orange.pvm";
 //const char *fileName = "Porsche.pvm";
-//const char *fileName = "Lobster.pvm";
+const char *fileName = "Lobster.pvm";
 
 //VAO
 GLuint vao;
@@ -210,6 +212,7 @@ glm::mat4 view ( 1.0f, 0.0f, 0.0f, 0.0f,
 0.0f, 0.0f, -10.0f, 1.0f );
 
 glm::mat4 model(1.0f);
+glm::mat4 model2(1.0f);
 
 
 
@@ -226,20 +229,25 @@ unsigned char test[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0,
 void loadTexture(unsigned char **texels, unsigned int &w, unsigned int &h, unsigned int &d, const char *fileName)
 {
 	unsigned int ww, hh, dd;
-	//delete[](*texels);
+	/**/
+	delete[](*texels);
 
-	/*
+	
 	*texels = readPVMvolume((char *)fileName, &ww, &hh, &dd);
-
+	
 	w = ww;
 	h = hh;
 	d = dd;
-	*/
+
+	model2[1].y = (float)h / (float)w;
+	model2[2].z = (float)d / (float)w;
+
+	/**//**
 	*texels = test;
 
 	w = 3;
 	h = 3;
-	d = 3;
+	d = 3;/**/
 
 	return;
 
@@ -508,7 +516,7 @@ void sceneInit(){
 		GL_UNSIGNED_BYTE, texels);
 
 	//TODO: Volver a poner
-	//delete[]texels;
+	delete[]texels;
 
 }
 
@@ -634,6 +642,7 @@ void funcionIdle(){
 	 model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
 
 	 model = glm::scale(model, glm::vec3(3, 3, 3));
+	 model = model * model2;
 	 model = glm::translate(model, glm::vec3(-0.333f));
 
 
