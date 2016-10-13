@@ -155,11 +155,11 @@ GLfloat iso = 0.20f;
 
 //aqui va el archivo pvm que cargaremos (lo de arriba es el tamaño)
 //const char *fileName = "MRI-Head.pvm";
-//const char *fileName = "VisMale.pvm";
+const char *fileName = "VisMale.pvm";
 //const char *fileName = "Baby.pvm";
 //const char *fileName = "Orange.pvm";
 //const char *fileName = "Porsche.pvm";
-const char *fileName = "Lobster.pvm";
+//const char *fileName = "Lobster.pvm";
 
 //VAO
 GLuint vao;
@@ -520,6 +520,57 @@ void sceneInit(){
 
 }
 
+void keyPressed(unsigned char key, int x, int y) {
+	float fraction = 0.1f;
+	float incV = 0.05f;
+	float inciso = 0.01f;
+	float angulo = 0.01f;
+
+	switch (key) {
+	case 'r':
+		view = glm::rotate(view, angulo, glm::vec3(1, 0, 0));
+		break;
+	case 'f':
+		view = glm::rotate(view, -angulo, glm::vec3(1, 0, 0));
+		break;
+	case 't':
+		view = glm::rotate(view, angulo, glm::vec3(0, 0, 1));
+		break;
+	case 'g':
+		view = glm::rotate(view, -angulo, glm::vec3(0, 0, 1));
+		break;
+	case 'q':
+		view = glm::rotate(view, angulo, glm::vec3(0, 1, 0));
+		break;
+	case 'e':
+		view = glm::rotate(view, -angulo, glm::vec3(0, 1, 0));
+		break;
+	case 'z':
+		iso -= inciso;
+		break;
+	case 'x':
+		iso += inciso;
+		break;
+	case 'w':
+		view[3].y += incV;
+		break;
+	case 'a':
+		view[3].x += incV;
+		break;
+	case 's':
+		view[3].y -= incV;
+		break;
+	case 'd':
+		view[3].x -= incV;
+		break;
+	case '+':
+		view[3].z += incV;
+		break;
+	case '-':
+		view[3].z -= incV;
+		break;
+	}
+}
 void processSpecialKeys(int key, int xx, int yy) {
 
 	float fraction = 0.1f;
@@ -634,14 +685,16 @@ void funcionDeReescalado(GLsizei w, GLsizei h)
 //IdleFunc
 void funcionIdle(){
 	
-	//angulo = 0.0f;
+	angulo = 0.0f;
 	angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
 
-	model = glm::mat4(1);
+	
 	 model = glm::rotate(model, angulo, glm::vec3(1, 0, 0));
 	 model = glm::rotate(model, angulo, glm::vec3(0, 1, 0));
-
+	 
+	 model = glm::mat4(1);
 	 model = glm::scale(model, glm::vec3(3, 3, 3));
+
 	 model = model * model2;
 	 model = glm::translate(model, glm::vec3(-0.333f));
 
@@ -670,6 +723,7 @@ int main(int argc, char **argv)
 	glutDisplayFunc(renderScene);
 	glutIdleFunc(funcionIdle);
 	glutTimerFunc(1000, countFPS, 1);
+	glutKeyboardFunc(keyPressed);
 	glutSpecialFunc(processSpecialKeys);
 
 	//Esperamos a que se cree el contexto de OpenGL

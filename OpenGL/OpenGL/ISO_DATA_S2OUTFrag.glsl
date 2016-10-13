@@ -355,7 +355,7 @@ vec4 shade(in vec3 norm, in vec3 colorpos){
 	vec3 R = normalize(reflect(-L, norm));
 	float factor = max(dot(R, V), 0.001);
 	vec3 specular = Is * Ks * pow(factor, alpha);
-	//c += clamp(specular, 0.0, 1.0);
+	c += clamp(specular, 0.0, 1.0);
 
 	return vec4(c, 0.0);
 	return vec4(norm, 1);
@@ -381,13 +381,13 @@ bool checkIsoValue(in float d0, in float d1, in float d2, in float d3, in float 
 {
 
 	float v1sig = d0 - isoValue;
-	if ((v1sig*(d1 - isovalue)) < 0.0) return true;
-	if ((v1sig*(d2 - isovalue)) < 0.0) return true;
-	if ((v1sig*(d3 - isovalue)) < 0.0) return true;
-	if ((v1sig*(d4 - isovalue)) < 0.0) return true;
-	if ((v1sig*(d5 - isovalue)) < 0.0) return true;
-	if ((v1sig*(d6 - isovalue)) < 0.0) return true;
-	if ((v1sig*(d7 - isovalue)) < 0.0) return true;
+	if ((v1sig*(d1 - isovalue)) <= 0.0) return true;
+	if ((v1sig*(d2 - isovalue)) <= 0.0) return true;
+	if ((v1sig*(d3 - isovalue)) <= 0.0) return true;
+	if ((v1sig*(d4 - isovalue)) <= 0.0) return true;
+	if ((v1sig*(d5 - isovalue)) <= 0.0) return true;
+	if ((v1sig*(d6 - isovalue)) <= 0.0) return true;
+	if ((v1sig*(d7 - isovalue)) <= 0.0) return true;
 	return false;
 
 }
@@ -608,8 +608,8 @@ void main()
 				float Y = d4 - d0;
 				float Z = d1 - d0;
 				float XY = d7 + d0 - d3 - d4;
-				float ZX = d2 + d0 - d4 - d1;
-				float YZ = d5 + d0 - d4 - d3;
+				float ZX = d2 + d0 - d3 - d1;
+				float YZ = d5 + d0 - d4 - d1;
 				float XYZ = d6 + d3 + d4 + d1 - d0 - d5 - d2 - d7;
 
 				vec3 ptotrans = currentPoint - (voxelID - vec3(0.5)); //translacion del voxel al origen
