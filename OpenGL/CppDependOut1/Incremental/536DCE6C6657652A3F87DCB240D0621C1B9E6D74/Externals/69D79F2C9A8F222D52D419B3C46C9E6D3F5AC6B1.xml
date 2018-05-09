@@ -1,0 +1,319 @@
+<Externals>
+<cts Spec="&lt;char&gt;" namespace="std" access="none" depth="0" pod="true" kind="struct" name="char_traits" id="0eca8725507377f8c121d6e3de51f947_76e43d9fa50c2ce16dafa9452550a098" file="3" linestart="463" lineend="554"/>
+<tm namespace="std" access="none" depth="3" kind="class" name="basic_ostream" id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243" file="4" linestart="37" lineend="609" previous="0eca8725507377f8c121d6e3de51f947_7df99f34c778205aaa2e1759bec30243">
+<template_parameters>
+<ttp name="_Elem" id="9cedb58615dade7747537f6487b7f5e2_16f2e94b2b51d2f5dff02392fae903e6" depth="0" index="0" proto="type-parameter-0-0"/>
+<ttp name="_Traits" id="9cedb58615dade7747537f6487b7f5e2_e2d9f5b99956b4f9c1c67b1b3209c8f9" depth="0" index="1" proto="type-parameter-0-1"/>
+</template_parameters>
+<cr namespace="std" access="none" depth="3" kind="class" name="basic_ostream" id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243" file="4" linestart="39" lineend="609" previous="0eca8725507377f8c121d6e3de51f947_7df99f34c778205aaa2e1759bec30243">
+<base access="public">
+<tss>
+<templatebase id="9ab790e714cb599a8135b4699a50b856_0973aa6d290bf2c44e86c2f58971d880"/>
+<template_arguments>
+<ttp/>
+<ttp/>
+</template_arguments>
+</tss>
+</base>
+<cr access="public" kind="class" name="basic_ostream" id="9cedb58615dade7747537f6487b7f5e2_5fbde4af169bb278d3e041271eb8fcd4" file="4" linestart="39" lineend="39"/>
+<m name="operator&lt;&lt;" id="9cedb58615dade7747537f6487b7f5e2_d33445cdb753f92a6c0b97ecb40fd870" file="4" linestart="192" lineend="195" operator="true" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="_Myt &amp;">
+<lrf>
+<Tdef>
+<tss>
+<templatebase id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<ttp/>
+<ttp/>
+</template_arguments>
+</tss>
+</Tdef>
+</lrf>
+</fpt>
+<p name="_Pfn" proto="_Myt &amp;(*)(_Myt &amp;) __attribute__((cdecl))" isPtr="true" access2="none">
+<pt>
+<Attributed/>
+</pt>
+</p>
+</m>
+</cr>
+</tm>
+<f name="glDeleteTextures" id="f67d8644de1d3d604c9a07aca91bf53a_c646f916e2d044f9b326d2adc04e6b34" file="5" linestart="904" lineend="904" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="n" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="textures" proto="const GLuint *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</QualType>
+</pt>
+</p>
+</f>
+<f name="exit" id="21eb9b1da650872c929703a43c5bc4a9_4e37e3a24fbdab33ec964df39dbd53f6" file="6" linestart="51" lineend="51" extC="true" access="none">
+<Attributed/>
+<p name="_Code" proto="int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="int"/>
+</p>
+</f>
+<v name="__glewBindFramebuffer" proto="PFNGLBINDFRAMEBUFFERPROC" isPtr="true" isLiteral="true" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34" file="5" linestart="16706" lineend="16706" storage="extern" access2="none">
+<Tdef>
+<pt>
+<Attributed/>
+</pt>
+</Tdef>
+</v>
+<v name="__glewCheckFramebufferStatus" proto="PFNGLCHECKFRAMEBUFFERSTATUSPROC" isPtr="true" isLiteral="true" id="f67d8644de1d3d604c9a07aca91bf53a_ed09a65fb57eb4990d303d14d64b7dca" file="5" linestart="16709" lineend="16709" storage="extern" access2="none">
+<Tdef>
+<pt>
+<Attributed/>
+</pt>
+</Tdef>
+</v>
+<v name="__glewDeleteFramebuffers" proto="PFNGLDELETEFRAMEBUFFERSPROC" isPtr="true" isLiteral="true" id="f67d8644de1d3d604c9a07aca91bf53a_b77f8f5670b47f8b6b8e42570a223b3e" file="5" linestart="16710" lineend="16710" storage="extern" access2="none">
+<Tdef>
+<pt>
+<Attributed/>
+</pt>
+</Tdef>
+</v>
+<v name="__glewFramebufferTexture2D" proto="PFNGLFRAMEBUFFERTEXTURE2DPROC" isPtr="true" isLiteral="true" id="f67d8644de1d3d604c9a07aca91bf53a_6543a9563f4a4bb50bc4d05d84052fbe" file="5" linestart="16714" lineend="16714" storage="extern" access2="none">
+<Tdef>
+<pt>
+<Attributed/>
+</pt>
+</Tdef>
+</v>
+<v name="__glewGenFramebuffers" proto="PFNGLGENFRAMEBUFFERSPROC" isPtr="true" isLiteral="true" id="f67d8644de1d3d604c9a07aca91bf53a_9a32750e4dd0dbefd902fb341f9b15e3" file="5" linestart="16717" lineend="16717" storage="extern" access2="none">
+<Tdef>
+<pt>
+<Attributed/>
+</pt>
+</Tdef>
+</v>
+<f namespace="std" name="operator&lt;&lt;" id="9cedb58615dade7747537f6487b7f5e2_a8b001da139eef9b7b8dd07e8c06f59d" file="4" linestart="768" lineend="813" operator="true" access="none" inline="true" hasbody="true" isdef="true">
+<fpt cc="cdecl" proto="basic_ostream&lt;char, _Traits&gt; &amp;">
+<lrf>
+<tss>
+<templatebase id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<bt name="char"/>
+<ttp/>
+</template_arguments>
+</tss>
+</lrf>
+</fpt>
+<p name="_Ostr" proto="basic_ostream&lt;char, _Traits&gt; &amp;" isRef="true" access2="none">
+<lrf>
+<tss>
+<templatebase id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<bt name="char"/>
+<ttp/>
+</template_arguments>
+</tss>
+</lrf>
+</p>
+<p name="_Val" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+</f>
+<ft name="operator&lt;&lt;" id="9cedb58615dade7747537f6487b7f5e2_3298dfe44ddb6b69da98967bbc11dbef" file="4" linestart="768" lineend="813">
+<template_parameters>
+<ttp name="_Traits" id="9cedb58615dade7747537f6487b7f5e2_29653cbbe518513f057baf83aeea343a" depth="0" index="0" proto="type-parameter-0-0"/>
+</template_parameters>
+<f namespace="std" name="operator&lt;&lt;" id="9cedb58615dade7747537f6487b7f5e2_a8b001da139eef9b7b8dd07e8c06f59d" file="4" linestart="768" lineend="813" operator="true" access="none" inline="true" hasbody="true" isdef="true">
+<fpt cc="cdecl" proto="basic_ostream&lt;char, _Traits&gt; &amp;">
+<lrf>
+<tss>
+<templatebase id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<bt name="char"/>
+<ttp/>
+</template_arguments>
+</tss>
+</lrf>
+</fpt>
+<p name="_Ostr" proto="basic_ostream&lt;char, _Traits&gt; &amp;" isRef="true" access2="none">
+<lrf>
+<tss>
+<templatebase id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<bt name="char"/>
+<ttp/>
+</template_arguments>
+</tss>
+</lrf>
+</p>
+<p name="_Val" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+</f>
+</ft>
+<f namespace="std" name="endl" id="9cedb58615dade7747537f6487b7f5e2_519f22e86fa75f44ad68a8158aae2a36" file="4" linestart="980" lineend="987" access="none" inline="true" hasbody="true" isdef="true">
+<Attributed/>
+<p name="_Ostr" proto="basic_ostream&lt;_Elem, _Traits&gt; &amp;" isRef="true" access2="none">
+<lrf>
+<tss>
+<templatebase id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<ttp/>
+<ttp/>
+</template_arguments>
+</tss>
+</lrf>
+</p>
+</f>
+<ft name="endl" id="9cedb58615dade7747537f6487b7f5e2_74537f44d6cd7a95f2b060cedb35e9d9" file="4" linestart="979" lineend="987">
+<template_parameters>
+<ttp name="_Elem" id="9cedb58615dade7747537f6487b7f5e2_3ebe6248f47274de228e7ab1d4c7f696" depth="0" index="0" proto="type-parameter-0-0"/>
+<ttp name="_Traits" id="9cedb58615dade7747537f6487b7f5e2_8a9fe01f4f41f3e2862becdd6b274d11" depth="0" index="1" proto="type-parameter-0-1"/>
+</template_parameters>
+<f namespace="std" name="endl" id="9cedb58615dade7747537f6487b7f5e2_519f22e86fa75f44ad68a8158aae2a36" file="4" linestart="980" lineend="987" access="none" inline="true" hasbody="true" isdef="true">
+<Attributed/>
+<p name="_Ostr" proto="basic_ostream&lt;_Elem, _Traits&gt; &amp;" isRef="true" access2="none">
+<lrf>
+<tss>
+<templatebase id="9cedb58615dade7747537f6487b7f5e2_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<ttp/>
+<ttp/>
+</template_arguments>
+</tss>
+</lrf>
+</p>
+</f>
+</ft>
+<v namespace="std" name="cerr" proto="ostream" id="1e5cfb09f26c263f1786a3adff0ffa1d_727bfa73000f271f9932e7c3a4cef3a9" file="7" linestart="29" lineend="29" storage="extern" access2="none">
+<Tdef>
+<tss>
+<templatebase id="0eca8725507377f8c121d6e3de51f947_7df99f34c778205aaa2e1759bec30243"/>
+<template_arguments>
+<bt name="char"/>
+<tss>
+<templatebase id="0eca8725507377f8c121d6e3de51f947_bf3447e13ccfc57e5fa847f5d78e7639"/>
+<template_arguments>
+<bt name="char"/>
+</template_arguments>
+</tss>
+</template_arguments>
+</tss>
+</Tdef>
+</v>
+<f name="glBindTexture" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" file="5" linestart="850" lineend="850" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="target" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="texture" proto="GLuint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+</f>
+<f name="glGenTextures" id="f67d8644de1d3d604c9a07aca91bf53a_2276ce224e4031b73b46306323abbb35" file="5" linestart="943" lineend="943" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="n" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="textures" proto="GLuint *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</pt>
+</p>
+</f>
+<f name="glTexImage2D" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473" file="5" linestart="1146" lineend="1146" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="target" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="level" proto="GLint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="internalformat" proto="GLint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="width" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="height" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="border" proto="GLint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="format" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="type" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="pixels" proto="const void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="void"/>
+</QualType>
+</pt>
+</p>
+</f>
+<f name="glTexParameteri" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934" file="5" linestart="1149" lineend="1149" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="target" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="pname" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="param" proto="GLint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+</f>
+<v name="__glewDrawBuffers" proto="PFNGLDRAWBUFFERSPROC" isPtr="true" isLiteral="true" id="f67d8644de1d3d604c9a07aca91bf53a_6b483957ef43caf84fc7d1a06b0e1b63" file="5" linestart="16250" lineend="16250" storage="extern" access2="none">
+<Tdef>
+<pt>
+<Attributed/>
+</pt>
+</Tdef>
+</v>
+</Externals>

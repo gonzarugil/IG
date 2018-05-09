@@ -1,6 +1,6 @@
 ﻿  Source.cpp
-c:\users\gonzalo\repos\ig\opengl\opengl\source.cpp(313): warning C4244: 'inicializando': conversión de 'std::streamoff' a 'unsigned int'; posible pérdida de datos
-c:\users\gonzalo\repos\ig\opengl\opengl\source.cpp(581): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\gonzalo\repos\ig\opengl\opengl\source.cpp(584): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-  OpenGL.vcxproj -> C:\Users\Gonzalo\Repos\IG\OpenGL\Debug\OpenGL.exe
-  OpenGL.vcxproj -> C:\Users\Gonzalo\Repos\IG\OpenGL\Debug\OpenGL.pdb (Full PDB)
+d:\visual workspace\ig\opengl\opengl\source.cpp(343): warning C4244: 'inicializando': conversión de 'std::streamoff' a 'unsigned int'; posible pérdida de datos
+d:\visual workspace\ig\opengl\opengl\source.cpp(611): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\visual workspace\ig\opengl\opengl\source.cpp(614): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  OpenGL.vcxproj -> D:\Visual Workspace\IG\OpenGL\Debug\OpenGL.exe
+  OpenGL.vcxproj -> D:\Visual Workspace\IG\OpenGL\Debug\OpenGL.pdb (Partial PDB)

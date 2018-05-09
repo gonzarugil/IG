@@ -1,0 +1,259 @@
+<Externals>
+<cr access="none" depth="0" pod="true" kind="struct" name="FIBITMAP" id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7" file="3" linestart="122" lineend="122"/>
+<e access="none" name="FREE_IMAGE_FORMAT" id="d8dc1866e1a3cc859c32ddaf8b641b31_a5d8b2ad89cbd6047ba7e94a3efece89" file="3" linestart="383" lineend="423" fixed="true">
+<promotion_type>
+<bt name="int"/>
+</promotion_type>
+<integer_type>
+<bt name="int"/>
+</integer_type>
+<ec name="FIF_UNKNOWN" id="d8dc1866e1a3cc859c32ddaf8b641b31_579978c7bc9164a59ea83cf5a4455133" file="3" linestart="384" lineend="384">
+<et>
+<e id="d8dc1866e1a3cc859c32ddaf8b641b31_a5d8b2ad89cbd6047ba7e94a3efece89"/>
+</et>
+</ec>
+</e>
+<f name="glBindTexture" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" file="4" linestart="850" lineend="850" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="target" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="texture" proto="GLuint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+</f>
+<f name="glDeleteTextures" id="f67d8644de1d3d604c9a07aca91bf53a_c646f916e2d044f9b326d2adc04e6b34" file="4" linestart="904" lineend="904" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="n" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="textures" proto="const GLuint *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</QualType>
+</pt>
+</p>
+</f>
+<f name="glGenTextures" id="f67d8644de1d3d604c9a07aca91bf53a_2276ce224e4031b73b46306323abbb35" file="4" linestart="943" lineend="943" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="n" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="textures" proto="GLuint *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</pt>
+</p>
+</f>
+<f name="glTexParameterf" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca" file="4" linestart="1147" lineend="1147" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="target" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="pname" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="param" proto="GLfloat" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="float"/>
+</Tdef>
+</p>
+</f>
+<f name="glTexImage2D" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473" file="4" linestart="1146" lineend="1146" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="target" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="level" proto="GLint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="internalformat" proto="GLint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="width" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="height" proto="GLsizei" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="border" proto="GLint" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+<p name="format" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="type" proto="GLenum" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="pixels" proto="const void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="void"/>
+</QualType>
+</pt>
+</p>
+</f>
+<f name="memcpy" id="4011270312a45783dba0c52491a951b4_60bc7b595257868b3d58e003eb334889" file="5" linestart="40" lineend="44" extC="true" access="none">
+<Attributed/>
+<p name="_Dst" proto="void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<bt name="void"/>
+</pt>
+</p>
+<p name="_Src" proto="const void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="void"/>
+</QualType>
+</pt>
+</p>
+<p name="_Size" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+</f>
+<f name="FreeImage_Initialise" id="d8dc1866e1a3cc859c32ddaf8b641b31_b2921c64cde0d713bd1a09e3948e9e6b" file="3" linestart="787" lineend="787" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="load_local_plugins_only" proto="BOOL" isLiteral="true" isPrimitive="true" init="true" access2="none">
+<Tdef>
+<bt name="int"/>
+</Tdef>
+</p>
+</f>
+<f name="FreeImage_DeInitialise" id="d8dc1866e1a3cc859c32ddaf8b641b31_0bab3b261c4fda961e7e93f7c782efad" file="3" linestart="788" lineend="788" extC="true" imported="true" access="none">
+<Attributed/>
+</f>
+<f name="FreeImage_Unload" id="d8dc1866e1a3cc859c32ddaf8b641b31_3bb87feb6b848042d29cfc4584c3d798" file="3" linestart="809" lineend="809" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="dib" proto="FIBITMAP *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<rt>
+<cr id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7"/>
+</rt>
+</pt>
+</p>
+</f>
+<f name="FreeImage_Load" id="d8dc1866e1a3cc859c32ddaf8b641b31_32df9057645b754d832ca9e7a56bc224" file="3" linestart="816" lineend="816" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="fif" proto="FREE_IMAGE_FORMAT" isLiteral="true" access2="none">
+<et>
+<e id="d8dc1866e1a3cc859c32ddaf8b641b31_a5d8b2ad89cbd6047ba7e94a3efece89"/>
+</et>
+</p>
+<p name="filename" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+<p name="flags" proto="int" isLiteral="true" isPrimitive="true" init="true" access2="none">
+<bt name="int"/>
+</p>
+</f>
+<f name="FreeImage_GetFIFFromFilename" id="d8dc1866e1a3cc859c32ddaf8b641b31_2c036dedd2dde7e361edeeaa5389d665" file="3" linestart="852" lineend="852" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="filename" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+</f>
+<f name="FreeImage_FIFSupportsReading" id="d8dc1866e1a3cc859c32ddaf8b641b31_e18e768b391a7a08b62de585c418ee9a" file="3" linestart="854" lineend="854" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="fif" proto="FREE_IMAGE_FORMAT" isLiteral="true" access2="none">
+<et>
+<e id="d8dc1866e1a3cc859c32ddaf8b641b31_a5d8b2ad89cbd6047ba7e94a3efece89"/>
+</et>
+</p>
+</f>
+<f name="FreeImage_GetFileType" id="d8dc1866e1a3cc859c32ddaf8b641b31_5f26938e25bbb998af8870c980bb33a0" file="3" linestart="878" lineend="878" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="filename" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+<p name="size" proto="int" isLiteral="true" isPrimitive="true" init="true" access2="none">
+<bt name="int"/>
+</p>
+</f>
+<f name="FreeImage_GetBits" id="d8dc1866e1a3cc859c32ddaf8b641b31_5bc1a2906e3b72b61f0c94dbaf04e040" file="3" linestart="895" lineend="895" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="dib" proto="FIBITMAP *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<rt>
+<cr id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7"/>
+</rt>
+</pt>
+</p>
+</f>
+<f name="FreeImage_GetWidth" id="d8dc1866e1a3cc859c32ddaf8b641b31_aa417f42c53d811a6ef22862408f98fa" file="3" linestart="907" lineend="907" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="dib" proto="FIBITMAP *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<rt>
+<cr id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7"/>
+</rt>
+</pt>
+</p>
+</f>
+<f name="FreeImage_GetHeight" id="d8dc1866e1a3cc859c32ddaf8b641b31_54abc590bc54fcea17e5f65bcfc5091c" file="3" linestart="908" lineend="908" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="dib" proto="FIBITMAP *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<rt>
+<cr id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7"/>
+</rt>
+</pt>
+</p>
+</f>
+<f name="FreeImage_ConvertTo32Bits" id="d8dc1866e1a3cc859c32ddaf8b641b31_3c6c3df9d8b7d894f4061ab69c10c2c6" file="3" linestart="996" lineend="996" extC="true" imported="true" access="none">
+<Attributed/>
+<p name="dib" proto="FIBITMAP *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<rt>
+<cr id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7"/>
+</rt>
+</pt>
+</p>
+</f>
+</Externals>

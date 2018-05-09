@@ -1,0 +1,7 @@
+<log>
+ <error level="error" id="err_ref_non_value" file="D:\Visual\VC\Tools\MSVC\14.11.25503\include\type_traits" line="724" col="35" msg="&apos;_To&apos; does not refer to a value" />
+ <error level="error" id="err_ref_non_value" file="D:\Visual\VC\Tools\MSVC\14.11.25503\include\type_traits" line="724" col="40" msg="&apos;_From&apos; does not refer to a value" />
+ <error level="error" id="err_expected_class_name" file="D:\Visual\VC\Tools\MSVC\14.11.25503\include\type_traits" line="725" col="2" msg="expected class name" />
+ <error level="error" id="err_expected_after" file="D:\Visual\VC\Tools\MSVC\14.11.25503\include\type_traits" line="1542" col="50" msg="expected &apos;;&apos; after alias declaration" />
+ <error level="error" id="err_no_template_suggest" file="D:\Visual\VC\Tools\MSVC\14.11.25503\include\type_traits" line="1548" col="30" msg="no template named &apos;make_integer_sequence&apos;; did you mean &apos;integer_sequence&apos;?" />
+</log>

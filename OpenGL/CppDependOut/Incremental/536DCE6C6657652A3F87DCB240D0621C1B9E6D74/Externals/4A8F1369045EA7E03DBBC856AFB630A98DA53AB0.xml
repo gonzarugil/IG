@@ -1,0 +1,327 @@
+<Externals>
+<cr access="none" depth="0" pod="true" kind="struct" name="_iobuf" id="9fa9b909c33d86f34384add657ca687f_9b75e14604360f7936837e5997e12eba" file="3" linestart="25" lineend="28"/>
+<f name="__acrt_iob_func" id="9fa9b909c33d86f34384add657ca687f_bd0aca046a0f96893005a6516972a86f" file="3" linestart="31" lineend="31" extC="true" access="none">
+<Attributed/>
+<p name="_Ix" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+</p>
+</f>
+<f name="_snprintf" id="40c87f7442d5852627f24f7f62e998c6_0f1cb2646e3c42a5ffa79d4d098f94fb" file="4" linestart="1958" lineend="1974" extC="true" variadic="true" access="none" inline="true" hasbody="true" isdef="true">
+<Attributed/>
+<p name="_Buffer" proto="char *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<bt name="char"/>
+</pt>
+</QualType>
+</p>
+<p name="_BufferCount" proto="const size_t" const="true" isLiteral="true" isPrimitive="true" access2="none">
+<QualType const="true">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</QualType>
+</p>
+<p name="_Format" proto="const char *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</QualType>
+</p>
+</f>
+<f name="fopen" id="40c87f7442d5852627f24f7f62e998c6_2da5e5cc592c865059d910483f142c03" file="4" linestart="207" lineend="210" extC="true" access="none">
+<Attributed/>
+<p name="_FileName" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+<p name="_Mode" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+</f>
+<f name="fread" id="40c87f7442d5852627f24f7f62e998c6_b1b7d214a3cbcd3fa5299fdfea034426" file="4" linestart="233" lineend="238" extC="true" access="none">
+<Attributed/>
+<p name="_Buffer" proto="void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<bt name="void"/>
+</pt>
+</p>
+<p name="_ElementSize" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="_ElementCount" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="_Stream" proto="FILE *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<Tdef>
+<ety>
+<rt>
+<cr id="9fa9b909c33d86f34384add657ca687f_9b75e14604360f7936837e5997e12eba"/>
+</rt>
+</ety>
+</Tdef>
+</pt>
+</p>
+</f>
+<f name="fgetc" id="40c87f7442d5852627f24f7f62e998c6_41de66532a68457b49f284ee93efca9e" file="4" linestart="176" lineend="178" extC="true" access="none">
+<Attributed/>
+<p name="_Stream" proto="FILE *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<Tdef>
+<ety>
+<rt>
+<cr id="9fa9b909c33d86f34384add657ca687f_9b75e14604360f7936837e5997e12eba"/>
+</rt>
+</ety>
+</Tdef>
+</pt>
+</p>
+</f>
+<f name="fclose" id="40c87f7442d5852627f24f7f62e998c6_ee7792def11fbde2b52e65d03d71c767" file="4" linestart="146" lineend="148" extC="true" access="none">
+<Attributed/>
+<p name="_Stream" proto="FILE *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<Tdef>
+<ety>
+<rt>
+<cr id="9fa9b909c33d86f34384add657ca687f_9b75e14604360f7936837e5997e12eba"/>
+</rt>
+</ety>
+</Tdef>
+</pt>
+</p>
+</f>
+<f name="fwrite" id="40c87f7442d5852627f24f7f62e998c6_99cff6d05b75a56d52bf3c6ee9dd5543" file="4" linestart="291" lineend="296" extC="true" access="none">
+<Attributed/>
+<p name="_Buffer" proto="const void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="void"/>
+</QualType>
+</pt>
+</p>
+<p name="_ElementSize" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="_ElementCount" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+<p name="_Stream" proto="FILE *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<Tdef>
+<ety>
+<rt>
+<cr id="9fa9b909c33d86f34384add657ca687f_9b75e14604360f7936837e5997e12eba"/>
+</rt>
+</ety>
+</Tdef>
+</pt>
+</p>
+</f>
+<f name="fprintf" id="40c87f7442d5852627f24f7f62e998c6_af6d79effa222eff445da5668b78cca0" file="4" linestart="826" lineend="840" extC="true" variadic="true" access="none" inline="true" hasbody="true" isdef="true">
+<Attributed/>
+<p name="_Stream" proto="FILE *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<Tdef>
+<ety>
+<rt>
+<cr id="9fa9b909c33d86f34384add657ca687f_9b75e14604360f7936837e5997e12eba"/>
+</rt>
+</ety>
+</Tdef>
+</pt>
+</QualType>
+</p>
+<p name="_Format" proto="const char *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</QualType>
+</p>
+</f>
+<f name="printf" id="40c87f7442d5852627f24f7f62e998c6_b7741ad5be5c6fa81d0814565a1836dc" file="4" linestart="946" lineend="959" extC="true" variadic="true" access="none" inline="true" hasbody="true" isdef="true">
+<Attributed/>
+<p name="_Format" proto="const char *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</QualType>
+</p>
+</f>
+<f name="sscanf" id="40c87f7442d5852627f24f7f62e998c6_bffb4d3f39ea0f19c3e1f4b758b8469a" file="4" linestart="2260" lineend="2274" extC="true" variadic="true" access="none" inline="true" hasbody="true" isdef="true">
+<Attributed/>
+<p name="_Buffer" proto="const char *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</QualType>
+</p>
+<p name="_Format" proto="const char *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</QualType>
+</p>
+</f>
+<f name="free" id="5e3b560ee4ba72a5aaaf4182e0feb63a_dd5a2138c1c85d1739ee7f1eb39d4e45" file="5" linestart="85" lineend="87" extC="true" access="none">
+<Attributed/>
+<p name="_Block" proto="void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<bt name="void"/>
+</pt>
+</p>
+</f>
+<f name="malloc" id="5e3b560ee4ba72a5aaaf4182e0feb63a_ce29b3b7be14c0f0acda69d94481373b" file="5" linestart="96" lineend="99" extC="true" access="none">
+<Attributed/>
+<p name="_Size" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+</f>
+<f name="realloc" id="5e3b560ee4ba72a5aaaf4182e0feb63a_04ff1626811a864e08d02d40adfb6e45" file="5" linestart="121" lineend="125" extC="true" access="none">
+<Attributed/>
+<p name="_Block" proto="void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<bt name="void"/>
+</pt>
+</p>
+<p name="_Size" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+</f>
+<f name="exit" id="21eb9b1da650872c929703a43c5bc4a9_4e37e3a24fbdab33ec964df39dbd53f6" file="6" linestart="51" lineend="51" extC="true" access="none">
+<Attributed/>
+<p name="_Code" proto="int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="int"/>
+</p>
+</f>
+<f name="memcpy" id="4011270312a45783dba0c52491a951b4_60bc7b595257868b3d58e003eb334889" file="7" linestart="40" lineend="44" extC="true" access="none">
+<Attributed/>
+<p name="_Dst" proto="void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<bt name="void"/>
+</pt>
+</p>
+<p name="_Src" proto="const void *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="void"/>
+</QualType>
+</pt>
+</p>
+<p name="_Size" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+</f>
+<f name="strlen" id="9880416dcac2a62bf51d66307548c880_f8452ad4eaa3596cf51e894986d06794" file="8" linestart="218" lineend="220" extC="true" access="none">
+<Attributed/>
+<p name="_Str" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+</f>
+<f name="strncmp" id="9880416dcac2a62bf51d66307548c880_16c99e9b8c25da0b1c81e36ac966428d" file="8" linestart="274" lineend="278" extC="true" access="none">
+<Attributed/>
+<p name="_Str1" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+<p name="_Str2" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+</p>
+<p name="_MaxCount" proto="size_t" isLiteral="true" isPrimitive="true" access2="none">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</p>
+</f>
+<f name="strchr" id="9880416dcac2a62bf51d66307548c880_ae3d926a6f17338f88484216cc7cb54c" file="8" linestart="503" lineend="506" access="none" inline="true" hasbody="true" isdef="true">
+<Attributed/>
+<p name="_String" proto="char *const" isPtr="true" const="true" isLiteral="true" access2="none">
+<QualType const="true">
+<pt>
+<bt name="char"/>
+</pt>
+</QualType>
+</p>
+<p name="_Ch" proto="const int" const="true" isLiteral="true" isPrimitive="true" access2="none">
+<QualType const="true">
+<bt name="int"/>
+</QualType>
+</p>
+</f>
+<f name="fabs" id="064701083ae4fc01225d5d639fdbd7b7_2da9683e3e5536b0a9c0cc9b794dbae1" file="9" linestart="477" lineend="477" extC="true" access="none">
+<Attributed/>
+<p name="_X" proto="double" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="double"/>
+</p>
+</f>
+<f name="pow" id="064701083ae4fc01225d5d639fdbd7b7_4269c64bf6ffce885c795b3b55ed60d5" file="9" linestart="481" lineend="481" extC="true" access="none">
+<Attributed/>
+<p name="_X" proto="double" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="double"/>
+</p>
+<p name="_Y" proto="double" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="double"/>
+</p>
+</f>
+<f name="sqrt" id="064701083ae4fc01225d5d639fdbd7b7_cb0fa0784151e793a3b077aab3eaab03" file="9" linestart="484" lineend="484" extC="true" access="none">
+<Attributed/>
+<p name="_X" proto="double" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="double"/>
+</p>
+</f>
+<f name="floor" id="064701083ae4fc01225d5d639fdbd7b7_f095a46458cb75325a9da3e2a60b4a7b" file="9" linestart="504" lineend="504" extC="true" access="none">
+<Attributed/>
+<p name="_X" proto="double" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="double"/>
+</p>
+</f>
+</Externals>

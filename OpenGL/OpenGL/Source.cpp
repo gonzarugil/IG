@@ -15,6 +15,8 @@
 #include "preprocessor.h"
 #include "ddsbase.h"
 
+#include <ctime>
+
 
 
 
@@ -154,11 +156,21 @@ GLuint d3d= 134;
 GLfloat iso = 0.20f;
 
 //aqui va el archivo pvm que cargaremos (lo de arriba es el tamaño)
-//const char *fileName = "MRI-Head.pvm";
-const char *fileName = "VisMale.pvm";
-//const char *fileName = "Baby.pvm";
-//const char *fileName = "Orange.pvm";
+//Benchmarks
+//const char *fileName = "Box.pvm";
+//const char *fileName = "Foot.pvm";
+//const char *fileName = "Bonsai2.pvm";
 //const char *fileName = "Porsche.pvm";
+//
+
+
+//const char *fileName = "MRI-Head.pvm";
+//const char *fileName = "VisMale.pvm";
+//const char *fileName = "Baby.pvm";
+//const char *fileName = "Bonsai1.pvm";
+//const char *fileName = "Orange.pvm";
+
+//const char *fileName = "CT-Chest.pvm";
 //const char *fileName = "Lobster.pvm";
 
 //VAO
@@ -217,6 +229,24 @@ glm::mat4 model2(1.0f);
 
 
 glm::mat4 modelstatic(1.0f);
+
+typedef BOOL (APIENTRY *PFNWGLSWAPINTERVALFARPROC)( int );
+PFNWGLSWAPINTERVALFARPROC wglSwapIntervalEXT = 0;
+
+void setVSync(int interval=1)
+{
+  const char *extensions = (char*)glGetString( GL_EXTENSIONS );
+
+  if( strstr( extensions, "WGL_EXT_swap_control" ) == 0 )
+    return; // Error: WGL_EXT_swap_control extension not supported on your computer.\n");
+  else
+  {
+    wglSwapIntervalEXT = (PFNWGLSWAPINTERVALFARPROC)wglGetProcAddress( "wglSwapIntervalEXT" );
+
+    if( wglSwapIntervalEXT )
+      wglSwapIntervalEXT(interval);
+  }
+}
 
 
 
@@ -461,7 +491,7 @@ void destroy()
 //Inicializa y configura la escena
 void sceneInit(){
 
-
+	setVSync(0);
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	buildProjectionMatrix(45.0f, 4.0f / 3.0f, 0.1f, 50.0f);
@@ -523,7 +553,7 @@ void sceneInit(){
 void keyPressed(unsigned char key, int x, int y) {
 	float fraction = 0.1f;
 	float incV = 0.05f;
-	float inciso = 0.01f;
+	float inciso = 0.001f;
 	float angulo = 0.01f;
 
 	switch (key) {
@@ -685,7 +715,7 @@ void funcionDeReescalado(GLsizei w, GLsizei h)
 //IdleFunc
 void funcionIdle(){
 	
-	angulo = 0.0f;
+	angulo = 0.00f;
 	angulo = (angulo<3.141599f*2.0f) ? angulo + 0.003f : 0.0f;
 
 	
@@ -738,8 +768,18 @@ int main(int argc, char **argv)
 	fbo = new CFBO(512,512);// fboaux;
 
 	printf("This system supports OpenGL Version %s.\n", oglVersion);
+
+	//Timer for benchmark
+	clock_t start;
+	double duration;
+
+	start = clock();
+
 	shaderInit();
 	sceneInit();
+
+	duration = (clock() - start) / (double)CLOCKS_PER_SEC;
+	printf("Loaded! in %f seconds. \n", duration);
 
 	glutMainLoop();
 	destroy();

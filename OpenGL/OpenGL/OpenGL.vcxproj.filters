@@ -79,5 +79,8 @@
     <None Include="ISO_DATA_S2OUTFrag.glsl">
       <Filter>Archivos de recursos</Filter>
     </None>
+    <None Include="ISO_Simple.glsl">
+      <Filter>Archivos de recursos</Filter>
+    </None>
   </ItemGroup>
 </Project>

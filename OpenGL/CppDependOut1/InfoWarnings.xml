@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<InfoWarnings>
+  <Info>Begin analysis with CppDepend v2017.3.0.65</Info>
+  <Info>The parser used is Clang</Info>
+  <Info>4 Cores are used, you can change this value from the menu Tools-&gt;Options-&gt;Parser Configuration</Info>
+  <Info>No dependency cycle detected in Projects referencement graph.</Info>
+  <Info>Analyse dependencies of your application.</Info>
+  <Info>Log trend metrics values.</Info>
+  <Info>Execute queries and rules.</Info>
+  <Warning>1 quality gate fail.
+  - 'Critical Rules Violated' value 2 rules greater than fail threshold 0 rules</Warning>
+  <Info>CppDepend analysis done. Duration: 00:00:18</Info>
+  <Info>Building the report (standard).</Info>
+</InfoWarnings>

@@ -1,0 +1,1318 @@
+<Root>
+<Comments>
+<c f="1" b="94" e="94"/>
+<c f="1" b="95" e="94"/>
+<c f="1" b="111" e="111"/>
+<c f="1" b="112" e="111"/>
+</Comments>
+<Macros>
+<m f="1" bl="15" bc="17" el="15" ec="17"/>
+<m f="1" bl="16" bc="16" el="16" ec="16"/>
+<m f="1" bl="16" bc="34" el="16" ec="34"/>
+<m f="1" bl="17" bc="4" el="17" ec="4"/>
+<m f="1" bl="17" bc="13" el="17" ec="13"/>
+<m f="1" bl="18" bc="19" el="18" ec="19"/>
+<m f="1" bl="18" bc="34" el="18" ec="34"/>
+<m f="1" bl="19" bc="4" el="19" ec="4"/>
+<m f="1" bl="20" bc="19" el="20" ec="19"/>
+<m f="1" bl="20" bc="34" el="20" ec="34"/>
+<m f="1" bl="21" bc="4" el="21" ec="4"/>
+<m f="1" bl="22" bc="19" el="22" ec="19"/>
+<m f="1" bl="22" bc="34" el="22" ec="34"/>
+<m f="1" bl="23" bc="4" el="23" ec="4"/>
+<m f="1" bl="24" bc="19" el="24" ec="19"/>
+<m f="1" bl="24" bc="34" el="24" ec="34"/>
+<m f="1" bl="25" bc="4" el="25" ec="4"/>
+<m f="1" bl="34" bc="17" el="34" ec="17"/>
+<m f="1" bl="36" bc="17" el="36" ec="17"/>
+<m f="1" bl="55" bc="8" el="55" ec="8"/>
+<m f="1" bl="62" bc="13" el="62" ec="13"/>
+<m f="1" bl="75" bc="23" el="75" ec="23"/>
+<m f="1" bl="84" bc="13" el="84" ec="13"/>
+<m f="1" bl="118" bc="13" el="118" ec="13"/>
+<m f="1" bl="120" bc="9" el="120" ec="9"/>
+<m f="1" bl="123" bc="15" el="123" ec="15"/>
+</Macros>
+<Directives>
+<m f="1" bl="1" bc="1"/>
+<m f="1" bl="2" bc="1"/>
+<m f="1" bl="3" bc="1"/>
+<m f="1" bl="4" bc="1"/>
+<m f="1" bl="5" bc="1"/>
+<m f="1" bl="6" bc="1"/>
+<m f="1" bl="7" bc="1"/>
+</Directives>
+<Comments/>
+<Macros/>
+<Directives/>
+<tun>
+<cr access="none" depth="0" kind="class" name="CTexture" id="3a803104c4be51b0e7c9fc3b006092fb_043eb8d5cc1ff2cd37d89eb7e285754b" file="2" linestart="4" lineend="27">
+<cr access="public" kind="class" name="CTexture" id="3a803104c4be51b0e7c9fc3b006092fb_47bb576fd5e3b7b72c47423c6783aa2c" file="2" linestart="4" lineend="4"/>
+<asd access="public"/>
+<c name="CTexture" id="3a803104c4be51b0e7c9fc3b006092fb_14ba482421c80c6c60e15d18c89d4171" file="2" linestart="7" lineend="7" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</c>
+<d name="~CTexture" id="3a803104c4be51b0e7c9fc3b006092fb_22f3f4636054024ae1c8a0f10ecb4a98" file="2" linestart="8" lineend="8" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</d>
+<m name="buildTexture" id="3a803104c4be51b0e7c9fc3b006092fb_b24b0025891a2b4dc660af9cf8632492" file="2" linestart="10" lineend="10" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</m>
+<m name="isInit" id="3a803104c4be51b0e7c9fc3b006092fb_62b7787e2e0dff84e27518827fd9c32c" file="2" linestart="11" lineend="11" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="bool">
+<bt name="bool"/>
+</fpt>
+</m>
+<m name="freeTexture" id="3a803104c4be51b0e7c9fc3b006092fb_6e0b7a1c92134d268cc6f61ecd4a03fe" file="2" linestart="13" lineend="13" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</m>
+<m name="loadFile" id="3a803104c4be51b0e7c9fc3b006092fb_e33f76c2e33af72deaf39e18125c27a3" file="2" linestart="14" lineend="14" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="fileName" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+<Stmt>
+
+</Stmt>
+</p>
+</m>
+<m name="operator=" id="3a803104c4be51b0e7c9fc3b006092fb_f7f0c50ff9bdd13ee397b7512729cabb" file="2" linestart="16" lineend="16" operator="true" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="CTexture &amp;">
+<lrf>
+<rt>
+<cr id="3a803104c4be51b0e7c9fc3b006092fb_043eb8d5cc1ff2cd37d89eb7e285754b"/>
+</rt>
+</lrf>
+</fpt>
+<p name="m" proto="const CTexture &amp;" isRef="true" isLiteral="true" access2="none">
+<lrf>
+<QualType const="true">
+<rt>
+<cr id="3a803104c4be51b0e7c9fc3b006092fb_043eb8d5cc1ff2cd37d89eb7e285754b"/>
+</rt>
+</QualType>
+</lrf>
+<Stmt>
+
+</Stmt>
+</p>
+</m>
+<m name="activate" id="3a803104c4be51b0e7c9fc3b006092fb_96b8eaf7af470e3bbf60a73f0181e09e" file="2" linestart="18" lineend="18" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</m>
+<asd access="protected"/>
+<fl name="size" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" file="2" linestart="23" lineend="23" isArray="true" isLiteral="true" access="protected" proto="unsigned int [2]">
+<cat>
+<bt name="unsigned int"/>
+</cat>
+</fl>
+<fl name="map" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" file="2" linestart="24" lineend="24" isPtr="true" isLiteral="true" access="protected" proto="char *">
+<pt>
+<bt name="char"/>
+</pt>
+</fl>
+<fl name="id" id="3a803104c4be51b0e7c9fc3b006092fb_ca85d26a79e5a25a2c3077d1aa0f88d9" file="2" linestart="25" lineend="25" isLiteral="true" access="protected" proto="unsigned int">
+<bt name="unsigned int"/>
+</fl>
+<fl name="_isInit" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" file="2" linestart="26" lineend="26" isLiteral="true" access="protected" proto="bool">
+<bt name="bool"/>
+</fl>
+<c name="CTexture" id="3a803104c4be51b0e7c9fc3b006092fb_bd76af8ef9a44cce28de413df985877f" file="2" linestart="4" lineend="4" copyconst="true" implicit="true" access="public" inline="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="" proto="const CTexture &amp;" isRef="true" isLiteral="true" access2="none">
+<lrf>
+<QualType const="true">
+<rt>
+<cr id="3a803104c4be51b0e7c9fc3b006092fb_043eb8d5cc1ff2cd37d89eb7e285754b"/>
+</rt>
+</QualType>
+</lrf>
+<Stmt>
+
+</Stmt>
+</p>
+</c>
+</cr>
+<m name="buildTexture" id="97df24737a09201e72c09a0b29f2e785_b24b0025891a2b4dc660af9cf8632492" file="1" linestart="9" lineend="27" previous="3a803104c4be51b0e7c9fc3b006092fb_b24b0025891a2b4dc660af9cf8632492" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="10" cb="1" le="27" ce="1">
+<if lb="11" cb="2" le="26" ce="2">
+<xop lb="11" cb="6" le="11" ce="39" kind="&amp;&amp;">
+<xop lb="11" cb="6" le="11" ce="33" kind="&amp;&amp;">
+<xop lb="11" cb="6" le="11" ce="17" kind="!=">
+<n32 lb="11" cb="6" le="11" ce="12">
+<n2 lb="11" cb="6" le="11" ce="12">
+<exp pvirg="true"/>
+<n32 lb="11" cb="6">
+<mex lb="11" cb="6" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="11" cb="6"/>
+</mex>
+</n32>
+<n45 lb="11" cb="11">
+<flit/>
+</n45>
+</n2>
+</n32>
+<n32 lb="11" cb="17">
+<n45 lb="11" cb="17"/>
+</n32>
+</xop>
+<xop lb="11" cb="22" le="11" ce="33" kind="!=">
+<n32 lb="11" cb="22" le="11" ce="28">
+<n2 lb="11" cb="22" le="11" ce="28">
+<exp pvirg="true"/>
+<n32 lb="11" cb="22">
+<mex lb="11" cb="22" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="11" cb="22"/>
+</mex>
+</n32>
+<n45 lb="11" cb="27">
+<flit/>
+</n45>
+</n2>
+</n32>
+<n32 lb="11" cb="33">
+<n45 lb="11" cb="33"/>
+</n32>
+</xop>
+</xop>
+<uo lb="11" cb="38" le="11" ce="39" kind="!">
+<n32 lb="11" cb="39">
+<mex lb="11" cb="39" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" nm="_isInit" arrow="1">
+<n19 lb="11" cb="39"/>
+</mex>
+</n32>
+</uo>
+</xop>
+<u lb="12" cb="2" le="26" ce="2">
+<xop lb="13" cb="3" le="13" ce="13" kind="=">
+<mex lb="13" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" nm="_isInit" arrow="1">
+<n19 lb="13" cb="3"/>
+</mex>
+<n9 lb="13" cb="13"/>
+</xop>
+<ce lb="14" cb="3" le="14" ce="23" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_2276ce224e4031b73b46306323abbb35">
+<exp pvirg="true"/>
+<n32 lb="14" cb="3">
+<drx lb="14" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_2276ce224e4031b73b46306323abbb35" nm="glGenTextures"/>
+</n32>
+<n45 lb="14" cb="17"/>
+<uo lb="14" cb="20" le="14" ce="21" kind="&amp;">
+<mex lb="14" cb="21" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_ca85d26a79e5a25a2c3077d1aa0f88d9" nm="id" arrow="1">
+<n19 lb="14" cb="21"/>
+</mex>
+</uo>
+</ce>
+<ce lb="15" cb="3" le="15" ce="34" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2">
+<exp pvirg="true"/>
+<n32 lb="15" cb="3">
+<drx lb="15" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" nm="glBindTexture"/>
+</n32>
+<n32 lb="15" cb="17">
+<n45 lb="15" cb="17">
+<flit/>
+</n45>
+</n32>
+<n32 lb="15" cb="32">
+<mex lb="15" cb="32" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_ca85d26a79e5a25a2c3077d1aa0f88d9" nm="id" arrow="1">
+<n19 lb="15" cb="32"/>
+</mex>
+</n32>
+</ce>
+<ce lb="16" cb="3" le="17" ce="43" nbparm="9" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473">
+<exp pvirg="true"/>
+<n32 lb="16" cb="3">
+<drx lb="16" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473" nm="glTexImage2D"/>
+</n32>
+<n32 lb="16" cb="16">
+<n45 lb="16" cb="16"/>
+</n32>
+<n45 lb="16" cb="31"/>
+<n45 lb="16" cb="34">
+<flit/>
+</n45>
+<n32 lb="16" cb="44" le="16" ce="50">
+<n32 lb="16" cb="44" le="16" ce="50">
+<n2 lb="16" cb="44" le="16" ce="50">
+<exp pvirg="true"/>
+<n32 lb="16" cb="44">
+<mex lb="16" cb="44" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="16" cb="44"/>
+</mex>
+</n32>
+<n45 lb="16" cb="49"/>
+</n2>
+</n32>
+</n32>
+<n32 lb="16" cb="53" le="16" ce="59">
+<n32 lb="16" cb="53" le="16" ce="59">
+<n2 lb="16" cb="53" le="16" ce="59">
+<exp pvirg="true"/>
+<n32 lb="16" cb="53">
+<mex lb="16" cb="53" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="16" cb="53"/>
+</mex>
+</n32>
+<n45 lb="16" cb="58"/>
+</n2>
+</n32>
+</n32>
+<n45 lb="16" cb="62"/>
+<n32 lb="17" cb="4">
+<n45 lb="17" cb="4">
+<flit/>
+</n45>
+</n32>
+<n32 lb="17" cb="13">
+<n45 lb="17" cb="13">
+<flit/>
+</n45>
+</n32>
+<n32 lb="17" cb="31" le="17" ce="40">
+<ocast lb="17" cb="31" le="17" ce="40">
+<pt>
+<Tdef>
+<bt name="void"/>
+</Tdef>
+</pt>
+<n32 lb="17" cb="40">
+<n32 lb="17" cb="40">
+<mex lb="17" cb="40" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="17" cb="40"/>
+</mex>
+</n32>
+</n32>
+</ocast>
+</n32>
+</ce>
+<ce lb="18" cb="3" le="19" ce="13" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca">
+<exp pvirg="true"/>
+<n32 lb="18" cb="3">
+<drx lb="18" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca" nm="glTexParameterf"/>
+</n32>
+<n32 lb="18" cb="19">
+<n45 lb="18" cb="19"/>
+</n32>
+<n32 lb="18" cb="34">
+<n45 lb="18" cb="34">
+<flit/>
+</n45>
+</n32>
+<n32 lb="19" cb="4">
+<n45 lb="19" cb="4">
+<flit/>
+</n45>
+</n32>
+</ce>
+<ce lb="20" cb="3" le="21" ce="13" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca">
+<exp pvirg="true"/>
+<n32 lb="20" cb="3">
+<drx lb="20" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca" nm="glTexParameterf"/>
+</n32>
+<n32 lb="20" cb="19">
+<n45 lb="20" cb="19"/>
+</n32>
+<n32 lb="20" cb="34">
+<n45 lb="20" cb="34">
+<flit/>
+</n45>
+</n32>
+<n32 lb="21" cb="4">
+<n45 lb="21" cb="4"/>
+</n32>
+</ce>
+<ce lb="22" cb="3" le="23" ce="13" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca">
+<exp pvirg="true"/>
+<n32 lb="22" cb="3">
+<drx lb="22" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca" nm="glTexParameterf"/>
+</n32>
+<n32 lb="22" cb="19">
+<n45 lb="22" cb="19"/>
+</n32>
+<n32 lb="22" cb="34">
+<n45 lb="22" cb="34">
+<flit/>
+</n45>
+</n32>
+<n32 lb="23" cb="4">
+<n45 lb="23" cb="4">
+<flit/>
+</n45>
+</n32>
+</ce>
+<ce lb="24" cb="3" le="25" ce="13" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca">
+<exp pvirg="true"/>
+<n32 lb="24" cb="3">
+<drx lb="24" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_283e6d06b6cb3e5b5b62017855de9bca" nm="glTexParameterf"/>
+</n32>
+<n32 lb="24" cb="19">
+<n45 lb="24" cb="19"/>
+</n32>
+<n32 lb="24" cb="34">
+<n45 lb="24" cb="34">
+<flit/>
+</n45>
+</n32>
+<n32 lb="25" cb="4">
+<n45 lb="25" cb="4"/>
+</n32>
+</ce>
+</u>
+</if>
+</u>
+
+</Stmt>
+</m>
+<m name="activate" id="97df24737a09201e72c09a0b29f2e785_96b8eaf7af470e3bbf60a73f0181e09e" file="1" linestart="31" lineend="37" previous="3a803104c4be51b0e7c9fc3b006092fb_96b8eaf7af470e3bbf60a73f0181e09e" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="32" cb="1" le="37" ce="1">
+<if lb="33" cb="2" le="36" ce="33" else="true" elselb="36" elsecb="3">
+<n32 lb="33" cb="6">
+<mex lb="33" cb="6" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" nm="_isInit" arrow="1">
+<n19 lb="33" cb="6"/>
+</mex>
+</n32>
+<ce lb="34" cb="3" le="34" ce="34" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2">
+<exp pvirg="true"/>
+<n32 lb="34" cb="3">
+<drx lb="34" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" nm="glBindTexture"/>
+</n32>
+<n32 lb="34" cb="17">
+<n45 lb="34" cb="17">
+<flit/>
+</n45>
+</n32>
+<n32 lb="34" cb="32">
+<mex lb="34" cb="32" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_ca85d26a79e5a25a2c3077d1aa0f88d9" nm="id" arrow="1">
+<n19 lb="34" cb="32"/>
+</mex>
+</n32>
+</ce>
+<ce lb="36" cb="3" le="36" ce="33" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2">
+<exp pvirg="true"/>
+<n32 lb="36" cb="3">
+<drx lb="36" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" nm="glBindTexture"/>
+</n32>
+<n32 lb="36" cb="17">
+<n45 lb="36" cb="17"/>
+</n32>
+<n32 lb="36" cb="32">
+<n45 lb="36" cb="32">
+<flit/>
+</n45>
+</n32>
+</ce>
+</if>
+</u>
+
+</Stmt>
+</m>
+<m name="freeTexture" id="97df24737a09201e72c09a0b29f2e785_6e0b7a1c92134d268cc6f61ecd4a03fe" file="1" linestart="40" lineend="47" previous="3a803104c4be51b0e7c9fc3b006092fb_6e0b7a1c92134d268cc6f61ecd4a03fe" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="41" cb="1" le="47" ce="1">
+<if lb="42" cb="2" le="46" ce="2">
+<n32 lb="42" cb="6">
+<mex lb="42" cb="6" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" nm="_isInit" arrow="1">
+<n19 lb="42" cb="6"/>
+</mex>
+</n32>
+<u lb="43" cb="2" le="46" ce="2">
+<ce lb="44" cb="3" le="44" ce="26" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_c646f916e2d044f9b326d2adc04e6b34">
+<exp pvirg="true"/>
+<n32 lb="44" cb="3">
+<drx lb="44" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_c646f916e2d044f9b326d2adc04e6b34" nm="glDeleteTextures"/>
+</n32>
+<n45 lb="44" cb="20">
+<flit/>
+</n45>
+<n32 lb="44" cb="23" le="44" ce="24">
+<uo lb="44" cb="23" le="44" ce="24" kind="&amp;">
+<mex lb="44" cb="24" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_ca85d26a79e5a25a2c3077d1aa0f88d9" nm="id" arrow="1">
+<n19 lb="44" cb="24"/>
+</mex>
+</uo>
+</n32>
+</ce>
+<xop lb="45" cb="3" le="45" ce="13" kind="=">
+<mex lb="45" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" nm="_isInit" arrow="1">
+<n19 lb="45" cb="3"/>
+</mex>
+<n9 lb="45" cb="13"/>
+</xop>
+</u>
+</if>
+</u>
+
+</Stmt>
+</m>
+<c name="CTexture" id="97df24737a09201e72c09a0b29f2e785_14ba482421c80c6c60e15d18c89d4171" file="1" linestart="50" lineend="57" previous="3a803104c4be51b0e7c9fc3b006092fb_14ba482421c80c6c60e15d18c89d4171" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="51" cb="1" le="57" ce="1">
+<xop lb="52" cb="2" le="52" ce="12" kind="=">
+<n2 lb="52" cb="2" le="52" ce="8">
+<exp pvirg="true"/>
+<n32 lb="52" cb="2">
+<mex lb="52" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="52" cb="2"/>
+</mex>
+</n32>
+<n45 lb="52" cb="7">
+<flit/>
+</n45>
+</n2>
+<n32 lb="52" cb="12">
+<n45 lb="52" cb="12"/>
+</n32>
+</xop>
+<xop lb="53" cb="2" le="53" ce="12" kind="=">
+<n2 lb="53" cb="2" le="53" ce="8">
+<exp pvirg="true"/>
+<n32 lb="53" cb="2">
+<mex lb="53" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="53" cb="2"/>
+</mex>
+</n32>
+<n45 lb="53" cb="7">
+<flit/>
+</n45>
+</n2>
+<n32 lb="53" cb="12">
+<n45 lb="53" cb="12"/>
+</n32>
+</xop>
+<xop lb="55" cb="2" le="55" ce="8" kind="=">
+<mex lb="55" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="55" cb="2"/>
+</mex>
+<n32 lb="55" cb="8">
+<n45 lb="55" cb="8"/>
+</n32>
+</xop>
+<xop lb="56" cb="2" le="56" ce="12" kind="=">
+<mex lb="56" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" nm="_isInit" arrow="1">
+<n19 lb="56" cb="2"/>
+</mex>
+<n9 lb="56" cb="12"/>
+</xop>
+</u>
+
+</Stmt>
+</c>
+<d name="~CTexture" id="97df24737a09201e72c09a0b29f2e785_22f3f4636054024ae1c8a0f10ecb4a98" file="1" linestart="59" lineend="63" previous="3a803104c4be51b0e7c9fc3b006092fb_22f3f4636054024ae1c8a0f10ecb4a98" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="60" cb="1" le="63" ce="1">
+<mce lb="61" cb="2" le="61" ce="14" nbparm="0" id="3a803104c4be51b0e7c9fc3b006092fb_6e0b7a1c92134d268cc6f61ecd4a03fe">
+<exp pvirg="true"/>
+<mex lb="61" cb="2" id="3a803104c4be51b0e7c9fc3b006092fb_6e0b7a1c92134d268cc6f61ecd4a03fe" nm="freeTexture" arrow="1">
+<n19 lb="61" cb="2"/>
+</mex>
+</mce>
+<if lb="62" cb="2" le="62" ce="30">
+<xop lb="62" cb="6" le="62" ce="13" kind="!=">
+<n32 lb="62" cb="6">
+<mex lb="62" cb="6" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="62" cb="6"/>
+</mex>
+</n32>
+<n32 lb="62" cb="13">
+<n45 lb="62" cb="13">
+<flit/>
+</n45>
+</n32>
+</xop>
+<n13 lb="62" cb="19" le="62" ce="30">
+<exp pvirg="true"/>
+<n32 lb="62" cb="30">
+<mex lb="62" cb="30" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="62" cb="30"/>
+</mex>
+</n32>
+</n13>
+</if>
+</u>
+
+</Stmt>
+</d>
+<m name="isInit" id="97df24737a09201e72c09a0b29f2e785_62b7787e2e0dff84e27518827fd9c32c" file="1" linestart="67" lineend="70" previous="3a803104c4be51b0e7c9fc3b006092fb_62b7787e2e0dff84e27518827fd9c32c" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="bool">
+<bt name="bool"/>
+</fpt>
+<Stmt>
+<u lb="68" cb="1" le="70" ce="1">
+<rx lb="69" cb="2" le="69" ce="9" pvirg="true">
+<n32 lb="69" cb="9">
+<mex lb="69" cb="9" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_979ca38fef2468bcd83db6b61d74b064" nm="_isInit" arrow="1">
+<n19 lb="69" cb="9"/>
+</mex>
+</n32>
+</rx>
+</u>
+
+</Stmt>
+</m>
+<m name="loadFile" id="97df24737a09201e72c09a0b29f2e785_e33f76c2e33af72deaf39e18125c27a3" file="1" linestart="73" lineend="108" previous="3a803104c4be51b0e7c9fc3b006092fb_e33f76c2e33af72deaf39e18125c27a3" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="fileName" proto="const char *" isPtr="true" isLiteral="true" access2="none">
+<pt>
+<QualType const="true">
+<bt name="char"/>
+</QualType>
+</pt>
+<Stmt>
+
+</Stmt>
+</p>
+<Stmt>
+<u lb="74" cb="1" le="108" ce="1">
+<ce lb="75" cb="2" le="75" ce="27" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_b2921c64cde0d713bd1a09e3948e9e6b">
+<exp pvirg="true"/>
+<n32 lb="75" cb="2">
+<drx lb="75" cb="2" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_b2921c64cde0d713bd1a09e3948e9e6b" nm="FreeImage_Initialise"/>
+</n32>
+<n45 lb="75" cb="23">
+<flit/>
+</n45>
+</ce>
+<dst lb="77" cb="2" le="77" ce="63">
+<exp pvirg="true"/>
+<Var nm="format" value="true">
+<et>
+<e id="d8dc1866e1a3cc859c32ddaf8b641b31_a5d8b2ad89cbd6047ba7e94a3efece89"/>
+</et>
+<ce lb="77" cb="29" le="77" ce="62" nbparm="2" id="d8dc1866e1a3cc859c32ddaf8b641b31_5f26938e25bbb998af8870c980bb33a0">
+<exp pvirg="true"/>
+<n32 lb="77" cb="29">
+<drx lb="77" cb="29" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_5f26938e25bbb998af8870c980bb33a0" nm="FreeImage_GetFileType"/>
+</n32>
+<n32 lb="77" cb="51">
+<drx lb="77" cb="51" kind="lvalue" nm="fileName"/>
+</n32>
+<n45 lb="77" cb="61">
+<flit/>
+</n45>
+</ce>
+</Var>
+</dst>
+<if lb="78" cb="2" le="79" ce="49">
+<xop lb="78" cb="6" le="78" ce="16" kind="==">
+<n32 lb="78" cb="6">
+<n32 lb="78" cb="6">
+<drx lb="78" cb="6" kind="lvalue" nm="format"/>
+</n32>
+</n32>
+<n32 lb="78" cb="16">
+<drx lb="78" cb="16" id="d8dc1866e1a3cc859c32ddaf8b641b31_579978c7bc9164a59ea83cf5a4455133" nm="FIF_UNKNOWN"/>
+</n32>
+</xop>
+<xop lb="79" cb="3" le="79" ce="49" kind="=">
+<drx lb="79" cb="3" kind="lvalue" nm="format"/>
+<ce lb="79" cb="12" le="79" ce="49" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_2c036dedd2dde7e361edeeaa5389d665">
+<exp pvirg="true"/>
+<n32 lb="79" cb="12">
+<drx lb="79" cb="12" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_2c036dedd2dde7e361edeeaa5389d665" nm="FreeImage_GetFIFFromFilename"/>
+</n32>
+<n32 lb="79" cb="41">
+<drx lb="79" cb="41" kind="lvalue" nm="fileName"/>
+</n32>
+</ce>
+</xop>
+</if>
+<if lb="80" cb="2" le="81" ce="3">
+<xop lb="80" cb="6" le="80" ce="69" kind="||">
+<n46 lb="80" cb="6" le="80" ce="28">
+<exp pvirg="true"/>
+<xop lb="80" cb="7" le="80" ce="17" kind="==">
+<n32 lb="80" cb="7">
+<n32 lb="80" cb="7">
+<drx lb="80" cb="7" kind="lvalue" nm="format"/>
+</n32>
+</n32>
+<n32 lb="80" cb="17">
+<drx lb="80" cb="17" id="d8dc1866e1a3cc859c32ddaf8b641b31_579978c7bc9164a59ea83cf5a4455133" nm="FIF_UNKNOWN"/>
+</n32>
+</xop>
+</n46>
+<uo lb="80" cb="33" le="80" ce="69" kind="!">
+<n32 lb="80" cb="34" le="80" ce="69">
+<ce lb="80" cb="34" le="80" ce="69" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_e18e768b391a7a08b62de585c418ee9a">
+<exp pvirg="true"/>
+<n32 lb="80" cb="34">
+<drx lb="80" cb="34" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_e18e768b391a7a08b62de585c418ee9a" nm="FreeImage_FIFSupportsReading"/>
+</n32>
+<n32 lb="80" cb="63">
+<drx lb="80" cb="63" kind="lvalue" nm="format"/>
+</n32>
+</ce>
+</n32>
+</uo>
+</xop>
+<rx lb="81" cb="3" pvirg="true"/>
+</if>
+<dst lb="83" cb="2" le="83" ce="50">
+<exp pvirg="true"/>
+<Var nm="img">
+<pt>
+<rt>
+<cr id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7"/>
+</rt>
+</pt>
+<ce lb="83" cb="18" le="83" ce="49" nbparm="3" id="d8dc1866e1a3cc859c32ddaf8b641b31_32df9057645b754d832ca9e7a56bc224">
+<exp pvirg="true"/>
+<n32 lb="83" cb="18">
+<drx lb="83" cb="18" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_32df9057645b754d832ca9e7a56bc224" nm="FreeImage_Load"/>
+</n32>
+<n32 lb="83" cb="33">
+<drx lb="83" cb="33" kind="lvalue" nm="format"/>
+</n32>
+<n32 lb="83" cb="41">
+<drx lb="83" cb="41" kind="lvalue" nm="fileName"/>
+</n32>
+<n12>
+<exp pvirg="true"/>
+</n12>
+</ce>
+</Var>
+</dst>
+<if lb="84" cb="2" le="85" ce="3">
+<xop lb="84" cb="6" le="84" ce="13" kind="==">
+<n32 lb="84" cb="6">
+<drx lb="84" cb="6" kind="lvalue" nm="img"/>
+</n32>
+<n32 lb="84" cb="13">
+<n45 lb="84" cb="13"/>
+</n32>
+</xop>
+<rx lb="85" cb="3" pvirg="true"/>
+</if>
+<dst lb="87" cb="2" le="87" ce="25">
+<exp pvirg="true"/>
+<Var nm="tempImg">
+<pt>
+<rt>
+<cr id="d8dc1866e1a3cc859c32ddaf8b641b31_47d5744afdcfe63c03d9f50592c288a7"/>
+</rt>
+</pt>
+<n32 lb="87" cb="22">
+<drx lb="87" cb="22" kind="lvalue" nm="img"/>
+</n32>
+</Var>
+</dst>
+<xop lb="88" cb="2" le="88" ce="37" kind="=">
+<drx lb="88" cb="2" kind="lvalue" nm="img"/>
+<ce lb="88" cb="8" le="88" ce="37" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_3c6c3df9d8b7d894f4061ab69c10c2c6">
+<exp pvirg="true"/>
+<n32 lb="88" cb="8">
+<drx lb="88" cb="8" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_3c6c3df9d8b7d894f4061ab69c10c2c6" nm="FreeImage_ConvertTo32Bits"/>
+</n32>
+<n32 lb="88" cb="34">
+<drx lb="88" cb="34" kind="lvalue" nm="img"/>
+</n32>
+</ce>
+</xop>
+<ce lb="89" cb="2" le="89" ce="26" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_3bb87feb6b848042d29cfc4584c3d798">
+<exp pvirg="true"/>
+<n32 lb="89" cb="2">
+<drx lb="89" cb="2" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_3bb87feb6b848042d29cfc4584c3d798" nm="FreeImage_Unload"/>
+</n32>
+<n32 lb="89" cb="19">
+<drx lb="89" cb="19" kind="lvalue" nm="tempImg"/>
+</n32>
+</ce>
+<xop lb="91" cb="2" le="91" ce="34" kind="=">
+<n2 lb="91" cb="2" le="91" ce="8">
+<exp pvirg="true"/>
+<n32 lb="91" cb="2">
+<mex lb="91" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="91" cb="2"/>
+</mex>
+</n32>
+<n45 lb="91" cb="7"/>
+</n2>
+<ce lb="91" cb="12" le="91" ce="34" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_aa417f42c53d811a6ef22862408f98fa">
+<exp pvirg="true"/>
+<n32 lb="91" cb="12">
+<drx lb="91" cb="12" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_aa417f42c53d811a6ef22862408f98fa" nm="FreeImage_GetWidth"/>
+</n32>
+<n32 lb="91" cb="31">
+<drx lb="91" cb="31" kind="lvalue" nm="img"/>
+</n32>
+</ce>
+</xop>
+<xop lb="92" cb="2" le="92" ce="35" kind="=">
+<n2 lb="92" cb="2" le="92" ce="8">
+<exp pvirg="true"/>
+<n32 lb="92" cb="2">
+<mex lb="92" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="92" cb="2"/>
+</mex>
+</n32>
+<n45 lb="92" cb="7"/>
+</n2>
+<ce lb="92" cb="12" le="92" ce="35" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_54abc590bc54fcea17e5f65bcfc5091c">
+<exp pvirg="true"/>
+<n32 lb="92" cb="12">
+<drx lb="92" cb="12" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_54abc590bc54fcea17e5f65bcfc5091c" nm="FreeImage_GetHeight"/>
+</n32>
+<n32 lb="92" cb="32">
+<drx lb="92" cb="32" kind="lvalue" nm="img"/>
+</n32>
+</ce>
+</xop>
+<xop lb="95" cb="2" le="95" ce="38" kind="=">
+<mex lb="95" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="95" cb="2"/>
+</mex>
+<new lb="95" cb="8" le="95" ce="38">
+<exp pvirg="true"/>
+<xop lb="95" cb="17" le="95" ce="37" kind="*">
+<xop lb="95" cb="17" le="95" ce="27" kind="*">
+<n32 lb="95" cb="17">
+<n45 lb="95" cb="17">
+<flit/>
+</n45>
+</n32>
+<n32 lb="95" cb="21" le="95" ce="27">
+<n2 lb="95" cb="21" le="95" ce="27">
+<exp pvirg="true"/>
+<n32 lb="95" cb="21">
+<mex lb="95" cb="21" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="95" cb="21"/>
+</mex>
+</n32>
+<n45 lb="95" cb="26"/>
+</n2>
+</n32>
+</xop>
+<n32 lb="95" cb="31" le="95" ce="37">
+<n2 lb="95" cb="31" le="95" ce="37">
+<exp pvirg="true"/>
+<n32 lb="95" cb="31">
+<mex lb="95" cb="31" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="95" cb="31"/>
+</mex>
+</n32>
+<n45 lb="95" cb="36"/>
+</n2>
+</n32>
+</xop>
+</new>
+</xop>
+<dst lb="96" cb="2" le="96" ce="44">
+<exp pvirg="true"/>
+<Var nm="buff">
+<pt>
+<bt name="char"/>
+</pt>
+<ocast lb="96" cb="15" le="96" ce="43">
+<pt>
+<bt name="char"/>
+</pt>
+<ce lb="96" cb="22" le="96" ce="43" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_5bc1a2906e3b72b61f0c94dbaf04e040">
+<exp pvirg="true"/>
+<n32 lb="96" cb="22">
+<drx lb="96" cb="22" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_5bc1a2906e3b72b61f0c94dbaf04e040" nm="FreeImage_GetBits"/>
+</n32>
+<n32 lb="96" cb="40">
+<drx lb="96" cb="40" kind="lvalue" nm="img"/>
+</n32>
+</ce>
+</ocast>
+</Var>
+</dst>
+<fx lb="98" cb="2" le="103" ce="2">
+<dst lb="98" cb="7" le="98" ce="25">
+<exp pvirg="true"/>
+<Var nm="j" value="true">
+<bt name="unsigned int"/>
+<n32 lb="98" cb="24">
+<n45 lb="98" cb="24"/>
+</n32>
+</Var>
+</dst>
+<xop lb="98" cb="27" le="98" ce="45" kind="&lt;">
+<n32 lb="98" cb="27">
+<drx lb="98" cb="27" kind="lvalue" nm="j"/>
+</n32>
+<xop lb="98" cb="29" le="98" ce="45" kind="*">
+<n32 lb="98" cb="29" le="98" ce="35">
+<n2 lb="98" cb="29" le="98" ce="35">
+<exp pvirg="true"/>
+<n32 lb="98" cb="29">
+<mex lb="98" cb="29" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="98" cb="29"/>
+</mex>
+</n32>
+<n45 lb="98" cb="34"/>
+</n2>
+</n32>
+<n32 lb="98" cb="39" le="98" ce="45">
+<n2 lb="98" cb="39" le="98" ce="45">
+<exp pvirg="true"/>
+<n32 lb="98" cb="39">
+<mex lb="98" cb="39" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="98" cb="39"/>
+</mex>
+</n32>
+<n45 lb="98" cb="44"/>
+</n2>
+</n32>
+</xop>
+</xop>
+<uo lb="98" cb="48" le="98" ce="49" kind="++">
+<drx lb="98" cb="48" kind="lvalue" nm="j"/>
+</uo>
+<u lb="98" cb="52" le="103" ce="2">
+<xop lb="99" cb="3" le="99" ce="34" kind="=">
+<n2 lb="99" cb="3" le="99" ce="16">
+<exp pvirg="true"/>
+<n32 lb="99" cb="3">
+<mex lb="99" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="99" cb="3"/>
+</mex>
+</n32>
+<xop lb="99" cb="7" le="99" ce="15" kind="+">
+<xop lb="99" cb="7" le="99" ce="11" kind="*">
+<n32 lb="99" cb="7">
+<drx lb="99" cb="7" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="99" cb="11">
+<n45 lb="99" cb="11"/>
+</n32>
+</xop>
+<n32 lb="99" cb="15">
+<n45 lb="99" cb="15"/>
+</n32>
+</xop>
+</n2>
+<n32 lb="99" cb="20" le="99" ce="34">
+<n2 lb="99" cb="20" le="99" ce="34">
+<exp pvirg="true"/>
+<n32 lb="99" cb="20">
+<drx lb="99" cb="20" kind="lvalue" nm="buff"/>
+</n32>
+<xop lb="99" cb="25" le="99" ce="33" kind="+">
+<xop lb="99" cb="25" le="99" ce="29" kind="*">
+<n32 lb="99" cb="25">
+<drx lb="99" cb="25" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="99" cb="29">
+<n45 lb="99" cb="29"/>
+</n32>
+</xop>
+<n32 lb="99" cb="33">
+<n45 lb="99" cb="33">
+<flit/>
+</n45>
+</n32>
+</xop>
+</n2>
+</n32>
+</xop>
+<xop lb="100" cb="3" le="100" ce="34" kind="=">
+<n2 lb="100" cb="3" le="100" ce="16">
+<exp pvirg="true"/>
+<n32 lb="100" cb="3">
+<mex lb="100" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="100" cb="3"/>
+</mex>
+</n32>
+<xop lb="100" cb="7" le="100" ce="15" kind="+">
+<xop lb="100" cb="7" le="100" ce="11" kind="*">
+<n32 lb="100" cb="7">
+<drx lb="100" cb="7" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="100" cb="11">
+<n45 lb="100" cb="11"/>
+</n32>
+</xop>
+<n32 lb="100" cb="15">
+<n45 lb="100" cb="15"/>
+</n32>
+</xop>
+</n2>
+<n32 lb="100" cb="20" le="100" ce="34">
+<n2 lb="100" cb="20" le="100" ce="34">
+<exp pvirg="true"/>
+<n32 lb="100" cb="20">
+<drx lb="100" cb="20" kind="lvalue" nm="buff"/>
+</n32>
+<xop lb="100" cb="25" le="100" ce="33" kind="+">
+<xop lb="100" cb="25" le="100" ce="29" kind="*">
+<n32 lb="100" cb="25">
+<drx lb="100" cb="25" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="100" cb="29">
+<n45 lb="100" cb="29"/>
+</n32>
+</xop>
+<n32 lb="100" cb="33">
+<n45 lb="100" cb="33"/>
+</n32>
+</xop>
+</n2>
+</n32>
+</xop>
+<xop lb="101" cb="3" le="101" ce="34" kind="=">
+<n2 lb="101" cb="3" le="101" ce="16">
+<exp pvirg="true"/>
+<n32 lb="101" cb="3">
+<mex lb="101" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="101" cb="3"/>
+</mex>
+</n32>
+<xop lb="101" cb="7" le="101" ce="15" kind="+">
+<xop lb="101" cb="7" le="101" ce="11" kind="*">
+<n32 lb="101" cb="7">
+<drx lb="101" cb="7" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="101" cb="11">
+<n45 lb="101" cb="11"/>
+</n32>
+</xop>
+<n32 lb="101" cb="15">
+<n45 lb="101" cb="15"/>
+</n32>
+</xop>
+</n2>
+<n32 lb="101" cb="20" le="101" ce="34">
+<n2 lb="101" cb="20" le="101" ce="34">
+<exp pvirg="true"/>
+<n32 lb="101" cb="20">
+<drx lb="101" cb="20" kind="lvalue" nm="buff"/>
+</n32>
+<xop lb="101" cb="25" le="101" ce="33" kind="+">
+<xop lb="101" cb="25" le="101" ce="29" kind="*">
+<n32 lb="101" cb="25">
+<drx lb="101" cb="25" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="101" cb="29">
+<n45 lb="101" cb="29"/>
+</n32>
+</xop>
+<n32 lb="101" cb="33">
+<n45 lb="101" cb="33"/>
+</n32>
+</xop>
+</n2>
+</n32>
+</xop>
+<xop lb="102" cb="3" le="102" ce="34" kind="=">
+<n2 lb="102" cb="3" le="102" ce="16">
+<exp pvirg="true"/>
+<n32 lb="102" cb="3">
+<mex lb="102" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="102" cb="3"/>
+</mex>
+</n32>
+<xop lb="102" cb="7" le="102" ce="15" kind="+">
+<xop lb="102" cb="7" le="102" ce="11" kind="*">
+<n32 lb="102" cb="7">
+<drx lb="102" cb="7" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="102" cb="11">
+<n45 lb="102" cb="11"/>
+</n32>
+</xop>
+<n32 lb="102" cb="15">
+<n45 lb="102" cb="15">
+<flit/>
+</n45>
+</n32>
+</xop>
+</n2>
+<n32 lb="102" cb="20" le="102" ce="34">
+<n2 lb="102" cb="20" le="102" ce="34">
+<exp pvirg="true"/>
+<n32 lb="102" cb="20">
+<drx lb="102" cb="20" kind="lvalue" nm="buff"/>
+</n32>
+<xop lb="102" cb="25" le="102" ce="33" kind="+">
+<xop lb="102" cb="25" le="102" ce="29" kind="*">
+<n32 lb="102" cb="25">
+<drx lb="102" cb="25" kind="lvalue" nm="j"/>
+</n32>
+<n32 lb="102" cb="29">
+<n45 lb="102" cb="29"/>
+</n32>
+</xop>
+<n32 lb="102" cb="33">
+<n45 lb="102" cb="33"/>
+</n32>
+</xop>
+</n2>
+</n32>
+</xop>
+</u>
+</fx>
+<ce lb="105" cb="2" le="105" ce="22" nbparm="1" id="d8dc1866e1a3cc859c32ddaf8b641b31_3bb87feb6b848042d29cfc4584c3d798">
+<exp pvirg="true"/>
+<n32 lb="105" cb="2">
+<drx lb="105" cb="2" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_3bb87feb6b848042d29cfc4584c3d798" nm="FreeImage_Unload"/>
+</n32>
+<n32 lb="105" cb="19">
+<drx lb="105" cb="19" kind="lvalue" nm="img"/>
+</n32>
+</ce>
+<ce lb="107" cb="2" le="107" ce="25" nbparm="0" id="d8dc1866e1a3cc859c32ddaf8b641b31_0bab3b261c4fda961e7e93f7c782efad">
+<exp pvirg="true"/>
+<n32 lb="107" cb="2">
+<drx lb="107" cb="2" kind="lvalue" id="d8dc1866e1a3cc859c32ddaf8b641b31_0bab3b261c4fda961e7e93f7c782efad" nm="FreeImage_DeInitialise"/>
+</n32>
+</ce>
+</u>
+
+</Stmt>
+</m>
+<m name="operator=" id="97df24737a09201e72c09a0b29f2e785_f7f0c50ff9bdd13ee397b7512729cabb" file="1" linestart="110" lineend="129" previous="3a803104c4be51b0e7c9fc3b006092fb_f7f0c50ff9bdd13ee397b7512729cabb" operator="true" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="CTexture &amp;">
+<lrf>
+<rt>
+<cr id="3a803104c4be51b0e7c9fc3b006092fb_043eb8d5cc1ff2cd37d89eb7e285754b"/>
+</rt>
+</lrf>
+</fpt>
+<p name="m" proto="const CTexture &amp;" isRef="true" isLiteral="true" access2="none">
+<lrf>
+<QualType const="true">
+<rt>
+<cr id="3a803104c4be51b0e7c9fc3b006092fb_043eb8d5cc1ff2cd37d89eb7e285754b"/>
+</rt>
+</QualType>
+</lrf>
+<Stmt>
+
+</Stmt>
+</p>
+<Stmt>
+<u lb="112" cb="1" le="129" ce="1">
+<xop lb="113" cb="2" le="113" ce="20" kind="=">
+<n2 lb="113" cb="2" le="113" ce="8">
+<exp pvirg="true"/>
+<n32 lb="113" cb="2">
+<mex lb="113" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="113" cb="2"/>
+</mex>
+</n32>
+<n45 lb="113" cb="7">
+<flit/>
+</n45>
+</n2>
+<n32 lb="113" cb="12" le="113" ce="20">
+<n2 lb="113" cb="12" le="113" ce="20">
+<exp pvirg="true"/>
+<n32 lb="113" cb="12" le="113" ce="14">
+<mex lb="113" cb="12" le="113" ce="14" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" point="1">
+<drx lb="113" cb="12" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+<n45 lb="113" cb="19"/>
+</n2>
+</n32>
+</xop>
+<xop lb="114" cb="2" le="114" ce="20" kind="=">
+<n2 lb="114" cb="2" le="114" ce="8">
+<exp pvirg="true"/>
+<n32 lb="114" cb="2">
+<mex lb="114" cb="2" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" arrow="1">
+<n19 lb="114" cb="2"/>
+</mex>
+</n32>
+<n45 lb="114" cb="7">
+<flit/>
+</n45>
+</n2>
+<n32 lb="114" cb="12" le="114" ce="20">
+<n2 lb="114" cb="12" le="114" ce="20">
+<exp pvirg="true"/>
+<n32 lb="114" cb="12" le="114" ce="14">
+<mex lb="114" cb="12" le="114" ce="14" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" point="1">
+<drx lb="114" cb="12" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+<n45 lb="114" cb="19"/>
+</n2>
+</n32>
+</xop>
+<mce lb="116" cb="2" le="116" ce="14" nbparm="0" id="3a803104c4be51b0e7c9fc3b006092fb_6e0b7a1c92134d268cc6f61ecd4a03fe">
+<exp pvirg="true"/>
+<mex lb="116" cb="2" id="3a803104c4be51b0e7c9fc3b006092fb_6e0b7a1c92134d268cc6f61ecd4a03fe" nm="freeTexture" arrow="1">
+<n19 lb="116" cb="2"/>
+</mex>
+</mce>
+<if lb="118" cb="2" le="121" ce="2">
+<xop lb="118" cb="6" le="118" ce="13" kind="!=">
+<n32 lb="118" cb="6">
+<mex lb="118" cb="6" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="118" cb="6"/>
+</mex>
+</n32>
+<n32 lb="118" cb="13">
+<n45 lb="118" cb="13"/>
+</n32>
+</xop>
+<u lb="118" cb="19" le="121" ce="2">
+<n13 lb="119" cb="3" le="119" ce="14">
+<exp pvirg="true"/>
+<n32 lb="119" cb="14">
+<mex lb="119" cb="14" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="119" cb="14"/>
+</mex>
+</n32>
+</n13>
+<xop lb="120" cb="3" le="120" ce="9" kind="=">
+<mex lb="120" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="120" cb="3"/>
+</mex>
+<n32 lb="120" cb="9">
+<n45 lb="120" cb="9"/>
+</n32>
+</xop>
+</u>
+</if>
+<if lb="123" cb="2" le="126" ce="2">
+<xop lb="123" cb="6" le="123" ce="15" kind="!=">
+<n32 lb="123" cb="6" le="123" ce="8">
+<mex lb="123" cb="6" le="123" ce="8" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" point="1">
+<drx lb="123" cb="6" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+<n32 lb="123" cb="15">
+<n45 lb="123" cb="15"/>
+</n32>
+</xop>
+<u lb="123" cb="21" le="126" ce="2">
+<xop lb="124" cb="3" le="124" ce="43" kind="=">
+<mex lb="124" cb="3" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="124" cb="3"/>
+</mex>
+<new lb="124" cb="9" le="124" ce="43">
+<exp pvirg="true"/>
+<xop lb="124" cb="18" le="124" ce="42" kind="*">
+<xop lb="124" cb="18" le="124" ce="38" kind="*">
+<n32 lb="124" cb="18" le="124" ce="26">
+<n2 lb="124" cb="18" le="124" ce="26">
+<exp pvirg="true"/>
+<n32 lb="124" cb="18" le="124" ce="20">
+<mex lb="124" cb="18" le="124" ce="20" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" point="1">
+<drx lb="124" cb="18" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+<n45 lb="124" cb="25"/>
+</n2>
+</n32>
+<n32 lb="124" cb="30" le="124" ce="38">
+<n2 lb="124" cb="30" le="124" ce="38">
+<exp pvirg="true"/>
+<n32 lb="124" cb="30" le="124" ce="32">
+<mex lb="124" cb="30" le="124" ce="32" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" point="1">
+<drx lb="124" cb="30" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+<n45 lb="124" cb="37"/>
+</n2>
+</n32>
+</xop>
+<n32 lb="124" cb="42">
+<n45 lb="124" cb="42">
+<flit/>
+</n45>
+</n32>
+</xop>
+</new>
+</xop>
+<ce lb="125" cb="3" le="125" ce="47" nbparm="3" id="4011270312a45783dba0c52491a951b4_60bc7b595257868b3d58e003eb334889">
+<exp pvirg="true"/>
+<n32 lb="125" cb="3">
+<drx lb="125" cb="3" kind="lvalue" id="4011270312a45783dba0c52491a951b4_60bc7b595257868b3d58e003eb334889" nm="memcpy"/>
+</n32>
+<n32 lb="125" cb="10">
+<n32 lb="125" cb="10">
+<mex lb="125" cb="10" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" arrow="1">
+<n19 lb="125" cb="10"/>
+</mex>
+</n32>
+</n32>
+<n32 lb="125" cb="15" le="125" ce="17">
+<n32 lb="125" cb="15" le="125" ce="17">
+<mex lb="125" cb="15" le="125" ce="17" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_7ba30f703f70ad3db5ca3da85b7c0c29" nm="map" point="1">
+<drx lb="125" cb="15" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+</n32>
+<xop lb="125" cb="22" le="125" ce="46" kind="*">
+<xop lb="125" cb="22" le="125" ce="42" kind="*">
+<n32 lb="125" cb="22" le="125" ce="30">
+<n2 lb="125" cb="22" le="125" ce="30">
+<exp pvirg="true"/>
+<n32 lb="125" cb="22" le="125" ce="24">
+<mex lb="125" cb="22" le="125" ce="24" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" point="1">
+<drx lb="125" cb="22" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+<n45 lb="125" cb="29"/>
+</n2>
+</n32>
+<n32 lb="125" cb="34" le="125" ce="42">
+<n2 lb="125" cb="34" le="125" ce="42">
+<exp pvirg="true"/>
+<n32 lb="125" cb="34" le="125" ce="36">
+<mex lb="125" cb="34" le="125" ce="36" kind="lvalue" id="3a803104c4be51b0e7c9fc3b006092fb_1dec839d5a899c6ed1d8fcc24edeb78a" nm="size" point="1">
+<drx lb="125" cb="34" kind="lvalue" nm="m"/>
+</mex>
+</n32>
+<n45 lb="125" cb="41"/>
+</n2>
+</n32>
+</xop>
+<n32 lb="125" cb="46">
+<n45 lb="125" cb="46"/>
+</n32>
+</xop>
+</ce>
+</u>
+</if>
+<rx lb="128" cb="2" le="128" ce="10" pvirg="true">
+<uo lb="128" cb="9" le="128" ce="10" kind="*">
+<n19 lb="128" cb="10"/>
+</uo>
+</rx>
+</u>
+
+</Stmt>
+</m>
+</tun>
+</Root>

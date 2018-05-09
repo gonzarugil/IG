@@ -1,0 +1,10 @@
+﻿  ddsbase.cpp
+ddsbase.cpp(824): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+ddsbase.cpp(830): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  FBO.cpp
+  Source.cpp
+Source.cpp(313): warning C4244: 'inicializando': conversión de 'std::streamoff' a 'unsigned int'; posible pérdida de datos
+Source.cpp(581): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+Source.cpp(584): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  Texture.cpp
+LINK : fatal error LNK1181: no se puede abrir el archivo de entrada 'FreeImage.lib'

@@ -17,7 +17,7 @@ uniform mat4 view;
 uniform mat4 proy;
 
 
-float isoValue = 0.3;
+uniform float isoValue;
 float stepSize = 0.25;
 vec4 color = vec4(1,1,1,1);
 vec4 backgroundColor = vec4(0, 0, 1, 0);

@@ -1,0 +1,11 @@
+<log>
+ <error level="warning" id="warn_format_nonliteral_noargs" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="222" col="21" msg="format string is not a string literal (potentially insecure)" />
+ <error level="warning" id="warn_dangling_else" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="734" col="7" msg="add explicit braces to avoid dangling else" />
+ <error level="warning" id="warn_dangling_else" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="738" col="7" msg="add explicit braces to avoid dangling else" />
+ <error level="warning" id="warn_dangling_else" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="742" col="7" msg="add explicit braces to avoid dangling else" />
+ <error level="warning" id="warn_dangling_else" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="746" col="7" msg="add explicit braces to avoid dangling else" />
+ <error level="warning" id="warn_impcast_float_precision" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="824" col="9" msg="implicit conversion loses floating-point precision: &apos;double&apos; to &apos;float&apos;" />
+ <error level="warning" id="warn_impcast_float_precision" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="830" col="30" msg="implicit conversion loses floating-point precision: &apos;double&apos; to &apos;float&apos;" />
+ <error level="warning" id="warn_unused_parameter" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="840" col="72" msg="unused parameter &apos;depth&apos;" />
+ <error level="warning" id="pp_macro_not_used" file="D:\Visual Workspace\IG\OpenGL\OpenGL\ddsbase.cpp" line="35" col="9" msg="macro is not used" />
+</log>

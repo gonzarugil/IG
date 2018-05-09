@@ -1,0 +1,722 @@
+<Root>
+<Comments>
+<c f="1" b="13" e="13"/>
+<c f="1" b="14" e="13"/>
+<c f="1" b="20" e="20"/>
+<c f="1" b="21" e="20"/>
+<c f="1" b="22" e="22"/>
+<c f="1" b="23" e="23"/>
+<c f="1" b="24" e="23"/>
+<c f="1" b="24" e="24"/>
+<c f="1" b="26" e="26"/>
+<c f="1" b="27" e="26"/>
+<c f="1" b="30" e="30"/>
+<c f="1" b="31" e="30"/>
+<c f="1" b="34" e="34"/>
+<c f="1" b="35" e="34"/>
+<c f="1" b="39" e="39"/>
+<c f="1" b="40" e="39"/>
+<c f="1" b="47" e="47"/>
+<c f="1" b="48" e="47"/>
+<c f="1" b="61" e="61"/>
+<c f="1" b="62" e="62"/>
+<c f="1" b="63" e="62"/>
+</Comments>
+<Macros>
+<m f="1" bl="15" bc="16" el="15" ec="16"/>
+<m f="1" bl="16" bc="18" el="16" ec="18"/>
+<m f="1" bl="16" bc="33" el="16" ec="33"/>
+<m f="1" bl="16" bc="52" el="16" ec="52"/>
+<m f="1" bl="17" bc="18" el="17" ec="18"/>
+<m f="1" bl="17" bc="33" el="17" ec="33"/>
+<m f="1" bl="17" bc="52" el="17" ec="52"/>
+<m f="1" bl="18" bc="18" el="18" ec="18"/>
+<m f="1" bl="18" bc="33" el="18" ec="33"/>
+<m f="1" bl="18" bc="56" el="18" ec="56"/>
+<m f="1" bl="19" bc="18" el="19" ec="18"/>
+<m f="1" bl="19" bc="33" el="19" ec="33"/>
+<m f="1" bl="19" bc="56" el="19" ec="56"/>
+<m f="1" bl="21" bc="15" el="21" ec="15"/>
+<m f="1" bl="21" bc="33" el="21" ec="33"/>
+<m f="1" bl="21" bc="58" el="21" ec="58"/>
+<m f="1" bl="21" bc="67" el="21" ec="67"/>
+<m f="1" bl="21" bc="85" el="21" ec="85"/>
+<m f="1" bl="27" bc="2" el="27" ec="2"/>
+<m f="1" bl="28" bc="2" el="28" ec="2"/>
+<m f="1" bl="28" bc="20" el="28" ec="20"/>
+<m f="1" bl="31" bc="2" el="31" ec="2"/>
+<m f="1" bl="31" bc="25" el="31" ec="25"/>
+<m f="1" bl="31" bc="41" el="31" ec="41"/>
+<m f="1" bl="32" bc="3" el="32" ec="3"/>
+<m f="1" bl="36" bc="3" el="36" ec="3"/>
+<m f="1" bl="37" bc="2" el="37" ec="2"/>
+<m f="1" bl="40" bc="6" el="40" ec="6"/>
+<m f="1" bl="41" bc="3" el="41" ec="3"/>
+<m f="1" bl="41" bc="28" el="41" ec="28"/>
+<m f="1" bl="48" bc="2" el="48" ec="2"/>
+<m f="1" bl="48" bc="20" el="48" ec="20"/>
+<m f="1" bl="53" bc="2" el="53" ec="2"/>
+<m f="1" bl="63" bc="16" el="63" ec="16"/>
+<m f="1" bl="64" bc="15" el="64" ec="15"/>
+<m f="1" bl="64" bc="33" el="64" ec="33"/>
+<m f="1" bl="65" bc="3" el="65" ec="3"/>
+<m f="1" bl="65" bc="12" el="65" ec="12"/>
+<m f="1" bl="66" bc="18" el="66" ec="18"/>
+<m f="1" bl="66" bc="33" el="66" ec="33"/>
+<m f="1" bl="67" bc="3" el="67" ec="3"/>
+<m f="1" bl="68" bc="18" el="68" ec="18"/>
+<m f="1" bl="68" bc="33" el="68" ec="33"/>
+<m f="1" bl="69" bc="3" el="69" ec="3"/>
+<m f="1" bl="71" bc="16" el="71" ec="16"/>
+<m f="1" bl="77" bc="2" el="77" ec="2"/>
+<m f="1" bl="77" bc="20" el="77" ec="20"/>
+<m f="1" bl="80" bc="2" el="80" ec="2"/>
+<m f="1" bl="80" bc="20" el="80" ec="20"/>
+</Macros>
+<Directives>
+<m f="1" bl="1" bc="1"/>
+<m f="1" bl="2" bc="1"/>
+<m f="1" bl="3" bc="1"/>
+<m f="1" bl="4" bc="1"/>
+</Directives>
+<Comments/>
+<Macros/>
+<Directives/>
+<tun>
+<cr access="none" depth="0" kind="class" name="CFBO" id="bea1e4d55458dd978080d8092cd8db66_275cea7d45e3e117242942e9f4e90318" file="2" linestart="2" lineend="20">
+<cr access="public" kind="class" name="CFBO" id="bea1e4d55458dd978080d8092cd8db66_03542dc1a392de2fab46ca7305212ee4" file="2" linestart="2" lineend="2"/>
+<asd access="public"/>
+<c name="CFBO" id="bea1e4d55458dd978080d8092cd8db66_14f325aca8633325d03982adfc97442a" file="2" linestart="5" lineend="5" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="w" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+<p name="h" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+</c>
+<d name="~CFBO" id="bea1e4d55458dd978080d8092cd8db66_90007cca567a6797ab97d32264603bc1" file="2" linestart="6" lineend="6" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</d>
+<m name="resize" id="bea1e4d55458dd978080d8092cd8db66_76e76f74ad21884692afc12aa252315c" file="2" linestart="8" lineend="8" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="w" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+<p name="h" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+</m>
+<m name="activate" id="bea1e4d55458dd978080d8092cd8db66_0625b08ccf099428f621e85ee6120af6" file="2" linestart="9" lineend="9" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</m>
+<m name="deactivate" id="bea1e4d55458dd978080d8092cd8db66_01c2b0c25fa4d7c239915ba0c6a870d5" file="2" linestart="10" lineend="10" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+</m>
+<m name="getColorTexId" id="bea1e4d55458dd978080d8092cd8db66_2ef8d59e3db8a541b4258852a6b17fe0" file="2" linestart="12" lineend="12" access="public" hasbody="true">
+<fpt cc="x86_thiscall" proto="unsigned int">
+<bt name="unsigned int"/>
+</fpt>
+</m>
+<asd access="protected"/>
+<fl name="id" id="bea1e4d55458dd978080d8092cd8db66_0fd82ab797a69a343442a80b53fc0755" file="2" linestart="16" lineend="16" isLiteral="true" access="protected" proto="unsigned int">
+<bt name="unsigned int"/>
+</fl>
+<fl name="colorTex" id="bea1e4d55458dd978080d8092cd8db66_2c8e450821da1cd850a62afbe7423c34" file="2" linestart="18" lineend="18" isLiteral="true" access="protected" proto="unsigned int">
+<bt name="unsigned int"/>
+</fl>
+<c name="CFBO" id="bea1e4d55458dd978080d8092cd8db66_1bf64d418487445214337b21d470c8dd" file="2" linestart="2" lineend="2" copyconst="true" implicit="true" access="public" inline="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="" proto="const CFBO &amp;" isRef="true" isLiteral="true" access2="none">
+<lrf>
+<QualType const="true">
+<rt>
+<cr id="bea1e4d55458dd978080d8092cd8db66_275cea7d45e3e117242942e9f4e90318"/>
+</rt>
+</QualType>
+</lrf>
+<Stmt>
+
+</Stmt>
+</p>
+</c>
+</cr>
+<c name="CFBO" id="d1e59a57b91cf184526acc6d9b9450b6_14f325aca8633325d03982adfc97442a" file="1" linestart="11" lineend="49" previous="bea1e4d55458dd978080d8092cd8db66_14f325aca8633325d03982adfc97442a" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="w" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+<p name="h" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+<Stmt>
+<u lb="12" cb="1" le="49" ce="1">
+<ce lb="14" cb="2" le="14" ce="28" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_2276ce224e4031b73b46306323abbb35">
+<exp pvirg="true"/>
+<n32 lb="14" cb="2">
+<drx lb="14" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_2276ce224e4031b73b46306323abbb35" nm="glGenTextures"/>
+</n32>
+<n45 lb="14" cb="16">
+<flit/>
+</n45>
+<uo lb="14" cb="19" le="14" ce="20" kind="&amp;">
+<mex lb="14" cb="20" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_2c8e450821da1cd850a62afbe7423c34" nm="colorTex" arrow="1">
+<n19 lb="14" cb="20"/>
+</mex>
+</uo>
+</ce>
+<ce lb="15" cb="2" le="15" ce="39" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2">
+<exp pvirg="true"/>
+<n32 lb="15" cb="2">
+<drx lb="15" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" nm="glBindTexture"/>
+</n32>
+<n32 lb="15" cb="16">
+<n45 lb="15" cb="16">
+<flit/>
+</n45>
+</n32>
+<n32 lb="15" cb="31">
+<mex lb="15" cb="31" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_2c8e450821da1cd850a62afbe7423c34" nm="colorTex" arrow="1">
+<n19 lb="15" cb="31"/>
+</mex>
+</n32>
+</ce>
+<ce lb="16" cb="2" le="16" ce="61" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934">
+<exp pvirg="true"/>
+<n32 lb="16" cb="2">
+<drx lb="16" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934" nm="glTexParameteri"/>
+</n32>
+<n32 lb="16" cb="18">
+<n45 lb="16" cb="18"/>
+</n32>
+<n32 lb="16" cb="33">
+<n45 lb="16" cb="33">
+<flit/>
+</n45>
+</n32>
+<n45 lb="16" cb="52">
+<flit/>
+</n45>
+</ce>
+<ce lb="17" cb="2" le="17" ce="61" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934">
+<exp pvirg="true"/>
+<n32 lb="17" cb="2">
+<drx lb="17" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934" nm="glTexParameteri"/>
+</n32>
+<n32 lb="17" cb="18">
+<n45 lb="17" cb="18"/>
+</n32>
+<n32 lb="17" cb="33">
+<n45 lb="17" cb="33">
+<flit/>
+</n45>
+</n32>
+<n45 lb="17" cb="52"/>
+</ce>
+<ce lb="18" cb="2" le="18" ce="66" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934">
+<exp pvirg="true"/>
+<n32 lb="18" cb="2">
+<drx lb="18" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934" nm="glTexParameteri"/>
+</n32>
+<n32 lb="18" cb="18">
+<n45 lb="18" cb="18"/>
+</n32>
+<n32 lb="18" cb="33">
+<n45 lb="18" cb="33">
+<flit/>
+</n45>
+</n32>
+<n45 lb="18" cb="56">
+<flit/>
+</n45>
+</ce>
+<ce lb="19" cb="2" le="19" ce="66" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934">
+<exp pvirg="true"/>
+<n32 lb="19" cb="2">
+<drx lb="19" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934" nm="glTexParameteri"/>
+</n32>
+<n32 lb="19" cb="18">
+<n45 lb="19" cb="18"/>
+</n32>
+<n32 lb="19" cb="33">
+<n45 lb="19" cb="33">
+<flit/>
+</n45>
+</n32>
+<n45 lb="19" cb="56"/>
+</ce>
+<ce lb="21" cb="2" le="21" ce="89" nbparm="9" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473">
+<exp pvirg="true"/>
+<n32 lb="21" cb="2">
+<drx lb="21" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473" nm="glTexImage2D"/>
+</n32>
+<n32 lb="21" cb="15">
+<n45 lb="21" cb="15"/>
+</n32>
+<n45 lb="21" cb="30">
+<flit/>
+</n45>
+<n45 lb="21" cb="33">
+<flit/>
+</n45>
+<n45 lb="21" cb="45">
+<flit/>
+</n45>
+<n45 lb="21" cb="50"/>
+<n45 lb="21" cb="55"/>
+<n32 lb="21" cb="58">
+<n45 lb="21" cb="58">
+<flit/>
+</n45>
+</n32>
+<n32 lb="21" cb="67">
+<n45 lb="21" cb="67">
+<flit/>
+</n45>
+</n32>
+<n32 lb="21" cb="85">
+<n45 lb="21" cb="85"/>
+</n32>
+</ce>
+<mce lb="24" cb="2" le="24" ce="13" nbparm="2" id="bea1e4d55458dd978080d8092cd8db66_76e76f74ad21884692afc12aa252315c">
+<exp pvirg="true"/>
+<mex lb="24" cb="2" id="bea1e4d55458dd978080d8092cd8db66_76e76f74ad21884692afc12aa252315c" nm="resize" arrow="1">
+<n19 lb="24" cb="2"/>
+</mex>
+<n32 lb="24" cb="9">
+<drx lb="24" cb="9" kind="lvalue" nm="w"/>
+</n32>
+<n32 lb="24" cb="12">
+<drx lb="24" cb="12" kind="lvalue" nm="h"/>
+</n32>
+</mce>
+<ce lb="27" cb="2" le="27" ce="26" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_9a32750e4dd0dbefd902fb341f9b15e3">
+<exp pvirg="true"/>
+<n32 lb="27" cb="2">
+<drx lb="27" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_9a32750e4dd0dbefd902fb341f9b15e3" nm="__glewGenFramebuffers"/>
+</n32>
+<n45 lb="27" cb="20"/>
+<uo lb="27" cb="23" le="27" ce="24" kind="&amp;">
+<mex lb="27" cb="24" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_0fd82ab797a69a343442a80b53fc0755" nm="id" arrow="1">
+<n19 lb="27" cb="24"/>
+</mex>
+</uo>
+</ce>
+<ce lb="28" cb="2" le="28" ce="38" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34">
+<exp pvirg="true"/>
+<n32 lb="28" cb="2">
+<drx lb="28" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34" nm="__glewBindFramebuffer"/>
+</n32>
+<n32 lb="28" cb="20">
+<n45 lb="28" cb="20">
+<flit/>
+</n45>
+</n32>
+<n32 lb="28" cb="36">
+<mex lb="28" cb="36" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_0fd82ab797a69a343442a80b53fc0755" nm="id" arrow="1">
+<n19 lb="28" cb="36"/>
+</mex>
+</n32>
+</ce>
+<ce lb="31" cb="2" le="32" ce="29" nbparm="5" id="f67d8644de1d3d604c9a07aca91bf53a_6543a9563f4a4bb50bc4d05d84052fbe">
+<exp pvirg="true"/>
+<n32 lb="31" cb="2">
+<drx lb="31" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_6543a9563f4a4bb50bc4d05d84052fbe" nm="__glewFramebufferTexture2D"/>
+</n32>
+<n32 lb="31" cb="25">
+<n45 lb="31" cb="25"/>
+</n32>
+<n32 lb="31" cb="41">
+<n45 lb="31" cb="41">
+<flit/>
+</n45>
+</n32>
+<n32 lb="32" cb="3">
+<n45 lb="32" cb="3"/>
+</n32>
+<n32 lb="32" cb="18">
+<mex lb="32" cb="18" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_2c8e450821da1cd850a62afbe7423c34" nm="colorTex" arrow="1">
+<n19 lb="32" cb="18"/>
+</mex>
+</n32>
+<n45 lb="32" cb="28"/>
+</ce>
+<dst lb="35" cb="2" le="36" ce="24">
+<exp pvirg="true"/>
+<Var nm="buffs" value="true">
+<cat>
+<QualType const="true">
+<Tdef>
+<bt name="unsigned int"/>
+</Tdef>
+</QualType>
+</cat>
+<il lb="36" cb="2" le="36" ce="23">
+<exp pvirg="true"/>
+<n32 lb="36" cb="3">
+<n45 lb="36" cb="3"/>
+</n32>
+</il>
+</Var>
+</dst>
+<ce lb="37" cb="2" le="37" ce="24" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_6b483957ef43caf84fc7d1a06b0e1b63">
+<exp pvirg="true"/>
+<n32 lb="37" cb="2">
+<drx lb="37" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_6b483957ef43caf84fc7d1a06b0e1b63" nm="__glewDrawBuffers"/>
+</n32>
+<n45 lb="37" cb="16"/>
+<n32 lb="37" cb="19">
+<drx lb="37" cb="19" kind="lvalue" nm="buffs"/>
+</n32>
+</ce>
+<if lb="40" cb="2" le="45" ce="2">
+<xop lb="40" cb="6" le="41" ce="42" kind="!=">
+<n32 lb="40" cb="6">
+<n45 lb="40" cb="6">
+<flit/>
+</n45>
+</n32>
+<ce lb="41" cb="3" le="41" ce="42" nbparm="1" id="f67d8644de1d3d604c9a07aca91bf53a_ed09a65fb57eb4990d303d14d64b7dca">
+<exp pvirg="true"/>
+<n32 lb="41" cb="3">
+<drx lb="41" cb="3" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_ed09a65fb57eb4990d303d14d64b7dca" nm="__glewCheckFramebufferStatus"/>
+</n32>
+<n32 lb="41" cb="28">
+<n45 lb="41" cb="28"/>
+</n32>
+</ce>
+</xop>
+<u lb="42" cb="2" le="45" ce="2">
+<ocx lb="43" cb="3" le="43" ce="52" nbparm="2" id="9cedb58615dade7747537f6487b7f5e2_d33445cdb753f92a6c0b97ecb40fd870">
+<exp pvirg="true"/>
+<n32 lb="43" cb="44">
+<drx lb="43" cb="44" kind="lvalue" id="9cedb58615dade7747537f6487b7f5e2_d33445cdb753f92a6c0b97ecb40fd870" nm="operator&lt;&lt;"/>
+</n32>
+<ocx lb="43" cb="3" le="43" ce="16" nbparm="2" id="9cedb58615dade7747537f6487b7f5e2_a8b001da139eef9b7b8dd07e8c06f59d">
+<exp pvirg="true"/>
+<n32 lb="43" cb="13">
+<drx lb="43" cb="13" kind="lvalue" id="9cedb58615dade7747537f6487b7f5e2_a8b001da139eef9b7b8dd07e8c06f59d" nm="operator&lt;&lt;">
+<template_arguments>
+<rt>
+<cts id="0eca8725507377f8c121d6e3de51f947_76e43d9fa50c2ce16dafa9452550a098">
+<template_arguments>
+<bt name="char"/>
+</template_arguments>
+</cts>
+</rt>
+</template_arguments>
+</drx>
+</n32>
+<drx lb="43" cb="3" le="43" ce="8" kind="lvalue" id="1e5cfb09f26c263f1786a3adff0ffa1d_727bfa73000f271f9932e7c3a4cef3a9" nm="cerr"/>
+<n32 lb="43" cb="16">
+<n52 lb="43" cb="16">
+<slit/>
+</n52>
+</n32>
+</ocx>
+<n32 lb="43" cb="47" le="43" ce="52">
+<drx lb="43" cb="47" le="43" ce="52" kind="lvalue" id="9cedb58615dade7747537f6487b7f5e2_519f22e86fa75f44ad68a8158aae2a36" nm="endl">
+<template_arguments>
+<bt name="char"/>
+<rt>
+<cts id="0eca8725507377f8c121d6e3de51f947_76e43d9fa50c2ce16dafa9452550a098">
+<template_arguments>
+<bt name="char"/>
+</template_arguments>
+</cts>
+</rt>
+</template_arguments>
+</drx>
+</n32>
+</ocx>
+<ce lb="44" cb="3" le="44" ce="10" nbparm="1" id="21eb9b1da650872c929703a43c5bc4a9_4e37e3a24fbdab33ec964df39dbd53f6">
+<exp pvirg="true"/>
+<n32 lb="44" cb="3">
+<drx lb="44" cb="3" kind="lvalue" id="21eb9b1da650872c929703a43c5bc4a9_4e37e3a24fbdab33ec964df39dbd53f6" nm="exit"/>
+</n32>
+<uo lb="44" cb="8" le="44" ce="9" kind="-">
+<n45 lb="44" cb="9"/>
+</uo>
+</ce>
+</u>
+</if>
+<ce lb="48" cb="2" le="48" ce="37" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34">
+<exp pvirg="true"/>
+<n32 lb="48" cb="2">
+<drx lb="48" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34" nm="__glewBindFramebuffer"/>
+</n32>
+<n32 lb="48" cb="20">
+<n45 lb="48" cb="20"/>
+</n32>
+<n32 lb="48" cb="36">
+<n45 lb="48" cb="36"/>
+</n32>
+</ce>
+</u>
+
+</Stmt>
+</c>
+<d name="~CFBO" id="d1e59a57b91cf184526acc6d9b9450b6_90007cca567a6797ab97d32264603bc1" file="1" linestart="51" lineend="55" previous="bea1e4d55458dd978080d8092cd8db66_90007cca567a6797ab97d32264603bc1" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="52" cb="1" le="55" ce="1">
+<ce lb="53" cb="2" le="53" ce="29" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_b77f8f5670b47f8b6b8e42570a223b3e">
+<exp pvirg="true"/>
+<n32 lb="53" cb="2">
+<drx lb="53" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_b77f8f5670b47f8b6b8e42570a223b3e" nm="__glewDeleteFramebuffers"/>
+</n32>
+<n45 lb="53" cb="23">
+<flit/>
+</n45>
+<n32 lb="53" cb="26" le="53" ce="27">
+<uo lb="53" cb="26" le="53" ce="27" kind="&amp;">
+<mex lb="53" cb="27" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_0fd82ab797a69a343442a80b53fc0755" nm="id" arrow="1">
+<n19 lb="53" cb="27"/>
+</mex>
+</uo>
+</n32>
+</ce>
+<ce lb="54" cb="2" le="54" ce="31" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_c646f916e2d044f9b326d2adc04e6b34">
+<exp pvirg="true"/>
+<n32 lb="54" cb="2">
+<drx lb="54" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_c646f916e2d044f9b326d2adc04e6b34" nm="glDeleteTextures"/>
+</n32>
+<n45 lb="54" cb="19"/>
+<n32 lb="54" cb="22" le="54" ce="23">
+<uo lb="54" cb="22" le="54" ce="23" kind="&amp;">
+<mex lb="54" cb="23" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_2c8e450821da1cd850a62afbe7423c34" nm="colorTex" arrow="1">
+<n19 lb="54" cb="23"/>
+</mex>
+</uo>
+</n32>
+</ce>
+</u>
+
+</Stmt>
+</d>
+<m name="resize" id="d1e59a57b91cf184526acc6d9b9450b6_76e76f74ad21884692afc12aa252315c" file="1" linestart="58" lineend="73" previous="bea1e4d55458dd978080d8092cd8db66_76e76f74ad21884692afc12aa252315c" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<p name="w" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+<p name="h" proto="unsigned int" isLiteral="true" isPrimitive="true" access2="none">
+<bt name="unsigned int"/>
+<Stmt>
+
+</Stmt>
+</p>
+<Stmt>
+<u lb="59" cb="1" le="73" ce="1">
+<ce lb="63" cb="2" le="63" ce="39" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2">
+<exp pvirg="true"/>
+<n32 lb="63" cb="2">
+<drx lb="63" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" nm="glBindTexture"/>
+</n32>
+<n32 lb="63" cb="16">
+<n45 lb="63" cb="16">
+<flit/>
+</n45>
+</n32>
+<n32 lb="63" cb="31">
+<mex lb="63" cb="31" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_2c8e450821da1cd850a62afbe7423c34" nm="colorTex" arrow="1">
+<n19 lb="63" cb="31"/>
+</mex>
+</n32>
+</ce>
+<ce lb="64" cb="2" le="65" ce="31" nbparm="9" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473">
+<exp pvirg="true"/>
+<n32 lb="64" cb="2">
+<drx lb="64" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_a47135ab735b501e308ba08f62b26473" nm="glTexImage2D"/>
+</n32>
+<n32 lb="64" cb="15">
+<n45 lb="64" cb="15"/>
+</n32>
+<n45 lb="64" cb="30">
+<flit/>
+</n45>
+<n45 lb="64" cb="33">
+<flit/>
+</n45>
+<n32 lb="64" cb="45">
+<n32 lb="64" cb="45">
+<drx lb="64" cb="45" kind="lvalue" nm="w"/>
+</n32>
+</n32>
+<n32 lb="64" cb="48">
+<n32 lb="64" cb="48">
+<drx lb="64" cb="48" kind="lvalue" nm="h"/>
+</n32>
+</n32>
+<n45 lb="64" cb="51"/>
+<n32 lb="65" cb="3">
+<n45 lb="65" cb="3">
+<flit/>
+</n45>
+</n32>
+<n32 lb="65" cb="12">
+<n45 lb="65" cb="12">
+<flit/>
+</n45>
+</n32>
+<n32 lb="65" cb="30">
+<n45 lb="65" cb="30"/>
+</n32>
+</ce>
+<ce lb="66" cb="2" le="67" ce="13" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934">
+<exp pvirg="true"/>
+<n32 lb="66" cb="2">
+<drx lb="66" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934" nm="glTexParameteri"/>
+</n32>
+<n32 lb="66" cb="18">
+<n45 lb="66" cb="18"/>
+</n32>
+<n32 lb="66" cb="33">
+<n45 lb="66" cb="33">
+<flit/>
+</n45>
+</n32>
+<n45 lb="67" cb="3">
+<flit/>
+</n45>
+</ce>
+<ce lb="68" cb="2" le="69" ce="13" nbparm="3" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934">
+<exp pvirg="true"/>
+<n32 lb="68" cb="2">
+<drx lb="68" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_624f8222cba6bca213c0533337cf1934" nm="glTexParameteri"/>
+</n32>
+<n32 lb="68" cb="18">
+<n45 lb="68" cb="18"/>
+</n32>
+<n32 lb="68" cb="33">
+<n45 lb="68" cb="33">
+<flit/>
+</n45>
+</n32>
+<n45 lb="69" cb="3"/>
+</ce>
+<ce lb="71" cb="2" le="71" ce="32" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2">
+<exp pvirg="true"/>
+<n32 lb="71" cb="2">
+<drx lb="71" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_1be04bfaa50b01cc1b0ad8f21985bca2" nm="glBindTexture"/>
+</n32>
+<n32 lb="71" cb="16">
+<n45 lb="71" cb="16"/>
+</n32>
+<n32 lb="71" cb="31">
+<n45 lb="71" cb="31"/>
+</n32>
+</ce>
+</u>
+
+</Stmt>
+</m>
+<m name="activate" id="d1e59a57b91cf184526acc6d9b9450b6_0625b08ccf099428f621e85ee6120af6" file="1" linestart="76" lineend="78" previous="bea1e4d55458dd978080d8092cd8db66_0625b08ccf099428f621e85ee6120af6" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="76" cb="25" le="78" ce="1">
+<ce lb="77" cb="2" le="77" ce="38" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34">
+<exp pvirg="true"/>
+<n32 lb="77" cb="2">
+<drx lb="77" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34" nm="__glewBindFramebuffer"/>
+</n32>
+<n32 lb="77" cb="20">
+<n45 lb="77" cb="20">
+<flit/>
+</n45>
+</n32>
+<n32 lb="77" cb="36">
+<mex lb="77" cb="36" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_0fd82ab797a69a343442a80b53fc0755" nm="id" arrow="1">
+<n19 lb="77" cb="36"/>
+</mex>
+</n32>
+</ce>
+</u>
+
+</Stmt>
+</m>
+<m name="deactivate" id="d1e59a57b91cf184526acc6d9b9450b6_01c2b0c25fa4d7c239915ba0c6a870d5" file="1" linestart="79" lineend="81" previous="bea1e4d55458dd978080d8092cd8db66_01c2b0c25fa4d7c239915ba0c6a870d5" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="void">
+<bt name="void"/>
+</fpt>
+<Stmt>
+<u lb="79" cb="25" le="81" ce="1">
+<ce lb="80" cb="2" le="80" ce="37" nbparm="2" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34">
+<exp pvirg="true"/>
+<n32 lb="80" cb="2">
+<drx lb="80" cb="2" kind="lvalue" id="f67d8644de1d3d604c9a07aca91bf53a_dd336bda6069f5ae35226c49f882ef34" nm="__glewBindFramebuffer"/>
+</n32>
+<n32 lb="80" cb="20">
+<n45 lb="80" cb="20">
+<flit/>
+</n45>
+</n32>
+<n32 lb="80" cb="36">
+<n45 lb="80" cb="36">
+<flit/>
+</n45>
+</n32>
+</ce>
+</u>
+
+</Stmt>
+</m>
+<m name="getColorTexId" id="d1e59a57b91cf184526acc6d9b9450b6_2ef8d59e3db8a541b4258852a6b17fe0" file="1" linestart="83" lineend="83" previous="bea1e4d55458dd978080d8092cd8db66_2ef8d59e3db8a541b4258852a6b17fe0" access="public" hasbody="true" isdef="true">
+<fpt cc="x86_thiscall" proto="unsigned int">
+<bt name="unsigned int"/>
+</fpt>
+<Stmt>
+<u lb="83" cb="37" le="83" ce="56">
+<rx lb="83" cb="39" le="83" ce="46" pvirg="true">
+<n32 lb="83" cb="46">
+<mex lb="83" cb="46" kind="lvalue" id="bea1e4d55458dd978080d8092cd8db66_2c8e450821da1cd850a62afbe7423c34" nm="colorTex" arrow="1">
+<n19 lb="83" cb="46"/>
+</mex>
+</n32>
+</rx>
+</u>
+
+</Stmt>
+</m>
+</tun>
+</Root>
